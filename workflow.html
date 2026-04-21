@@ -3,837 +3,1494 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0f2d4a">
-<title>Dilmuss — To'liq Workflow: kimning ishi kimga bog'liq</title>
+<meta name="theme-color" content="#1c2144">
+<title>Atlas — Dilmuss Woman Workflow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,30..100,0..1;1,9..144,300..700,30..100,0..1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0f1216;
-    --ink-2:#2d323a;
-    --ink-3:#52585f;
-    --muted:#7d8289;
-    --line:#eae3d2;
-    --line-2:#d9d2c0;
-    --paper:#faf6ed;
-    --paper-2:#f2ecdd;
-    --paper-3:#ebe4d0;
-    --card:#ffffff;
-    --navy:#0f2d4a;
-    --navy-2:#1a4672;
-    --rust:#a83f1f;
-    --rust-2:#ca5b36;
-    --gold:#a88038;
-    --sage:#4d6e4a;
-    --shadow-sm:0 1px 2px rgba(15,18,22,.04),0 1px 1px rgba(15,18,22,.03);
-    --shadow-md:0 4px 14px rgba(15,18,22,.06),0 2px 4px rgba(15,18,22,.04);
-    --shadow-lg:0 16px 36px rgba(15,18,22,.1);
-    --radius:4px;
-    --trans:220ms cubic-bezier(.4,0,.2,1);
+    /* Paper stack — aged cream + ink + madder */
+    --paper:   #f1e8cf;
+    --paper-2: #e7dcbc;
+    --paper-3: #ddd0a3;
+    --chalk:   #faf5e3;
+    --ink:     #1c2144;
+    --ink-2:   #2d3355;
+    --ink-3:   #54577a;
+    --muted:   #8a886d;
+    --madder:  #a4361d;
+    --madder-2:#c45632;
+    --gold:    #b88e3f;
+    --sage:    #6d7a43;
+    --rule:    #4c4220;
+
+    --fs-display: "Fraunces", "Fraunces VF", Georgia, serif;
+    --fs-body:    "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --fs-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+    --radius: 2px;
+    --trans: 280ms cubic-bezier(.4,0,.2,1);
   }
+
   *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
   body{
     margin:0;padding:0;
-    font-family:"Inter","Helvetica Neue",system-ui,-apple-system,sans-serif;
-    font-size:clamp(14.5px,0.6vw + 13px,16px);
-    line-height:1.6;color:var(--ink);
+    font-family:var(--fs-body);
+    color:var(--ink);
     background:var(--paper);
+    font-size:clamp(15.5px, 0.5vw + 14px, 17px);
+    line-height:1.55;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
     overflow-x:hidden;
-  }
-  a{color:var(--rust);text-decoration:none}
-  a:hover{text-decoration:underline}
-
-  .wrap{max-width:1000px;margin:0 auto;padding:0 clamp(14px,4vw,32px)}
-
-  /* Header */
-  .header{
-    background:linear-gradient(180deg,var(--paper) 0%,var(--paper-2) 100%);
-    padding:clamp(32px,6vw,56px) 0 clamp(24px,4vw,40px);
-    border-bottom:1px solid var(--line);
-    text-align:center;
-  }
-  .header .eyebrow{
-    display:inline-flex;align-items:center;gap:10px;
-    font-size:clamp(10.5px,1vw,11.5px);font-weight:700;
-    letter-spacing:0.22em;color:var(--rust);
-    text-transform:uppercase;margin-bottom:14px;
-  }
-  .header .eyebrow::before,.header .eyebrow::after{
-    content:"";width:24px;height:2px;background:var(--rust);
-  }
-  .header h1{
-    font-family:"Source Serif 4",Georgia,serif;
-    font-size:clamp(26px,4.5vw,42px);
-    line-height:1.1;margin:0 0 12px;
-    letter-spacing:-0.02em;font-weight:600;
-  }
-  .header .sub{
-    font-family:"Source Serif 4",Georgia,serif;
-    font-size:clamp(14.5px,1.6vw,18px);
-    color:var(--ink-2);font-style:italic;
-    max-width:640px;margin:0 auto 18px;
-    line-height:1.5;
-  }
-  .header .back{
-    display:inline-block;
-    font-size:clamp(12px,1.1vw,13px);
-    color:var(--muted);
-    margin-top:10px;
+    font-feature-settings:"liga","dlig","ss01";
   }
 
-  /* Overview stats */
-  .overview{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
-    gap:10px;
-    margin:clamp(24px,3vw,32px) 0;
+  /* Grain / paper texture */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;z-index:60;
+    opacity:.22;
+    mix-blend-mode:multiply;
+    background-image:
+      radial-gradient(circle at 20% 35%, #00000008 0px, transparent 1.2px),
+      radial-gradient(circle at 75% 65%, #00000010 0px, transparent 1.6px),
+      radial-gradient(circle at 50% 50%, #00000006 0px, transparent 0.9px);
+    background-size:3px 3px, 4px 4px, 2px 2px;
   }
-  .ov{
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:14px 16px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow-sm);
-  }
-  .ov .lbl{
-    font-size:10.5px;font-weight:700;
-    text-transform:uppercase;letter-spacing:0.1em;
-    color:var(--muted);margin-bottom:4px;
-  }
-  .ov .num{
-    font-family:"Source Serif 4",Georgia,serif;
-    font-size:clamp(22px,2.4vw,28px);
-    color:var(--navy);font-weight:600;
-    line-height:1;
-  }
-  .ov .hint{font-size:11.5px;color:var(--muted);margin-top:4px}
-
-  /* Legend */
-  .legend{
-    display:flex;flex-wrap:wrap;gap:14px 20px;
-    padding:14px 18px;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    margin:clamp(20px,3vw,28px) 0;
-    font-size:clamp(11.5px,1vw,12.5px);color:var(--ink-2);
-    box-shadow:var(--shadow-sm);
-  }
-  .legend span{display:flex;align-items:center;gap:8px}
-  .legend .dot{
-    display:inline-block;width:14px;height:14px;
-    border-radius:50%;flex-shrink:0;
-  }
-  .legend .dot.rust{background:var(--rust)}
-  .legend .dot.navy{background:var(--navy)}
-  .legend .dot.sage{background:var(--sage)}
-  .legend .dot.plain{background:var(--paper);border:1.5px solid var(--line-2)}
-
-  /* Stage header */
-  .stage-head{
-    font-size:clamp(11px,1vw,12.5px);font-weight:700;
-    letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--rust);
-    border-bottom:2px solid var(--rust);
-    padding-bottom:10px;
-    margin:clamp(32px,4vw,44px) 0 16px;
-    display:flex;align-items:baseline;gap:12px;
-  }
-  .stage-head .st-num{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:28px;height:28px;border-radius:50%;
-    background:var(--rust);color:#fff;
-    font-size:13px;font-weight:700;
-    font-variant-numeric:tabular-nums;
-    align-self:center;
-  }
-  .stage-head .st-hint{
-    color:var(--muted);font-weight:500;
-    margin-left:auto;letter-spacing:0.04em;
-    text-transform:none;font-size:11.5px;
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:59;
+    opacity:.35;mix-blend-mode:multiply;
+    background:radial-gradient(ellipse at center, transparent 45%, rgba(76,66,32,0.22) 100%);
   }
 
-  /* Parallel intake tracks */
-  .parallel{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;margin-bottom:14px;
+  .wrap{
+    max-width:1260px;
+    margin:0 auto;
+    padding:0 clamp(18px, 4vw, 56px);
+    position:relative;
+    z-index:1;
   }
-  .track{
-    background:var(--paper-2);
-    border:1px dashed var(--line-2);
-    border-radius:var(--radius);
-    padding:14px;
-  }
-  .track .tl{
-    font-weight:700;
-    font-size:clamp(12.5px,1.1vw,13.5px);
-    margin-bottom:12px;color:var(--ink);
-    display:flex;align-items:center;gap:10px;
-  }
-  .track .tl .emoji{
-    font-size:20px;
-    background:var(--card);
-    border:1px solid var(--line);
-    width:34px;height:34px;
-    border-radius:50%;
-    display:inline-flex;align-items:center;justify-content:center;
-  }
-  .track.formal{background:#f0f5fb;border-color:#c9d8e8}
-  .track.bazaar{background:#fdf2e9;border-color:#e8c9b3}
 
-  /* Person card */
-  .person{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:clamp(12px,1.5vw,16px) clamp(14px,1.8vw,18px);
-    display:grid;
-    grid-template-columns:44px 1fr;
-    gap:clamp(10px,1.2vw,14px);
-    box-shadow:var(--shadow-sm);
-    transition:transform var(--trans),box-shadow var(--trans);
-    margin-bottom:4px;
+  /* ============ COVER ============ */
+  .cover{
+    min-height:92vh;
+    position:relative;
+    padding:clamp(24px, 4vw, 40px) 0 clamp(40px, 6vw, 60px);
+    display:flex;flex-direction:column;
+  }
+  .cover-top{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--fs-mono);
+    font-size:11px;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--ink-3);
+    padding:20px 0;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .cover-top .brand{font-weight:500}
+  .cover-top .issue span{margin-left:18px}
+
+  .cover-body{
+    flex:1;display:flex;flex-direction:column;
+    justify-content:center;padding:clamp(30px,5vw,60px) 0;
     position:relative;
   }
-  .person:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
-  .person.important{border-left:4px solid var(--rust)}
-  .person.automated{
-    background:linear-gradient(to bottom, #f0f5fb, var(--card));
-    border-left:4px solid var(--navy);
-  }
-  .person.new-role{border-left:4px solid var(--sage)}
 
-  .p-num{
-    font-family:"Source Serif 4",Georgia,serif;
-    font-size:clamp(18px,2vw,22px);
-    font-weight:600;color:var(--navy);
-    line-height:1;
-    border:1.5px solid var(--line);
-    border-radius:50%;
-    width:44px;height:44px;
-    display:flex;align-items:center;justify-content:center;
-    background:var(--paper);
-    flex-shrink:0;
-    font-variant-numeric:tabular-nums;
+  .cover h1{
+    font-family:var(--fs-display);
+    font-weight:400;
+    font-variation-settings:"opsz" 144, "SOFT" 100, "WONK" 1;
+    font-size:clamp(74px, 18vw, 240px);
+    line-height:0.82;
+    letter-spacing:-0.04em;
+    margin:0;color:var(--ink);
+    text-transform:none;
   }
-  .person.important .p-num{background:var(--rust);color:#fff;border-color:var(--rust)}
-  .person.automated .p-num{background:var(--navy);color:#fff;border-color:var(--navy)}
-  .person.new-role .p-num{background:var(--sage);color:#fff;border-color:var(--sage)}
-
-  .p-head{
-    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  .cover h1 .italic{
+    font-style:italic;
+    color:var(--madder);
+    font-variation-settings:"opsz" 144, "SOFT" 100, "WONK" 1;
   }
-  .p-role{
-    font-weight:700;
-    font-size:clamp(13.5px,1.2vw,15px);
-    color:var(--ink);line-height:1.3;
+  .cover .sub{
+    font-family:var(--fs-body);
+    font-style:italic;
+    font-size:clamp(20px, 2.6vw, 34px);
+    color:var(--ink-2);
+    line-height:1.3;
+    margin-top:clamp(30px, 4vw, 48px);
+    max-width:760px;
+    letter-spacing:0.005em;
   }
-  .p-emoji{font-size:22px;line-height:1}
-  .p-where{
-    font-size:clamp(10.5px,0.95vw,11.5px);
-    color:var(--muted);
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    font-weight:600;
-    margin-top:2px;
+  .cover .sub em{
+    color:var(--madder);font-style:normal;
   }
-  .p-task{
-    font-size:clamp(12.5px,1.1vw,13.5px);
-    color:var(--ink-2);line-height:1.52;
-    margin-top:8px;
-  }
-  .p-meta{
-    display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;
-  }
-  .p-meta .pill{
-    font-size:clamp(10.5px,1vw,11.5px);
-    font-weight:600;
-    background:var(--paper-2);
-    padding:3px 9px;border-radius:2px;
-    display:inline-block;
+  .cover .deck{
+    margin-top:clamp(24px, 3vw, 32px);
+    max-width:620px;
+    font-family:var(--fs-body);
+    font-size:clamp(15px, 1.5vw, 18px);
+    line-height:1.5;
     color:var(--ink-2);
   }
-  .p-meta .pill.nav{background:#e1ecf5;color:var(--navy)}
-  .p-meta .pill.rst{background:#fef1e3;color:var(--rust)}
-  .p-meta .pill.sg{background:#e3eedf;color:var(--sage)}
 
-  /* Arrow */
-  .arrow{
-    display:flex;align-items:center;justify-content:center;
-    gap:8px;
-    color:var(--muted);
-    font-size:13px;
-    margin:2px 0;
-    height:26px;
-    font-weight:500;
+  .cover-bottom{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    gap:clamp(20px,3vw,40px);
+    padding-top:24px;
+    border-top:1px solid var(--ink);
+    font-family:var(--fs-mono);
+    font-size:11px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--ink-3);
   }
-  .arrow::before,.arrow::after{
-    content:"";flex:1;height:1px;
-    background:var(--line-2);max-width:80px;
+  .cover-bottom .byline b{color:var(--ink);font-weight:500}
+  .cover-bottom .scroll-hint{
+    display:flex;align-items:center;gap:10px;
   }
-  .arrow svg{flex-shrink:0}
-  .arrow-label{
-    font-size:11px;
+  .cover-bottom .scroll-hint::after{
+    content:"↓";font-size:16px;color:var(--madder);
+    animation:bob 1.8s ease-in-out infinite;
+  }
+  @keyframes bob{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(5px)}
+  }
+
+  /* Decorative flourish in corner */
+  .flourish{
+    position:absolute;font-family:var(--fs-display);
+    font-style:italic;color:var(--madder);
+    opacity:0.7;pointer-events:none;
+    font-variation-settings:"opsz" 144, "WONK" 1;
+  }
+  .flourish.tr{
+    top:80px;right:0;
+    font-size:clamp(40px,5vw,72px);
+    transform:rotate(-6deg);
+  }
+  .flourish.bl{
+    bottom:110px;left:-10px;
+    font-size:clamp(70px,10vw,140px);
+    transform:rotate(4deg);opacity:0.15;
+  }
+
+  /* ============ CHAPTER HEADER ============ */
+  .chap{
+    position:relative;
+    padding:clamp(50px, 8vw, 110px) 0 clamp(28px, 4vw, 40px);
+  }
+  .chap-rule{
+    border-top:1px solid var(--ink);
+    padding-top:clamp(20px,3vw,28px);
+    margin-bottom:clamp(16px,2.2vw,24px);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--fs-mono);
+    font-size:11px;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--ink-3);
+  }
+  .chap-rule .cn{color:var(--madder);font-weight:500}
+  .chap-num{
+    font-family:var(--fs-display);
+    font-variation-settings:"opsz" 144, "SOFT" 100, "WONK" 1;
+    font-weight:300;
+    font-size:clamp(180px, 28vw, 380px);
+    line-height:0.78;
+    color:var(--paper-3);
+    letter-spacing:-0.06em;
+    margin:0;
+    position:relative;
+    z-index:0;
+    pointer-events:none;
+  }
+  .chap h2{
+    font-family:var(--fs-display);
+    font-variation-settings:"opsz" 144, "SOFT" 50, "WONK" 0;
+    font-weight:400;
+    font-size:clamp(42px, 7vw, 96px);
+    line-height:0.9;
+    letter-spacing:-0.03em;
+    margin:clamp(-160px, -24vw, -320px) 0 0;
+    color:var(--ink);
+    position:relative;
+    z-index:1;
+  }
+  .chap h2 em{
+    font-style:italic;color:var(--madder);
+  }
+  .chap .kicker{
+    font-family:var(--fs-body);
     font-style:italic;
-    color:var(--muted);
-    padding:0 8px;
+    font-size:clamp(18px, 2vw, 24px);
+    color:var(--ink-2);
+    line-height:1.4;
+    margin-top:clamp(14px,2vw,20px);
+    max-width:680px;
   }
 
-  /* Merge */
-  .merge{
-    text-align:center;
-    font-size:clamp(11.5px,1.05vw,12.5px);
-    font-weight:700;
-    color:var(--rust);
-    padding:14px clamp(12px,2vw,18px);
-    margin:14px 0;
-    background:linear-gradient(135deg,#fef7ef 0%,#fdecd9 100%);
-    border-radius:var(--radius);
-    letter-spacing:0.04em;
+  /* ============ CAST STRIP ============ */
+  .cast{padding:clamp(40px,6vw,80px) 0 clamp(30px,4vw,50px)}
+  .cast .kicker{margin-bottom:clamp(20px,3vw,32px)}
+  .cast-strip{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(165px, 1fr));
+    gap:clamp(10px,1.4vw,16px);
+    margin:clamp(16px,2vw,24px) 0;
+  }
+  .cast-role{
+    background:var(--chalk);
+    border:1px solid var(--ink);
+    padding:clamp(14px,1.8vw,20px) clamp(14px,1.8vw,18px);
+    position:relative;
+    min-height:160px;
+    display:flex;flex-direction:column;
+    transition:transform var(--trans), background var(--trans);
+  }
+  .cast-role:hover{transform:translate(-2px,-2px)}
+  .cast-role::after{
+    content:"";position:absolute;
+    inset:4px -4px -4px 4px;
+    background:var(--ink);z-index:-1;
+    transition:inset var(--trans);
+  }
+  .cast-role:hover::after{inset:6px -6px -6px 6px}
+
+  .cast-num{
+    font-family:var(--fs-display);
+    font-variation-settings:"opsz" 144, "WONK" 1;
+    font-weight:300;
+    font-size:clamp(42px,4.5vw,56px);
+    line-height:0.9;color:var(--madder);
+    font-variant-numeric:oldstyle-nums;
+    margin-bottom:6px;
+  }
+  .cast-num .mark{
+    font-family:var(--fs-mono);
+    font-size:11px;color:var(--ink-3);
+    letter-spacing:0.15em;margin-left:4px;
+    font-variant-numeric:normal;
+    vertical-align:middle;
     text-transform:uppercase;
-    border:1px solid #e8c9b3;
+  }
+  .cast-role .name{
+    font-family:var(--fs-display);
+    font-style:italic;
+    font-weight:400;
+    font-variation-settings:"opsz" 24, "SOFT" 50;
+    font-size:clamp(15px,1.4vw,17px);
+    line-height:1.25;
+    color:var(--ink);
+    margin-bottom:4px;
+  }
+  .cast-role .where{
+    font-family:var(--fs-mono);
+    font-size:9.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-top:auto;
+  }
+  .cast-role.auto{background:var(--ink);border-color:var(--ink)}
+  .cast-role.auto .cast-num{color:var(--gold)}
+  .cast-role.auto .name{color:var(--chalk)}
+  .cast-role.auto .where{color:var(--paper-3)}
+  .cast-role.new{background:var(--madder);border-color:var(--madder)}
+  .cast-role.new .cast-num{color:var(--chalk)}
+  .cast-role.new .name{color:var(--chalk)}
+  .cast-role.new .where{color:#f3d4c4}
+  .cast-role.new::after{background:var(--ink)}
+
+  /* ============ ATLAS (the big diagram) ============ */
+  .atlas{
+    padding:clamp(40px,6vw,90px) 0;
     position:relative;
   }
-  .merge::before{content:"▼ ";color:var(--rust)}
+  .atlas-wrap{
+    background:var(--chalk);
+    border:1px solid var(--ink);
+    padding:clamp(20px,3vw,40px);
+    position:relative;
+    margin-top:clamp(24px,3vw,40px);
+    box-shadow:
+      6px 6px 0 var(--paper-3),
+      6px 6px 0 1px var(--ink);
+  }
+  .atlas-wrap::before{
+    content:"MAP · I";
+    position:absolute;top:-11px;left:24px;
+    background:var(--chalk);
+    padding:0 10px;
+    font-family:var(--fs-mono);font-size:11px;
+    letter-spacing:0.3em;color:var(--madder);
+    font-weight:500;
+  }
+  .atlas-wrap::after{
+    content:"scale · not to";
+    position:absolute;bottom:-10px;right:24px;
+    background:var(--chalk);padding:0 10px;
+    font-family:var(--fs-body);font-style:italic;
+    font-size:12px;color:var(--ink-3);
+  }
 
-  /* Feedback loop callout */
+  .atlas-svg-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    padding:8px 0;
+  }
+  .atlas-svg-wrap svg{
+    display:block;
+    width:100%;height:auto;
+    min-width:920px;
+  }
+
+  .atlas-legend{
+    display:flex;flex-wrap:wrap;gap:14px 28px;
+    margin-top:clamp(16px,2vw,24px);
+    padding-top:clamp(14px,2vw,20px);
+    border-top:1px dashed var(--ink-3);
+    font-family:var(--fs-mono);
+    font-size:10.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .atlas-legend span{display:flex;align-items:center;gap:8px}
+  .atlas-legend .line-sample{
+    display:inline-block;width:34px;height:0;
+    border-top:2.5px solid var(--ink);
+  }
+  .atlas-legend .line-sample.goods{border-top:2.5px solid var(--ink)}
+  .atlas-legend .line-sample.data{border-top:1.5px dotted var(--gold);height:2px}
+  .atlas-legend .line-sample.decision{border-top:2px dashed var(--madder)}
+
+  /* ============ STAGE DETAIL CARDS ============ */
+  .stage-body{
+    padding:clamp(20px,3vw,36px) 0 clamp(40px,6vw,70px);
+  }
+  .parallel-tracks{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(18px,2.4vw,32px);
+    margin:clamp(16px,2vw,24px) 0;
+  }
+  .track{
+    background:var(--chalk);
+    border:1px solid var(--ink);
+    padding:clamp(22px,2.6vw,32px);
+    position:relative;
+  }
+  .track-mark{
+    font-family:var(--fs-mono);
+    font-size:10px;letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:var(--madder);
+    margin-bottom:12px;font-weight:500;
+  }
+  .track h3{
+    font-family:var(--fs-display);
+    font-weight:400;
+    font-style:italic;
+    font-variation-settings:"opsz" 72;
+    font-size:clamp(26px,3vw,38px);
+    line-height:1;
+    margin:0 0 clamp(18px,2.4vw,28px);
+    color:var(--ink);
+    letter-spacing:-0.015em;
+  }
+
+  .role{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:clamp(14px,1.8vw,22px);
+    padding:clamp(16px,2vw,22px) 0;
+    border-top:1px solid var(--paper-3);
+  }
+  .role:first-of-type{border-top:1.5px solid var(--ink)}
+  .role:last-of-type{border-bottom:1.5px solid var(--ink)}
+  .role-num{
+    font-family:var(--fs-display);
+    font-variation-settings:"opsz" 144, "WONK" 1;
+    font-weight:300;
+    font-size:clamp(52px,6vw,80px);
+    line-height:0.86;
+    color:var(--madder);
+    font-variant-numeric:oldstyle-nums;
+    letter-spacing:-0.03em;
+    align-self:start;
+    padding-top:4px;
+    min-width:70px;
+  }
+  .role-num.auto{color:var(--ink)}
+  .role-content{min-width:0}
+  .role-name{
+    font-family:var(--fs-display);
+    font-style:italic;
+    font-variation-settings:"opsz" 48, "SOFT" 30;
+    font-size:clamp(21px,2.2vw,28px);
+    line-height:1.15;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+    margin:0 0 4px;
+    font-weight:400;
+  }
+  .role-loc{
+    font-family:var(--fs-mono);
+    font-size:10px;letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-bottom:10px;
+  }
+  .role-task{
+    font-family:var(--fs-body);
+    font-size:clamp(15px,1.3vw,17px);
+    line-height:1.5;
+    color:var(--ink-2);
+    font-style:normal;
+  }
+  .role-task em{color:var(--madder);font-style:italic;font-weight:500}
+  .role-stats{
+    display:flex;flex-wrap:wrap;gap:12px 18px;
+    margin-top:12px;
+    padding-top:10px;
+    border-top:1px dashed var(--paper-3);
+    font-family:var(--fs-mono);
+    font-size:11px;letter-spacing:0.08em;
+    color:var(--ink-3);
+  }
+  .role-stats b{color:var(--ink);font-weight:500}
+  .role-stats .hl{color:var(--madder);font-weight:500}
+
+  /* DC stream — single column */
+  .stream{
+    background:var(--chalk);
+    border:1px solid var(--ink);
+    padding:clamp(22px,2.6vw,34px);
+    margin:clamp(16px,2vw,24px) 0;
+  }
+
+  /* Merge banner */
+  .merge{
+    position:relative;
+    text-align:center;
+    padding:clamp(18px,2.4vw,26px);
+    margin:clamp(24px,3vw,36px) 0;
+    font-family:var(--fs-display);
+    font-style:italic;
+    font-size:clamp(19px,2.2vw,26px);
+    font-variation-settings:"opsz" 72;
+    color:var(--madder);
+    line-height:1.25;
+    font-weight:400;
+  }
+  .merge::before,.merge::after{
+    content:"";display:block;height:1px;
+    background:var(--madder);
+    margin:0 auto;
+  }
+  .merge::before{width:90px;margin-bottom:18px}
+  .merge::after{width:90px;margin-top:18px}
+  .merge .ornament{
+    display:inline-block;
+    color:var(--madder);
+    margin:0 8px;
+    font-style:normal;
+    opacity:0.55;
+  }
+
+  /* Feedback block */
   .feedback{
-    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
-    color:#fff;
-    padding:clamp(18px,2.5vw,28px) clamp(20px,2.8vw,32px);
-    border-radius:var(--radius);
-    margin:20px 0;
-    box-shadow:var(--shadow-lg);
-    position:relative;overflow:hidden;
+    background:var(--ink);
+    color:var(--chalk);
+    padding:clamp(28px,4vw,56px);
+    margin:clamp(24px,3vw,40px) 0;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--ink);
   }
   .feedback::before{
     content:"↻";
     position:absolute;
-    right:-30px;top:-60px;
-    font-size:220px;
-    opacity:0.07;
-    color:#fff;
-    font-weight:100;
+    right:-60px;top:-80px;
+    font-family:var(--fs-display);
+    font-size:420px;
     line-height:1;
+    opacity:0.07;color:var(--gold);
+    font-weight:300;
+    pointer-events:none;
   }
-  .feedback .fb-title{
-    font-weight:700;
-    font-size:clamp(13px,1.2vw,14.5px);
-    letter-spacing:0.08em;
+  .feedback .fb-label{
+    font-family:var(--fs-mono);
+    font-size:11px;letter-spacing:0.24em;
     text-transform:uppercase;
-    margin-bottom:10px;
+    color:var(--gold);
+    margin-bottom:clamp(12px,1.6vw,18px);
     position:relative;
-    display:flex;align-items:center;gap:10px;
   }
-  .feedback .fb-title::before{
-    content:"↻";font-size:20px;color:#f5c36a;
-  }
-  .feedback .fb-flow{
-    font-family:"JetBrains Mono","SF Mono",Consolas,monospace;
-    font-size:clamp(11.5px,1vw,13px);
-    color:#c3d4e4;line-height:1.8;
+  .feedback h3{
+    font-family:var(--fs-display);
+    font-weight:300;
+    font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 80;
+    font-size:clamp(30px,4vw,56px);
+    line-height:1;
+    margin:0 0 clamp(18px,2.4vw,28px);
+    color:var(--chalk);
+    letter-spacing:-0.02em;
+    max-width:720px;
     position:relative;
-    display:flex;flex-wrap:wrap;gap:6px 10px;
-    align-items:center;
   }
-  .feedback .fb-flow b{color:#f5c36a;font-weight:600}
-  .feedback .fb-flow .sep{color:#6682a0}
-  .feedback .fb-note{
-    margin-top:12px;
-    font-size:clamp(12px,1.05vw,13.5px);
-    color:#e8efc5;
+  .feedback .fb-chain{
+    display:flex;flex-wrap:wrap;align-items:center;
+    gap:8px 14px;
+    font-family:var(--fs-mono);
+    font-size:clamp(11.5px,1.1vw,13px);
+    letter-spacing:0.08em;
+    color:var(--paper-3);
+    margin-bottom:clamp(18px,2.4vw,24px);
+    position:relative;
+  }
+  .feedback .fb-chain b{color:var(--gold);font-weight:500}
+  .feedback .fb-chain .tick{color:var(--madder-2)}
+  .feedback .fb-body{
+    font-family:var(--fs-body);
+    font-size:clamp(15.5px,1.4vw,18px);
+    line-height:1.55;
+    color:var(--paper-3);
+    max-width:720px;
     font-style:italic;
     position:relative;
-    line-height:1.55;
   }
+  .feedback .fb-body b{color:var(--chalk);font-weight:500}
 
-  /* Timing strip */
-  .timing{
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:14px 18px;
-    border-radius:var(--radius);
-    margin:16px 0;
-    box-shadow:var(--shadow-sm);
+  /* Decision list */
+  .decisions{
+    list-style:none;padding:0;margin:clamp(16px,2.2vw,24px) 0 0;
+    display:grid;gap:clamp(10px,1.2vw,14px);
+    position:relative;
+  }
+  .decisions li{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+    grid-template-columns:auto 1fr;
     gap:14px;
+    padding:clamp(12px,1.6vw,18px);
+    background:var(--ink-2);
+    border-left:3px solid var(--gold);
+    color:var(--chalk);
+    font-family:var(--fs-body);
+    font-size:clamp(14.5px,1.2vw,16px);
+    line-height:1.5;
   }
-  .timing .tm{
+  .decisions li strong{
+    font-family:var(--fs-display);
+    font-style:italic;
+    font-size:clamp(17px,1.6vw,20px);
+    color:var(--gold);
+    font-weight:500;
+    display:block;
+    margin-bottom:2px;
+  }
+  .decisions li::before{
+    content:"→";
+    color:var(--madder-2);
+    font-family:var(--fs-mono);
+    font-size:18px;font-weight:500;
+    align-self:start;padding-top:4px;
+  }
+
+  /* Quote / Marginalia */
+  .marginalia{
+    margin:clamp(32px,4vw,60px) 0;
+    padding:clamp(20px,2.6vw,32px) clamp(24px,3vw,40px);
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    font-family:var(--fs-display);
+    font-style:italic;
+    font-weight:300;
+    font-variation-settings:"opsz" 72, "SOFT" 80;
+    font-size:clamp(20px,2.4vw,30px);
+    line-height:1.35;
+    color:var(--ink);
     text-align:center;
-    border-right:1px dashed var(--line);
-    padding-right:14px;
+    max-width:820px;
+    margin-left:auto;margin-right:auto;
   }
-  .timing .tm:last-child{border-right:none}
-  .timing .tm-t{
-    font-family:"Source Serif 4",Georgia,serif;
-    font-size:clamp(18px,2vw,22px);
-    color:var(--navy);font-weight:600;line-height:1;
-    font-variant-numeric:tabular-nums;
+  .marginalia .by{
+    display:block;
+    font-family:var(--fs-mono);
+    font-size:11px;letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-style:normal;
+    color:var(--ink-3);
+    margin-top:clamp(14px,1.6vw,20px);
   }
-  .timing .tm-l{
-    font-size:10.5px;font-weight:700;
-    text-transform:uppercase;letter-spacing:0.1em;
-    color:var(--muted);margin-top:6px;
+  .marginalia .by::before{content:"— "}
+
+  /* Colophon */
+  .colophon{
+    padding:clamp(40px,5vw,72px) 0 clamp(30px,4vw,48px);
+    border-top:1px solid var(--ink);
+    margin-top:clamp(40px,5vw,64px);
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:clamp(20px,3vw,40px);
+    font-family:var(--fs-mono);
+    font-size:11px;letter-spacing:0.12em;
+    color:var(--ink-3);
+    text-transform:uppercase;
   }
-  @media (max-width:560px){
-    .timing .tm{border-right:none;border-bottom:1px dashed var(--line);padding:0 0 12px}
-    .timing .tm:last-child{border-bottom:none;padding-bottom:0}
+  .colophon h4{
+    font-family:var(--fs-display);
+    font-style:italic;
+    font-variation-settings:"opsz" 48;
+    font-size:16px;
+    letter-spacing:-0.01em;
+    color:var(--madder);
+    margin:0 0 10px;font-weight:500;
+    text-transform:none;
+  }
+  .colophon p{margin:0;line-height:1.7;text-transform:none;letter-spacing:0.04em;font-size:11.5px;color:var(--ink-2)}
+  .colophon a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--madder)}
+
+  /* Foot-rule / page number */
+  .page-no{
+    font-family:var(--fs-mono);
+    font-size:11px;letter-spacing:0.2em;
+    color:var(--ink-3);
+    text-transform:uppercase;
+    text-align:center;
+    padding:20px 0;
+  }
+  .page-no b{color:var(--madder);font-weight:500}
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes enter{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .cover,.chap,.feedback,.cast-strip,.atlas-wrap,.stream,.parallel-tracks,.marginalia{
+    animation:enter 700ms cubic-bezier(.4,0,.2,1) both;
+  }
+  .cast-strip{animation-delay:120ms}
+  .chap{animation-delay:80ms}
+
+  /* Link in header */
+  .back-link{
+    color:var(--madder);
+    font-family:var(--fs-mono);
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:border-color var(--trans);
+  }
+  .back-link:hover{border-bottom-color:var(--madder)}
+
+  /* SVG map internals */
+  .map-node circle{fill:var(--chalk);stroke:var(--ink);stroke-width:2}
+  .map-node.important circle{fill:var(--madder);stroke:var(--madder)}
+  .map-node.auto circle{fill:var(--ink);stroke:var(--ink)}
+  .map-node.new circle{fill:var(--chalk);stroke:var(--madder);stroke-width:2.5}
+  .map-node text.n{
+    font-family:var(--fs-display);
+    font-weight:300;
+    font-size:22px;
+    font-variation-settings:"opsz" 72, "WONK" 1;
+    fill:var(--ink);
+    text-anchor:middle;
+    dominant-baseline:central;
+    font-variant-numeric:oldstyle-nums;
+  }
+  .map-node.important text.n,.map-node.auto text.n{fill:var(--chalk)}
+  .map-node.new text.n{fill:var(--madder)}
+  .map-node text.role{
+    font-family:var(--fs-display);
+    font-style:italic;
+    font-variation-settings:"opsz" 24;
+    font-size:13px;
+    fill:var(--ink);
+    text-anchor:middle;
+    font-weight:500;
+    letter-spacing:0.002em;
+  }
+  .map-node text.sub{
+    font-family:var(--fs-mono);
+    font-size:9px;letter-spacing:0.12em;
+    text-transform:uppercase;
+    fill:var(--ink-3);
+    text-anchor:middle;
+  }
+  .map-line{stroke:var(--ink);stroke-width:2.5;fill:none;stroke-linecap:round}
+  .map-line.thin{stroke-width:1.8}
+  .map-line.dashed{stroke-dasharray:8 5}
+  .map-line.dotted{stroke:var(--gold);stroke-width:2;stroke-dasharray:1 6;stroke-linecap:round}
+  .map-line.feedback{stroke:var(--madder);stroke-width:2;stroke-dasharray:9 6}
+  .map-label{
+    font-family:var(--fs-body);font-style:italic;
+    font-size:12px;fill:var(--ink-3);
+  }
+  .map-label.caps{
+    font-family:var(--fs-mono);font-style:normal;
+    font-size:9.5px;letter-spacing:0.2em;
+    text-transform:uppercase;fill:var(--madder);
+    font-weight:500;
+  }
+  .map-label.gold{fill:var(--gold)}
+  .map-stamp{
+    font-family:var(--fs-mono);
+    font-size:8.5px;letter-spacing:0.24em;
+    text-transform:uppercase;
+    fill:var(--ink-3);
+  }
+  .map-stores{fill:var(--ink-2);opacity:0.55}
+  .map-stores.hl{fill:var(--madder);opacity:0.9}
+
+  /* Responsive */
+  @media (max-width: 780px){
+    .parallel-tracks{grid-template-columns:1fr}
+    .cover h1{font-size:clamp(68px, 16vw, 120px)}
+    .cast-strip{grid-template-columns:repeat(auto-fit, minmax(140px, 1fr))}
+    .chap h2{margin-top:clamp(-120px, -20vw, -220px)}
+    .role{grid-template-columns:1fr}
+    .role-num{font-size:clamp(46px,9vw,60px)}
+    .feedback::before{font-size:260px;right:-40px;top:-50px}
   }
 
-  /* Footer */
-  .foot{
-    border-top:1px solid var(--line);
-    margin-top:48px;padding:24px 0 40px;
-    color:var(--muted);
-    font-size:12.5px;
-  }
-
-  /* Small utilities */
-  .muted{color:var(--muted)}
-  .hl{color:var(--rust);font-weight:600}
-
-  @media (max-width:720px){
-    .parallel{grid-template-columns:1fr;gap:10px}
-    .person{grid-template-columns:38px 1fr;gap:10px;padding:12px 14px}
-    .p-num{width:38px;height:38px;font-size:16px}
-    .arrow::before,.arrow::after{max-width:40px}
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    *,*::before,*::after{
-      animation-duration:0.01ms !important;
-      transition-duration:0.01ms !important;
-    }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none !important;transition:none !important}
   }
 </style>
 </head>
 <body>
 
-<header class="header">
+<!-- ========= COVER ========= -->
+<section class="cover">
   <div class="wrap">
-    <div class="eyebrow">Workflow visualizatsiyasi</div>
-    <h1>To'liq oqim — kimning ishi kimga bog'liq</h1>
-    <p class="sub">12 ta rol, 2 ta parallel kanaldan boshlab, omborda birlashib, 55 do'kondan POS orqali yana yuqoriga qaytadi.</p>
-    <p class="back"><a href="./">← Asosiy hujjatga qaytish</a></p>
-  </div>
-</header>
+    <div class="cover-top">
+      <div class="brand">Dilmuss · Woman</div>
+      <div class="issue">
+        <span>Atlas № I</span>
+        <span>2026 · Aprel</span>
+      </div>
+    </div>
 
-<main class="wrap">
+    <div class="cover-body">
+      <span class="flourish tr">№ I</span>
+      <span class="flourish bl">&amp;</span>
+      <h1>O'n ikki<br><span class="italic">qo'l.</span></h1>
+      <p class="sub">
+        Bitta oqim — <em>bozordan kassaga</em>, so'ng kassadan qarorgohga.
+        Dilmuss chakana zanjirining har bir kishining ishi, aniq va ulangan.
+      </p>
+      <p class="deck">
+        Ushbu atlas SKU-ga asoslangan o'tishning kundalik ishini chizadi.
+        Har bir rol o'zining yo'li va vazifasiga ega; birlik — ular orasidagi
+        ulanishlar. Quyida xarita, so'ngra to'rt bob.
+      </p>
+    </div>
 
-  <div class="overview">
-    <div class="ov">
-      <div class="lbl">Jami rollar</div>
-      <div class="num">12</div>
-      <div class="hint">2 avtomat + 10 inson</div>
-    </div>
-    <div class="ov">
-      <div class="lbl">Parallel kanallar</div>
-      <div class="num">2</div>
-      <div class="hint">Turkiya import + Bozor</div>
-    </div>
-    <div class="ov">
-      <div class="lbl">Kunlik yuk</div>
-      <div class="num">~120</div>
-      <div class="hint">Ikki kanaldan birga</div>
-    </div>
-    <div class="ov">
-      <div class="lbl">Yuk sikli</div>
-      <div class="num">&lt;24 soat</div>
-      <div class="hint">Qabuldan do'konga</div>
+    <div class="cover-bottom">
+      <div class="byline">Tayyorladi: <b>Dilmuss Supply Chain maslahati</b></div>
+      <a class="back-link" href="./">← asosiy hujjat</a>
+      <div class="scroll-hint">sahifani aylantiring</div>
     </div>
   </div>
+</section>
 
-  <div class="legend">
-    <span><i class="dot rust"></i> Muhim/yangi pozitsiya</span>
-    <span><i class="dot navy"></i> Avtomatlashtirilgan (dastur)</span>
-    <span><i class="dot sage"></i> Yangi yaratilgan rol</span>
-    <span><i class="dot plain"></i> Mavjud, o'zgartirilgan rol</span>
+<!-- ========= CAST ========= -->
+<section class="cast">
+  <div class="wrap">
+    <div class="chap-rule">
+      <span class="cn">Dramatis Personae</span>
+      <span>o'n ikki rol · twelve hands</span>
+    </div>
+
+    <h2 style="font-family:var(--fs-display);font-weight:400;font-variation-settings:'opsz' 144, 'SOFT' 50;font-size:clamp(42px, 7vw, 84px);line-height:0.94;letter-spacing:-0.025em;margin:0 0 clamp(16px,2vw,24px);color:var(--ink)">
+      Kim <em style="font-style:italic;color:var(--madder)">nima qiladi</em>.
+    </h2>
+    <p class="kicker" style="font-family:var(--fs-body);font-style:italic;font-size:clamp(17px,1.9vw,22px);color:var(--ink-2);max-width:720px;line-height:1.4;margin-bottom:clamp(20px,3vw,32px)">
+      O'ntasi inson, ikkitasi dastur. Rangi bilan ajratilgan: qora — avtomat,
+      qizil — yangi yoki o'zgartirilgan rol.
+    </p>
+
+    <div class="cast-strip">
+      <div class="cast-role"><div class="cast-num">01<span class="mark">TR</span></div><div class="name">Turkiya<br>supplier</div><div class="where">Laleli · Merter</div></div>
+      <div class="cast-role"><div class="cast-num">02<span class="mark">TR</span></div><div class="name">Bojxona<br>broker</div><div class="where">Tashkent · AEO</div></div>
+      <div class="cast-role"><div class="cast-num">01<span class="mark">BZ</span></div><div class="name">Bozor<br>sotuvchi</div><div class="where">Chorsu · Yangiobod</div></div>
+      <div class="cast-role new"><div class="cast-num">02<span class="mark">BZ</span></div><div class="name">Field rep<br>(mahalla)</div><div class="where">iPad · printer</div></div>
+      <div class="cast-role"><div class="cast-num">03</div><div class="name">Qabul<br>xodimi</div><div class="where">DC · dok</div></div>
+      <div class="cast-role"><div class="cast-num">04</div><div class="name">QA ·<br>yorliqchi</div><div class="where">DC · stantsiya</div></div>
+      <div class="cast-role auto"><div class="cast-num">05</div><div class="name">Taqsimot<br>engine</div><div class="where">SaaS · dastur</div></div>
+      <div class="cast-role"><div class="cast-num">06</div><div class="name">Planirov-<br>shik</div><div class="where">DC · ofis</div></div>
+      <div class="cast-role"><div class="cast-num">07</div><div class="name">Put-to-light<br>xodimi</div><div class="where">DC · devor</div></div>
+      <div class="cast-role"><div class="cast-num">08</div><div class="name">Yuklovchi ·<br>haydovchi</div><div class="where">DC · dispatch</div></div>
+      <div class="cast-role"><div class="cast-num">09</div><div class="name">Do'kon<br>qabul</div><div class="where">55 filial</div></div>
+      <div class="cast-role"><div class="cast-num">10</div><div class="name">Kassa ·<br>POS</div><div class="where">Do'kon · 1C</div></div>
+      <div class="cast-role new"><div class="cast-num">11</div><div class="name">Xaridchi-<br>planirovshik</div><div class="where">Ofis · dashboard</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= ATLAS (the map) ========= -->
+<section class="atlas">
+  <div class="wrap">
+    <div class="chap-rule">
+      <span class="cn">Xarita</span>
+      <span>the single route · yagona yo'l</span>
+    </div>
+
+    <h2 style="font-family:var(--fs-display);font-weight:400;font-variation-settings:'opsz' 144,'SOFT' 50;font-size:clamp(42px, 7vw, 84px);line-height:0.94;letter-spacing:-0.025em;margin:0 0 clamp(16px,2vw,20px);color:var(--ink)">
+      Xarita, <em style="font-style:italic;color:var(--madder)">miqyosdan tashqari</em>.
+    </h2>
+    <p class="kicker" style="font-family:var(--fs-body);font-style:italic;font-size:clamp(17px,1.9vw,22px);color:var(--ink-2);max-width:720px;line-height:1.4">
+      Ikki oqim — Turkiya va bozor — chap tomondan kiradi; omborda qo'shiladi;
+      o'ng tomonda 55 do'konga taralayapti. Tunda kassalardan ma'lumot
+      <em style="color:var(--gold);font-style:normal">orqa tomondan</em> qaytadi.
+    </p>
+
+    <figure class="atlas-wrap">
+      <div class="atlas-svg-wrap">
+        <svg viewBox="0 0 1260 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow map">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#1c2144"/>
+            </marker>
+            <marker id="arr-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#a4361d"/>
+            </marker>
+            <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#b88e3f"/>
+            </marker>
+          </defs>
+
+          <!-- Corner cartouche text -->
+          <text x="30" y="30" class="map-stamp">Atlas · I</text>
+          <text x="1230" y="30" class="map-stamp" text-anchor="end">yagona sikl</text>
+          <text x="30" y="620" class="map-stamp">qoida — ma'lumot qaror qiladi</text>
+          <text x="1230" y="620" class="map-stamp" text-anchor="end">scale · not to</text>
+
+          <!-- Stage divider lines -->
+          <line x1="330" y1="80" x2="330" y2="520" stroke="#ddd0a3" stroke-dasharray="2 6" stroke-width="1"/>
+          <line x1="940" y1="80" x2="940" y2="520" stroke="#ddd0a3" stroke-dasharray="2 6" stroke-width="1"/>
+          <line x1="1110" y1="80" x2="1110" y2="520" stroke="#ddd0a3" stroke-dasharray="2 6" stroke-width="1"/>
+
+          <text x="175" y="72" class="map-label caps" text-anchor="middle">I · manba</text>
+          <text x="635" y="72" class="map-label caps" text-anchor="middle">II · ombor</text>
+          <text x="1025" y="72" class="map-label caps" text-anchor="middle">III · do'kon</text>
+          <text x="1185" y="72" class="map-label caps" text-anchor="middle">IV · qaytaloqa</text>
+
+          <!-- TURKEY TRACK -->
+          <text x="60" y="118" class="map-label caps" fill="#a4361d">▸ Turkiya</text>
+          <g class="map-node">
+            <circle cx="110" cy="170" r="30"/>
+            <text class="n" x="110" y="170">01</text>
+            <text class="role" x="110" y="218">Supplier</text>
+            <text class="sub" x="110" y="234">Laleli / Merter</text>
+          </g>
+          <path class="map-line" d="M 140 170 L 208 170" marker-end="url(#arr)"/>
+          <text class="map-label" x="174" y="162" text-anchor="middle">ASN 48h</text>
+
+          <g class="map-node">
+            <circle cx="238" cy="170" r="30"/>
+            <text class="n" x="238" y="170">02</text>
+            <text class="role" x="238" y="218">Bojxona</text>
+            <text class="sub" x="238" y="234">AEO · yashil</text>
+          </g>
+
+          <!-- From 02 Turkey to merge -->
+          <path class="map-line" d="M 268 170 C 310 170, 340 260, 400 300" marker-end="url(#arr)"/>
+
+          <!-- BAZAAR TRACK -->
+          <text x="60" y="402" class="map-label caps" fill="#a4361d">▸ Bozor</text>
+          <g class="map-node">
+            <circle cx="110" cy="440" r="30"/>
+            <text class="n" x="110" y="440">01</text>
+            <text class="role" x="110" y="488">Sotuvchi</text>
+            <text class="sub" x="110" y="504">Chorsu · Olay</text>
+          </g>
+          <path class="map-line" d="M 140 440 L 208 440" marker-end="url(#arr)"/>
+          <text class="map-label" x="174" y="432" text-anchor="middle">rep keladi</text>
+
+          <g class="map-node new">
+            <circle cx="238" cy="440" r="32"/>
+            <text class="n" x="238" y="440">02</text>
+            <text class="role" x="238" y="491">Field rep</text>
+            <text class="sub" x="238" y="507">mahalla · iPad</text>
+          </g>
+
+          <!-- From 02 Bazaar to merge -->
+          <path class="map-line" d="M 270 440 C 320 440, 340 360, 400 320" marker-end="url(#arr)"/>
+
+          <!-- MERGE point -->
+          <circle cx="410" cy="310" r="6" fill="#a4361d"/>
+          <text x="410" y="292" class="map-label caps" text-anchor="middle" fill="#a4361d">qo'shiladi</text>
+
+          <!-- DC FLOW: 6 nodes at y=310, spread from x=470 to x=910 -->
+          <path class="map-line" d="M 416 310 L 440 310" marker-end="url(#arr)"/>
+
+          <g class="map-node">
+            <circle cx="470" cy="310" r="28"/>
+            <text class="n" x="470" y="310">03</text>
+            <text class="role" x="470" y="356">Qabul</text>
+            <text class="sub" x="470" y="371">SSCC · 1 kishi</text>
+          </g>
+
+          <path class="map-line" d="M 498 310 L 548 310" marker-end="url(#arr)"/>
+
+          <g class="map-node">
+            <circle cx="576" cy="310" r="28"/>
+            <text class="n" x="576" y="310">04</text>
+            <text class="role" x="576" y="356">QA · yorliq</text>
+            <text class="sub" x="576" y="371">6–8 kishi</text>
+          </g>
+
+          <path class="map-line" d="M 604 310 L 654 310" marker-end="url(#arr)"/>
+
+          <g class="map-node auto">
+            <circle cx="682" cy="310" r="30"/>
+            <text class="n" x="682" y="310">05</text>
+            <text class="role" x="682" y="358">Engine</text>
+            <text class="sub" x="682" y="373">dastur</text>
+          </g>
+
+          <path class="map-line" d="M 712 310 L 762 310" marker-end="url(#arr)"/>
+
+          <g class="map-node">
+            <circle cx="790" cy="310" r="28"/>
+            <text class="n" x="790" y="310">06</text>
+            <text class="role" x="790" y="356">Planner</text>
+            <text class="sub" x="790" y="371">3 kishi</text>
+          </g>
+
+          <path class="map-line" d="M 818 310 L 868 310" marker-end="url(#arr)"/>
+
+          <g class="map-node">
+            <circle cx="896" cy="310" r="28"/>
+            <text class="n" x="896" y="310">07</text>
+            <text class="role" x="896" y="356">Put-to-light</text>
+            <text class="sub" x="896" y="371">8–12 kishi</text>
+          </g>
+
+          <path class="map-line" d="M 924 310 L 974 310" marker-end="url(#arr)"/>
+
+          <!-- 08 Loader -->
+          <g class="map-node">
+            <circle cx="1002" cy="310" r="28"/>
+            <text class="n" x="1002" y="310">08</text>
+            <text class="role" x="1002" y="356">Yuklovchi</text>
+            <text class="sub" x="1002" y="371">15 kishi</text>
+          </g>
+
+          <!-- From 08 to store receive -->
+          <path class="map-line" d="M 1030 310 C 1060 310, 1070 250, 1088 220" marker-end="url(#arr)"/>
+
+          <!-- Store receive + POS (stage III, stacked vertically) -->
+          <g class="map-node">
+            <circle cx="1088" cy="190" r="26"/>
+            <text class="n" x="1088" y="190">09</text>
+            <text class="role" x="1088" y="234">Do'kon qabul</text>
+          </g>
+
+          <path class="map-line" d="M 1088 216 L 1088 260" marker-end="url(#arr)"/>
+
+          <g class="map-node">
+            <circle cx="1088" cy="290" r="26"/>
+            <text class="n" x="1088" y="290">10</text>
+            <text class="role" x="1088" y="334">Kassa · POS</text>
+          </g>
+
+          <!-- Fan of 55 stores (decorative) -->
+          <g transform="translate(1030, 430)">
+            <text x="30" y="0" class="map-label caps">55 do'kon</text>
+            <g>
+              <!-- grid of small squares representing 55 stores (11x5) -->
+              <g fill="#54577a" opacity="0.55">
+                <!-- Row 1 -->
+                <rect x="0" y="10" width="6" height="6"/>
+                <rect x="10" y="10" width="6" height="6"/>
+                <rect x="20" y="10" width="6" height="6"/>
+                <rect x="30" y="10" width="6" height="6"/>
+                <rect x="40" y="10" width="6" height="6"/>
+                <rect x="50" y="10" width="6" height="6"/>
+                <rect x="60" y="10" width="6" height="6"/>
+                <rect x="70" y="10" width="6" height="6"/>
+                <rect x="80" y="10" width="6" height="6"/>
+                <rect x="90" y="10" width="6" height="6"/>
+                <rect x="100" y="10" width="6" height="6"/>
+                <!-- Row 2 -->
+                <rect x="0" y="20" width="6" height="6"/>
+                <rect x="10" y="20" width="6" height="6"/>
+                <rect x="20" y="20" width="6" height="6"/>
+                <rect x="30" y="20" width="6" height="6"/>
+                <rect x="40" y="20" width="6" height="6"/>
+                <rect x="50" y="20" width="6" height="6"/>
+                <rect x="60" y="20" width="6" height="6"/>
+                <rect x="70" y="20" width="6" height="6"/>
+                <rect x="80" y="20" width="6" height="6"/>
+                <rect x="90" y="20" width="6" height="6"/>
+                <rect x="100" y="20" width="6" height="6"/>
+                <!-- Row 3 -->
+                <rect x="0" y="30" width="6" height="6"/>
+                <rect x="10" y="30" width="6" height="6"/>
+                <rect x="20" y="30" width="6" height="6"/>
+                <rect x="30" y="30" width="6" height="6"/>
+                <rect x="40" y="30" width="6" height="6"/>
+                <rect x="50" y="30" width="6" height="6"/>
+                <rect x="60" y="30" width="6" height="6"/>
+                <rect x="70" y="30" width="6" height="6"/>
+                <rect x="80" y="30" width="6" height="6"/>
+                <rect x="90" y="30" width="6" height="6"/>
+                <rect x="100" y="30" width="6" height="6"/>
+                <!-- Row 4 -->
+                <rect x="0" y="40" width="6" height="6"/>
+                <rect x="10" y="40" width="6" height="6"/>
+                <rect x="20" y="40" width="6" height="6"/>
+                <rect x="30" y="40" width="6" height="6"/>
+                <rect x="40" y="40" width="6" height="6"/>
+                <rect x="50" y="40" width="6" height="6"/>
+                <rect x="60" y="40" width="6" height="6"/>
+                <rect x="70" y="40" width="6" height="6"/>
+                <rect x="80" y="40" width="6" height="6"/>
+                <rect x="90" y="40" width="6" height="6"/>
+                <rect x="100" y="40" width="6" height="6"/>
+                <!-- Row 5 (partial — 11 to get 55 total) -->
+                <rect x="0" y="50" width="6" height="6"/>
+                <rect x="10" y="50" width="6" height="6"/>
+                <rect x="20" y="50" width="6" height="6"/>
+                <rect x="30" y="50" width="6" height="6"/>
+                <rect x="40" y="50" width="6" height="6"/>
+                <rect x="50" y="50" width="6" height="6"/>
+                <rect x="60" y="50" width="6" height="6"/>
+                <rect x="70" y="50" width="6" height="6"/>
+                <rect x="80" y="50" width="6" height="6"/>
+                <rect x="90" y="50" width="6" height="6"/>
+                <rect x="100" y="50" width="6" height="6"/>
+              </g>
+            </g>
+            <text x="52" y="78" class="map-label" text-anchor="middle" fill="#8a886d" font-style="italic">(11 × 5 = 55)</text>
+          </g>
+
+          <!-- FEEDBACK ARC: from POS (10) bottom, curving through bottom of canvas, back to top around node 11 (buyer) -->
+          <!-- 11: Buyer (returns to top, positioned at x=1160 y=450 roughly) -->
+          <g class="map-node new">
+            <circle cx="1180" cy="170" r="30"/>
+            <text class="n" x="1180" y="170">11</text>
+            <text class="role" x="1180" y="220">Xaridchi</text>
+            <text class="sub" x="1180" y="236">dashboard</text>
+          </g>
+
+          <!-- POS → Data pipeline → Buyer (gold dotted) -->
+          <path class="map-line dotted" d="M 1114 290 C 1160 290, 1200 240, 1180 200" marker-end="url(#arr-g)"/>
+          <text class="map-label gold" x="1180" y="266" text-anchor="middle" font-style="italic">POS · har kecha</text>
+
+          <!-- Buyer → back to top (feedback line wrapping around) -->
+          <!-- Feedback flows: from 11 at (1180,170), goes up, left, all the way back down to 01 Turkey and 01 Bazaar -->
+          <path class="map-line feedback" d="M 1148 150 C 1000 100, 600 60, 200 100 C 150 110, 130 130, 130 150" marker-end="url(#arr-m)"/>
+          <text class="map-label caps" x="680" y="86" text-anchor="middle" fill="#a4361d">yangi PO → sikl qaytadan boshlanadi</text>
+
+          <!-- Annotations (little italic labels) -->
+          <text class="map-label" x="576" y="272" text-anchor="middle" font-style="italic">12 plitka kiosk</text>
+          <text class="map-label" x="682" y="276" text-anchor="middle" font-style="italic" fill="#b88e3f">inson emas — dastur</text>
+          <text class="map-label" x="790" y="272" text-anchor="middle" font-style="italic">bir bosish = ok</text>
+          <text class="map-label" x="896" y="272" text-anchor="middle" font-style="italic">qaror yo'q</text>
+
+          <!-- Small compass / north -->
+          <g transform="translate(1200, 570)">
+            <circle cx="0" cy="0" r="22" fill="none" stroke="#54577a" stroke-width="1"/>
+            <path d="M 0 -18 L 4 0 L 0 18 L -4 0 Z" fill="#a4361d" stroke="none"/>
+            <text x="0" y="-28" class="map-label caps" text-anchor="middle" font-size="8">N</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="atlas-legend">
+        <span><i class="line-sample goods"></i> jismoniy mol</span>
+        <span><i class="line-sample data"></i> ma'lumot</span>
+        <span><i class="line-sample decision"></i> qaror · qaytaloqa</span>
+        <span style="margin-left:auto;font-style:italic;letter-spacing:0.04em;text-transform:none;color:var(--ink-3)">ekranda torlasa — yonga surib ko'ring</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ========= CHAPTER I — INTAKE ========= -->
+<section class="chap">
+  <div class="wrap">
+    <div class="chap-rule">
+      <span class="cn">Bob I</span>
+      <span>manba · the source</span>
+    </div>
+    <h1 class="chap-num">I</h1>
+    <h2>Ikki <em>yo'l</em>.</h2>
+    <p class="kicker">
+      Birinchi o'nta dona mol omborga ikki mutlaqo boshqa yo'ldan keladi —
+      Laleli'dan kontrakt bo'yicha va Chorsu'dan qo'ldan qo'lga. Ikkala yo'l o'z
+      qoidalari va o'z kishilari bilan ishlaydi.
+    </p>
   </div>
 
-  <!-- STAGE 1: INTAKE -->
-  <div class="stage-head">
-    <span class="st-num">1</span>
-    Manba — ikki parallel kanal
-    <span class="st-hint">Rasmiy import · Bozor xaridi</span>
-  </div>
+  <div class="wrap stage-body">
+    <div class="parallel-tracks">
+      <div class="track">
+        <div class="track-mark">▸ Turkiya importi</div>
+        <h3>Kontrakt yo'li</h3>
 
-  <div class="parallel">
-    <!-- TURKEY TRACK -->
-    <div class="track formal">
-      <div class="tl"><span class="emoji">🇹🇷</span> Turkiya / Xitoy importi</div>
-
-      <div class="person">
-        <div class="p-num">01</div>
-        <div>
-          <div class="p-head">
-            <span class="p-emoji">🏭</span>
-            <span class="p-role">Turkiya yetkazib beruvchisi</span>
+        <div class="role">
+          <div class="role-num">01</div>
+          <div class="role-content">
+            <div class="role-name">Turkiya supplier</div>
+            <div class="role-loc">Laleli · Merter · Osmanbey</div>
+            <div class="role-task">
+              Dilmuss SKU'larini ishlab chiqarish liniyasida <em>shtrix-kod bilan bosadi</em>.
+              Har karton uchun noyob SSCC. Jo'natishdan 48 soat oldin elektron ASN (yuk xabarnomasi) yuboradi.
+            </div>
+            <div class="role-stats">
+              <span><b>Shartnoma bo'yicha</b></span>
+              <span>ASN → <span class="hl">48 soat oldin</span></span>
+            </div>
           </div>
-          <div class="p-where">Laleli · Merter · Osmanbey</div>
-          <div class="p-task">Dilmuss SKU'larini <b>ishlab chiqarish liniyasida</b> shtrix-kod bilan bosadi. Har karton uchun SSCC ushlaydi. Jo'natishdan 48 soat oldin <b>ASN</b> (elektron yuk xabarnomasi) yuboradi.</div>
-          <div class="p-meta">
-            <span class="pill">Shartnoma bo'yicha</span>
-            <span class="pill nav">ASN 48h oldin</span>
+        </div>
+
+        <div class="role">
+          <div class="role-num">02</div>
+          <div class="role-content">
+            <div class="role-name">Bojxona broker</div>
+            <div class="role-loc">Tashkent · AEO yashil yo'lak</div>
+            <div class="role-task">
+              AEO maqomi orqali <em>4–24 soatda</em> rasmiylashtiradi.
+              HS kod oldindan tasniflangan; hujjatlar elektron. Retaynerda doim ikki broker — birisi tushib qolmasin.
+            </div>
+            <div class="role-stats">
+              <span>Broker ikkita · doim</span>
+              <span>AEO · <span class="hl">&lt;24h</span></span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="arrow"><span class="arrow-label">Yuk + ASN</span></div>
+      <div class="track">
+        <div class="track-mark">▸ Toshkent bozorlari</div>
+        <h3>Bozor yo'li</h3>
 
-      <div class="person">
-        <div class="p-num">02</div>
-        <div>
-          <div class="p-head">
-            <span class="p-emoji">🛃</span>
-            <span class="p-role">Bojxona broker</span>
+        <div class="role">
+          <div class="role-num">01</div>
+          <div class="role-content">
+            <div class="role-name">Bozor sotuvchisi</div>
+            <div class="role-loc">Chorsu · Yangiobod · Olay · Malika</div>
+            <div class="role-task">
+              Odatiy ishi: qog'ozsiz, naqd savdo, tez. <em>O'zgartirilmaydi.</em>
+              Unga shtrix-kod yoki ASN so'rash — uni yo'qotish. Yechim — uni qoldirib, biz ishni qilish.
+            </div>
+            <div class="role-stats">
+              <span>SKU manbai · <b>30–50%</b></span>
+              <span>Qog'ozsiz</span>
+            </div>
           </div>
-          <div class="p-where">Tashkent · Davlat Bojxona Qo'mitasi</div>
-          <div class="p-task">AEO "yashil yo'lak" orqali <b>4–24 soatda</b> rasmiylashtiradi. HS kod bo'yicha oldindan tasniflangan, hujjatlar elektron.</div>
-          <div class="p-meta">
-            <span class="pill">2 broker retaynerda</span>
-            <span class="pill sg">AEO maqomi</span>
+        </div>
+
+        <div class="role">
+          <div class="role-num" style="color:var(--madder)">02</div>
+          <div class="role-content">
+            <div class="role-name">Field rep <span style="font-family:var(--fs-mono);font-size:10px;letter-spacing:0.2em;vertical-align:middle;color:var(--madder);margin-left:8px;font-style:normal">· YANGI</span></div>
+            <div class="role-loc">Mahalla orqali yollangan · 6–10 kishi</div>
+            <div class="role-task">
+              iPad + Bluetooth printer bilan bozorga boradi.
+              <em>12 plitkali rang tanlovi</em>, o'lcham tugmalari, miqdor, narx — iPadda.
+              480 dona SKU yorlig'i joyida bosiladi, yopishtiriladi, mashinaga yuklanadi. Ilova ASN yaratadi.
+            </div>
+            <div class="role-stats">
+              <span>Kit · <b>$1,500</b> / ≈18 mln so'm</span>
+              <span class="hl">Bozor muammosining yechimi</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- BAZAAR TRACK -->
-    <div class="track bazaar">
-      <div class="tl"><span class="emoji">🛒</span> Toshkent bozorlari</div>
+    <div class="merge">
+      Qaerda ikki yo'l bir bo'ladi <span class="ornament">❦</span> omborning dokida.
+    </div>
+  </div>
+</section>
 
-      <div class="person">
-        <div class="p-num">01</div>
-        <div>
-          <div class="p-head">
-            <span class="p-emoji">🧑‍🦱</span>
-            <span class="p-role">Bozor sotuvchisi</span>
+<!-- ========= CHAPTER II — MILL / DC ========= -->
+<section class="chap">
+  <div class="wrap">
+    <div class="chap-rule">
+      <span class="cn">Bob II</span>
+      <span>tegirmon · the mill</span>
+    </div>
+    <h1 class="chap-num">II</h1>
+    <h2>Omborda — <em>oltita qadam</em>.</h2>
+    <p class="kicker">
+      Qabul, yorliq, qaror, tasdiq, saralash, yuklash. Har qadam bitta kishi —
+      ba'zan bitta dastur. Hech kim ikki ishni birga qilmaydi.
+    </p>
+  </div>
+
+  <div class="wrap stage-body">
+    <div class="stream">
+      <div class="role">
+        <div class="role-num">03</div>
+        <div class="role-content">
+          <div class="role-name">Qabul xodimi</div>
+          <div class="role-loc">Yuklab-bo'shatish platformasi · 1 kishi / smena</div>
+          <div class="role-task">
+            Kelgan mashinada har kartonning <em>SSCC yorlig'ini skan qiladi</em> — tizim ASN bilan avto-tekshiradi.
+            Nima kelganini darhol ko'rsatadi; sanashga, yozishga hojat yo'q.
           </div>
-          <div class="p-where">Chorsu · Yangiobod · Olay · Malika</div>
-          <div class="p-task">Odatiy ishi: qog'ozsiz, naqd savdo. <b>O'zgartirilmaydi.</b> Uni majburlashga urinish — uni yo'qotish.</div>
-          <div class="p-meta">
-            <span class="pill">Jami ~30-50% SKU manbai</span>
+          <div class="role-stats">
+            <span>Oldingi: <b>30 daqiqa</b></span>
+            <span>Endi: <span class="hl">3 daqiqa</span></span>
           </div>
         </div>
       </div>
 
-      <div class="arrow"><span class="arrow-label">Dilmuss bozorga boradi</span></div>
-
-      <div class="person new-role">
-        <div class="p-num">02</div>
-        <div>
-          <div class="p-head">
-            <span class="p-emoji">📱</span>
-            <span class="p-role">Field rep (Dilmuss)</span>
-            <span class="pill sg" style="font-weight:700;font-size:10px;padding:2px 7px;background:#e3eedf;color:var(--sage);border-radius:2px">YANGI</span>
+      <div class="role">
+        <div class="role-num">04</div>
+        <div class="role-content">
+          <div class="role-name">QA &amp; yorliqchi</div>
+          <div class="role-loc">Kombinatsiyalangan stantsiya · 6–8 kishi</div>
+          <div class="role-task">
+            Istisno mollar uchun <em>12 plitkali sensor ekranda</em> rangni tasdiqlaydi.
+            Narx va xavfsizlik yorlig'ini bir stantsiyada birga chop etadi — oldin 2 alohida jamoa bor edi.
           </div>
-          <div class="p-where">Mahalla orqali yollangan, 6–10 kishi</div>
-          <div class="p-task">iPad + Bluetooth printer bilan bozorga boradi. Rang (12 plitka), o'lcham, miqdor, narx iPadda qayd qilinadi. <b>480 dona SKU yorlig'i joyida bosiladi va yopishtiriladi</b>, mashinaga yuklanadi. Ilova avto-ASN yaratadi.</div>
-          <div class="p-meta">
-            <span class="pill">Kit: $1,500 (18 mln so'm)</span>
-            <span class="pill rst">Bu bozor muammosining yechimi</span>
+          <div class="role-stats">
+            <span>Oldingi: <b>30 kishi / 2 jamoa</b></span>
+            <span>Endi: <span class="hl">6–8 kishi / 1 stantsiya</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-num auto">05</div>
+        <div class="role-content">
+          <div class="role-name">Taqsimot engine <span style="font-family:var(--fs-mono);font-size:10px;letter-spacing:0.2em;color:var(--ink);margin-left:8px;font-style:normal">· dastur</span></div>
+          <div class="role-loc">SaaS · Toolio / Onebeat / Syrup</div>
+          <div class="role-task">
+            Har SKU uchun "qaysi do'konga nechta" hisoblaydi. Kirishlar:
+            <em>klaster profili</em>, oxirgi 6 hafta sotilishi, mavsumiy ko'paytma (Navro'z · qish),
+            DC'dagi mavjud zapas, transit, do'kon min/max.
+          </div>
+          <div class="role-stats">
+            <span>Har kecha · 55 × SKU qaror</span>
+            <span class="hl">Inson emas — dastur</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-num">06</div>
+        <div class="role-content">
+          <div class="role-name">Planirovshik</div>
+          <div class="role-loc">DC ofisida · 3 kishi</div>
+          <div class="role-task">
+            Engine taklifini ko'radi. Birinchi 6 oyda — har taqsimotni <em>bitta bosishda</em> tasdiqlaydi.
+            Keyin faqat istisnolar (override stavkasi 10% dan pastga tushgan 60 kundan so'ng).
+          </div>
+          <div class="role-stats">
+            <span>Oldingi: <b>10 kishi (silosda)</b></span>
+            <span>Endi: <span class="hl">3 kishi (markaziy)</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-num">07</div>
+        <div class="role-content">
+          <div class="role-name">Put-to-light xodimi</div>
+          <div class="role-loc">60-yacheykali yorug'lik devori · 8–12 kishi</div>
+          <div class="role-task">
+            Mollar oqimda keladi. SKU'ni skan qiladi → <em>yorug'lik yonadi</em> → o'sha yacheykaga tashlaydi.
+            Hech qanday qaror, hech qanday sabr. Qaror engine'da; bu yerda faqat jismoniy harakat.
+          </div>
+          <div class="role-stats">
+            <span>Oldingi: <b>84–112 sortirovkachi</b></span>
+            <span>Endi: <span class="hl">8–12 kishi</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-num">08</div>
+        <div class="role-content">
+          <div class="role-name">Yuklovchi &amp; haydovchi</div>
+          <div class="role-loc">Dispatch platformasi · 15 kishi</div>
+          <div class="role-task">
+            Kartonlarni komplektlaydi — har karton avtomatik manifest bilan (qaysi SKU, nechta, qaysi do'kon).
+            Mashinaga yuklaydi, yo'lga chiqadi. Kun uchun 6–10 ta mashina.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="merge">
+      Mashinalar 55 <span class="ornament">—</span> ertasi 110 <span class="ornament">—</span> do'konga ketadi.
+    </div>
+  </div>
+</section>
+
+<!-- ========= CHAPTER III — STORE ========= -->
+<section class="chap">
+  <div class="wrap">
+    <div class="chap-rule">
+      <span class="cn">Bob III</span>
+      <span>do'kon · the floor</span>
+    </div>
+    <h1 class="chap-num">III</h1>
+    <h2>Do'konda, <em>yarim soniyada</em>.</h2>
+    <p class="kicker">
+      Mashina keladi; skaner bir marta chiqadi; inventar darhol yangilanadi.
+      Har sotuv — SKU yozuvi. Bu yerda yangi odam yo'q, faqat eski ish endi mazmunli.
+    </p>
+  </div>
+
+  <div class="wrap stage-body">
+    <div class="stream">
+      <div class="role">
+        <div class="role-num">09</div>
+        <div class="role-content">
+          <div class="role-name">Do'kon qabul xodimi</div>
+          <div class="role-loc">55 (→ 110) do'kon · mavjud xodim</div>
+          <div class="role-task">
+            Mashina keladi. <em>Bitta manifest skani</em> — ichidagi barcha SKU'lar do'kon inventariga tushadi.
+            Oldin: 30 daqiqa sanash, hujjatga yozish. Endi: 30 soniya skan.
+          </div>
+          <div class="role-stats">
+            <span>Yangi rol emas — o'zgartirilgan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-num">10</div>
+        <div class="role-content">
+          <div class="role-name">Kassa xodimi</div>
+          <div class="role-loc">1C:Retail POS</div>
+          <div class="role-task">
+            Har sotuv — SKU darajasida yozilib qoladi. <em>Qaysi rang, qaysi o'lcham, qachon sotildi</em> — hammasi tizimda.
+            Har kecha ma'lumot markazga ketadi.
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="merge">Ikki oqim DC (markaziy ombor) da birlashadi</div>
-
-  <!-- STAGE 2: DC FLOW -->
-  <div class="stage-head">
-    <span class="st-num">2</span>
-    Ombor (DC) — oqim ishlab chiqarish
-    <span class="st-hint">6 bosqich · 32–40 kishi</span>
+<!-- ========= CHAPTER IV — RETURN / FEEDBACK ========= -->
+<section class="chap">
+  <div class="wrap">
+    <div class="chap-rule">
+      <span class="cn">Bob IV</span>
+      <span>qaytaloqa · the return</span>
+    </div>
+    <h1 class="chap-num">IV</h1>
+    <h2>Ma'lumot <em>qaror qiladi</em>.</h2>
+    <p class="kicker">
+      Kassadan chiqqan har bir chek — bu ertangi xarid. POS ma'lumoti kecha
+      orqali Data Warehouse, Dashboard va Allocation Engine'ga o'tadi. Buyer ertalab
+      bitta ekranda hammasini ko'radi.
+    </p>
   </div>
 
-  <div class="person">
-    <div class="p-num">03</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">📦</span>
-        <span class="p-role">Qabul xodimi</span>
+  <div class="wrap stage-body">
+    <div class="feedback">
+      <div class="fb-label">↻ Tun siklining o'tishi</div>
+      <h3>Kassadan qarorgohgacha — 12 soat, inson teginmasdan.</h3>
+
+      <div class="fb-chain">
+        <b>POS</b>
+        <span class="tick">›</span>
+        <b>Data Warehouse</b>
+        <span class="tick">›</span>
+        <b>Dashboard</b>
+        <span class="tick">›</span>
+        <b>Allocation Engine</b>
+        <span class="tick">›</span>
+        <b>Buyer</b>
       </div>
-      <div class="p-where">Yuklab-bo'shatish platformasi</div>
-      <div class="p-task">Kelgan mashinada har kartonning <b>SSCC yorlig'ini skan qiladi</b>. Tizim ASN bilan avto-tekshirib beradi — nima kelganini darhol ko'rsatadi. Sanashga, yozishga hojat yo'q.</div>
-      <div class="p-meta">
-        <span class="pill nav">1 kishi / smena</span>
-        <span class="pill">Oldingi: 30 daqiqa · Endi: 3 daqiqa</span>
+
+      <p class="fb-body">
+        Har kecha 55 do'konning sotuvlari SKU darajasida markazga tushadi.
+        Ertaga ertalab Buyer dashboardida ko'rinadi: <b>nima sotildi, nima turadi,
+        qaysi o'lcham tugayapti, qaysi rang ishlamayapti</b>. Qaror tayyor, tasdiq qolgan.
+      </p>
+    </div>
+
+    <div class="stream">
+      <div class="role">
+        <div class="role-num" style="color:var(--madder)">11</div>
+        <div class="role-content">
+          <div class="role-name">Kategoriya xaridchi-planirovshik</div>
+          <div class="role-loc">Ofis · dashboard ekrani · 8 kishi (14 dan)</div>
+          <div class="role-task">
+            Ertalab dashboardni ochadi. Sell-through klaster bo'yicha,
+            buzilgan o'lcham istisnolari, supplier OTIF, rang performansi —
+            hammasi bir ekranda. <em>Uchta qaror qabul qiladi.</em>
+          </div>
+          <ul class="decisions" style="background:transparent;color:var(--ink);margin-top:18px">
+            <li style="background:var(--paper-2);color:var(--ink);border-left-color:var(--madder)">
+              <div>
+                <strong style="color:var(--madder)">Qayta buyurtma</strong>
+                Supplier bilan 2 hafta ichida — size-only pull (faqat M/L yoki faqat XS).
+              </div>
+            </li>
+            <li style="background:var(--paper-2);color:var(--ink);border-left-color:var(--madder)">
+              <div>
+                <strong style="color:var(--madder)">Chegirma boshlash</strong>
+                Sell-through 4-haftada 10% dan past bo'lsa — markdown.
+              </div>
+            </li>
+            <li style="background:var(--paper-2);color:var(--ink);border-left-color:var(--madder)">
+              <div>
+                <strong style="color:var(--madder)">Keyingi mavsum</strong>
+                Hozirgi rang/o'lcham ma'lumotini inobatga olgan holda yangi PO — sikl boshidan yana boshlanadi.
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="arrow">
-    <svg width="14" height="18" viewBox="0 0 14 18"><path d="M7 0v15M1 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-    <span class="arrow-label">Mollar QA/yorliq stantsiyasiga boradi</span>
-  </div>
-
-  <div class="person">
-    <div class="p-num">04</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">🏷️</span>
-        <span class="p-role">QA + Yorliqchi</span>
-      </div>
-      <div class="p-where">Kombinatsiyalangan stantsiyalar</div>
-      <div class="p-task">Istisno bo'lgan mollar uchun <b>12 plitkali sensor ekranda</b> rangni tasdiqlaydi. Narx va xavfsizlik yorlig'ini <b>bir stantsiyada</b> chop etadi (oldin 2 alohida jamoa edi).</div>
-      <div class="p-meta">
-        <span class="pill nav">6–8 kishi</span>
-        <span class="pill">Oldin: 30 kishi (2 jamoa)</span>
-      </div>
+    <div class="marginalia">
+      "Eng yaxshi supply chain — buning ekstraordinar joyi yo'q. Har kun bir xil.
+      Sezilmaydigan ritm. Ma'lumot aytadi; odam tasdiqlaydi."
+      <span class="by">§6.5 · allocation engine — amaliy matematika</span>
     </div>
   </div>
+</section>
 
-  <div class="arrow">
-    <svg width="14" height="18" viewBox="0 0 14 18"><path d="M7 0v15M1 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-    <span class="arrow-label">Ma'lumot engine'ga uzatiladi</span>
-  </div>
-
-  <div class="person automated">
-    <div class="p-num">05</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">🤖</span>
-        <span class="p-role">Taqsimot engine (dastur)</span>
+<!-- ========= COLOPHON ========= -->
+<footer class="colophon">
+  <div class="wrap" style="display:contents">
+    <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:clamp(20px,3vw,40px)">
+      <div>
+        <h4>Atlas</h4>
+        <p>Dilmuss Woman — transition roadmap · Workflow visualizatsiyasi · №I.<br>
+        55 do'konli O'zbek fashion tarmog'i uchun.</p>
       </div>
-      <div class="p-where">SaaS: Toolio / Onebeat / Syrup</div>
-      <div class="p-task">Har SKU uchun "qaysi do'konga nechta" hisoblaydi. <b>Kirish ma'lumotlari:</b> klaster profili (C1–C5), oxirgi 6 hafta sotilishi, mavsumiy ko'paytma (Navro'z, qish...), DC'dagi mavjud zapas, transit, do'kon min/max.</div>
-      <div class="p-meta">
-        <span class="pill nav">Inson emas — dastur</span>
-        <span class="pill">Har kecha 55 qaror / SKU</span>
+      <div>
+        <h4>Nashr</h4>
+        <p>Dilmuss Supply Chain maslahati<br>2026 aprel · Toshkent<br>
+        <a href="./">← asosiy hujjat</a></p>
       </div>
-    </div>
-  </div>
-
-  <div class="arrow">
-    <svg width="14" height="18" viewBox="0 0 14 18"><path d="M7 0v15M1 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-    <span class="arrow-label">Engine taklifi tekshirishga</span>
-  </div>
-
-  <div class="person">
-    <div class="p-num">06</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">🧑‍💼</span>
-        <span class="p-role">Planirovshik</span>
+      <div>
+        <h4>Shriftlar</h4>
+        <p>Fraunces — display<br>Instrument Serif — body<br>JetBrains Mono — mono</p>
       </div>
-      <div class="p-where">Ofisda — kompyuter oldida</div>
-      <div class="p-task">Engine taklifini ko'radi: rasim, rang taqsimoti, miqdorlar. Birinchi 6 oyda <b>har taqsimotni bitta bosishda</b> tasdiqlaydi. Keyinchalik faqat istisnolar (override rate &lt;10%).</div>
-      <div class="p-meta">
-        <span class="pill nav">3 kishi</span>
-        <span class="pill">Oldingi: 10 kishi (silosda)</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="arrow">
-    <svg width="14" height="18" viewBox="0 0 14 18"><path d="M7 0v15M1 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-    <span class="arrow-label">Pick list put-to-light devorga jo'natiladi</span>
-  </div>
-
-  <div class="person">
-    <div class="p-num">07</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">💡</span>
-        <span class="p-role">Put-to-light sort xodimi</span>
-      </div>
-      <div class="p-where">60-yacheykali yorug'lik devori oldida</div>
-      <div class="p-task">Mollar oqimda keladi. <b>SKU'ni skaner bilan skan qiladi → yorug'lik do'kon yacheykasini ko'rsatadi → o'sha yacheykaga tashlaydi</b>. Hech qanday qaror, hech qanday sabr. Qaror engine'da, bu yerda faqat jismoniy ish.</div>
-      <div class="p-meta">
-        <span class="pill nav">8–12 kishi</span>
-        <span class="pill">Oldingi: 84–112 sortirovkachi</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="arrow">
-    <svg width="14" height="18" viewBox="0 0 14 18"><path d="M7 0v15M1 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-    <span class="arrow-label">To'ldirilgan kartonlar dispatch zonasiga</span>
-  </div>
-
-  <div class="person">
-    <div class="p-num">08</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">🚚</span>
-        <span class="p-role">Yuklovchi + haydovchi</span>
-      </div>
-      <div class="p-where">Dispatch platformasi</div>
-      <div class="p-task">Kartonlarni komplektlaydi, <b>har karton avtomatik manifest</b> bilan (qaysi SKU, nechta, qaysi do'kon). Mashinaga yuklaydi, yo'lga chiqadi.</div>
-      <div class="p-meta">
-        <span class="pill nav">15 kishi</span>
-        <span class="pill">Mashinalar: 6–10 / kun</span>
+      <div>
+        <h4>Belgilar</h4>
+        <p>Qora → avtomat<br>Qizil → yangi yoki o'zgartirilgan<br>Oltin → ma'lumot oqimi</p>
       </div>
     </div>
   </div>
+</footer>
 
-  <div class="merge">Mashinalar 55 (→ 110) do'konga ketadi</div>
-
-  <!-- STAGE 3: STORE -->
-  <div class="stage-head">
-    <span class="st-num">3</span>
-    Do'konda
-    <span class="st-hint">55 filial · mavjud xodim</span>
-  </div>
-
-  <div class="person">
-    <div class="p-num">09</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">🏬</span>
-        <span class="p-role">Do'kon qabul xodimi</span>
-      </div>
-      <div class="p-where">55 (→ 110) do'kon</div>
-      <div class="p-task">Mashina keladi. <b>Bitta manifest skani</b> — ichidagi barcha SKU'lar inventarga tushadi. Oldin: 30 daqiqa sanash, hujjatga yozish. Endi: 30 soniya skan.</div>
-      <div class="p-meta">
-        <span class="pill">Mavjud xodim — yangi rol emas</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="arrow">
-    <svg width="14" height="18" viewBox="0 0 14 18"><path d="M7 0v15M1 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-    <span class="arrow-label">Mollar savdo maydonchasiga chiqariladi</span>
-  </div>
-
-  <div class="person">
-    <div class="p-num">10</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">💳</span>
-        <span class="p-role">Kassa xodimi (POS)</span>
-      </div>
-      <div class="p-where">Savdo nuqtasi (1C:Retail)</div>
-      <div class="p-task">Mijoz kelgan mahsulotni skan qiladi, sotadi. Har bir sotuv — <b>SKU darajasida yozilib qoladi</b>. Xaridor qaysi rangni va qaysi o'lchamni, qachon oldi — hammasi tizimda.</div>
-      <div class="p-meta">
-        <span class="pill">Mavjud — lekin birinchi marta foydali ma'lumot</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- STAGE 4: FEEDBACK LOOP -->
-  <div class="stage-head">
-    <span class="st-num">4</span>
-    Qaytaloqa — ma'lumot qaror qiladi
-    <span class="st-hint">Har kecha avtomatik</span>
-  </div>
-
-  <div class="feedback">
-    <div class="fb-title">POS ma'lumoti kechasi markazga qaytadi</div>
-    <div class="fb-flow">
-      <b>POS</b>
-      <span class="sep">→</span>
-      <b>Data Warehouse</b>
-      <span class="sep">→</span>
-      <b>Dashboard</b>
-      <span class="sep">→</span>
-      <b>Allocation Engine</b>
-      <span class="sep">→</span>
-      <b>Buyer-Planirovshik</b>
-    </div>
-    <div class="fb-note">
-      Har kecha 55 do'kondagi barcha sotuvlar SKU darajasida markazga tushadi.
-      Ertaga ertalab dashboardda ko'rinadi: nima sotilyapti, nima turibdi, qaysi o'lcham tugayapti, qaysi rang ishlamayapti.
-    </div>
-  </div>
-
-  <div class="person important">
-    <div class="p-num">11</div>
-    <div>
-      <div class="p-head">
-        <span class="p-emoji">🧠</span>
-        <span class="p-role">Kategoriya Xaridchi-Planirovshik</span>
-      </div>
-      <div class="p-where">Ofisda — dashboard ekrani oldida</div>
-      <div class="p-task">Ertalab dashboardni ochadi: <b>sell-through</b> klaster bo'yicha, <b>buzilgan o'lcham</b> istisnolari, <b>supplier OTIF</b>, <b>rang performansi</b>. Uchta qaror qabul qiladi:</div>
-      <div class="p-meta">
-        <span class="pill nav">8 kishi (14 dan)</span>
-        <span class="pill rst">Yuksaltirilgan rol</span>
-      </div>
-      <div style="margin-top:12px;font-size:clamp(12px,1.05vw,13px);color:var(--ink-2);line-height:1.55">
-        <div style="margin-bottom:4px">→ <b>Qayta buyurtma</b> — supplier bilan 2 hafta ichida (size-only pull)</div>
-        <div style="margin-bottom:4px">→ <b>Chegirma boshlash</b> — sell-through &lt;10% bo'lsa</div>
-        <div>→ <b>Keyingi mavsum uchun xarid</b> — hozirgi rang/o'lcham ma'lumotlarini inobatga olib</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="arrow" style="margin:20px 0 8px">
-    <span class="arrow-label">Xaridchi qarori yangi PO'ga aylanadi</span>
-  </div>
-
-  <!-- The loop closes -->
-  <div class="feedback" style="background:linear-gradient(135deg, var(--rust) 0%, var(--rust-2) 100%)">
-    <div class="fb-title" style="letter-spacing:0.08em">↻ Butun sikl yana yuqoridan boshlanadi</div>
-    <div class="fb-note" style="color:#fff3eb;margin-top:6px">
-      Xaridchining qarori — yangi PO. PO Turkiya supplieriga yoki bozor field rep'iga boradi. Oqim shunday — <b style="color:#fff">har kecha</b>, <b style="color:#fff">har kuni</b>, <b style="color:#fff">har hafta</b> — inson sezgisi emas, ma'lumot asosida yuritiladi.
-    </div>
-  </div>
-
-  <!-- TIMING STRIP -->
-  <div class="stage-head">
-    <span class="st-num">⏱</span>
-    Umumiy sikl vaqtlari
-    <span class="st-hint">Oldingi vs. yangi</span>
-  </div>
-
-  <div class="timing">
-    <div class="tm">
-      <div class="tm-t">2–4 <span style="font-size:12px">kun</span></div>
-      <div class="tm-l">Oldingi<br>Qabuldan do'konga</div>
-    </div>
-    <div class="tm">
-      <div class="tm-t">&lt;24 <span style="font-size:12px">soat</span></div>
-      <div class="tm-l">Yangi<br>Qabuldan do'konga</div>
-    </div>
-    <div class="tm">
-      <div class="tm-t">178–204</div>
-      <div class="tm-l">Oldingi<br>DC xodimlari</div>
-    </div>
-    <div class="tm">
-      <div class="tm-t">68–82</div>
-      <div class="tm-l">Yangi<br>DC xodimlari (−55%)</div>
-    </div>
-  </div>
-
-  <!-- Key principles -->
-  <div class="stage-head">
-    <span class="st-num">✓</span>
-    Ushbu workflow nega ishlaydi
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px,1fr));gap:12px;margin:14px 0 24px">
-    <div class="person" style="display:block">
-      <div style="font-weight:700;color:var(--navy);margin-bottom:6px;font-size:14.5px">1 · Har rol bitta ishni qiladi</div>
-      <div style="font-size:13px;color:var(--ink-2);line-height:1.55">14 menejer uchta ishni bajarishi (xaridlash, qabul, taqsimlash) o'rniga — har kim o'z sohasida. Segregation of duties.</div>
-    </div>
-    <div class="person" style="display:block">
-      <div style="font-weight:700;color:var(--navy);margin-bottom:6px;font-size:14.5px">2 · Ma'lumot qaror qiladi, odam tasdiqlaydi</div>
-      <div style="font-size:13px;color:var(--ink-2);line-height:1.55">Taqsimot engine ilk 6 oyda har qaror uchun inson nazoratini talab qiladi — keyin faqat istisnolarda.</div>
-    </div>
-    <div class="person" style="display:block">
-      <div style="font-weight:700;color:var(--navy);margin-bottom:6px;font-size:14.5px">3 · Bozor sotuvchisi o'zgarmaydi</div>
-      <div style="font-size:13px;color:var(--ink-2);line-height:1.55">Dilmuss bozorga boradi, bozor Dilmussga emas. Field rep barcha "hujjat ishini" supplier o'rniga qiladi.</div>
-    </div>
-    <div class="person" style="display:block">
-      <div style="font-weight:700;color:var(--navy);margin-bottom:6px;font-size:14.5px">4 · Sikl o'z-o'zini takomillashtiradi</div>
-      <div style="font-size:13px;color:var(--ink-2);line-height:1.55">Har sotuv — o'qitish ma'lumoti. Engine 6 hafta ichida har klaster uchun aniqlik ~70%+ ga yetadi.</div>
-    </div>
-  </div>
-
-  <div class="foot">
-    Ushbu sahifa <a href="./">asosiy hujjat</a>ning §6.1–6.6 bo'limlari va Ilova C.2 asosida tuzilgan vizualizatsiya.
-    <br>
-    So'mda xarajatlar 12,250 UZS/USD kursida (2026-yil aprel).
-  </div>
-
-</main>
+<div class="page-no">
+  <b>—</b> atlas № I <b>—</b>
+</div>
 
 </body>
 </html>
