@@ -252,6 +252,75 @@
   .cross{color:var(--rust);font-weight:700;font-size:16px;display:inline-block}
   @media (max-width:720px){th,td{padding:8px 10px}table{font-size:12px}}
 
+  /* Responsive tables — auto-stacked on mobile. JS adds data-label attrs. */
+  @media (max-width:640px){
+    .table-scroll{
+      overflow-x:visible;
+      border:none;background:transparent;box-shadow:none;border-radius:0;
+    }
+    .table-scroll::after{display:none}
+    table.responsive{display:block;margin:0}
+    table.responsive thead{display:none}
+    table.responsive tbody{display:block}
+    table.responsive tr{
+      display:block;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:14px 16px;
+      margin-bottom:10px;
+      box-shadow:var(--shadow-sm);
+    }
+    table.responsive tr:last-child{margin-bottom:0}
+    table.responsive tbody tr:hover{background:var(--card)}
+    table.responsive td{
+      display:grid;
+      grid-template-columns:minmax(0, 42%) minmax(0, 1fr);
+      gap:10px;
+      padding:5px 0;
+      border:none;
+      border-top:1px dashed var(--line);
+      align-items:start;
+      line-height:1.5;
+      font-size:12.5px;
+      white-space:normal;
+    }
+    table.responsive td:first-child{
+      display:block;
+      border-top:none;
+      padding-top:0;
+      padding-bottom:8px;
+      font-weight:700;
+      color:var(--ink);
+      font-size:14px;
+      line-height:1.4;
+    }
+    table.responsive td::before{
+      content:attr(data-label);
+      color:var(--muted);
+      font-size:10.5px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+      padding-top:3px;
+      overflow-wrap:anywhere;
+    }
+    table.responsive td:first-child::before{display:none}
+    table.responsive td.r,table.responsive td.c{text-align:left;justify-self:stretch;font-variant-numeric:tabular-nums}
+    table.responsive td[colspan]{
+      display:block;
+      border-top:1px solid var(--line-2);
+      padding:10px 0 0;
+      margin-top:8px;
+      font-size:12.5px;
+    }
+    table.responsive td[colspan]::before{display:none}
+    table.responsive td.tot{background:transparent;padding-top:8px}
+    table.responsive .check,table.responsive .cross{font-size:14px}
+    /* Tables without thead keep horizontal scroll */
+    table:not(.responsive){font-size:12px}
+  }
+
   /* Grids */
   .two{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:clamp(14px,2vw,22px)}
   .three{display:grid;grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));gap:clamp(12px,1.6vw,18px)}
@@ -2154,14 +2223,39 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
 
 <script>
 (function(){
-  // Wrap every table in a horizontally-scrollable container
+  // Wrap every table in a scrollable container; auto-label cells for mobile stacking
   document.querySelectorAll('table').forEach(function(t){
-    if(!t.parentNode.classList.contains('table-scroll') && !t.closest('.dash')){
-      var w = document.createElement('div');
-      w.className = 'table-scroll';
-      t.parentNode.insertBefore(w, t);
-      w.appendChild(t);
+    if(t.parentNode.classList.contains('table-scroll') || t.closest('.dash')) return;
+
+    var w = document.createElement('div');
+    w.className = 'table-scroll';
+    t.parentNode.insertBefore(w, t);
+    w.appendChild(t);
+
+    // Read column headers
+    var ths = t.querySelectorAll('thead th');
+    if(!ths.length) return;
+    var headers = [];
+    for(var i=0; i<ths.length; i++){
+      headers.push((ths[i].textContent || '').trim());
     }
+
+    // Apply data-label to every td based on its column index
+    var rows = t.querySelectorAll('tbody tr');
+    for(var r=0; r<rows.length; r++){
+      var tds = rows[r].children;
+      var col = 0;
+      for(var c=0; c<tds.length; c++){
+        var td = tds[c];
+        if(td.tagName !== 'TD') continue;
+        if(!td.hasAttribute('data-label') && headers[col]){
+          td.setAttribute('data-label', headers[col]);
+        }
+        var span = parseInt(td.getAttribute('colspan') || '1', 10);
+        col += span;
+      }
+    }
+    t.classList.add('responsive');
   });
 
   // Scroll progress + back-to-top visibility
