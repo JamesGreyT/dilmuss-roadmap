@@ -1,0 +1,1716 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dilmuss Woman — O'tish Yo'l Xaritasi</title>
+<style>
+  :root{
+    --ink:#121417;
+    --ink-2:#2a2e35;
+    --muted:#6b6f78;
+    --line:#e7e3db;
+    --paper:#faf7f1;
+    --paper-2:#f2ede2;
+    --card:#ffffff;
+    --navy:#14324f;
+    --navy-2:#1e4a73;
+    --rust:#b0451f;
+    --rust-2:#d96a3c;
+    --gold:#b08a3a;
+    --sage:#5c7a5a;
+    --red:#b23a3a;
+    --shadow:0 1px 0 rgba(20,24,32,.04);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"Inter","Helvetica Neue",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    font-size:15.5px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  h1,h2,h3,h4{font-family:"Source Serif 4","Georgia",serif;font-weight:600;color:var(--ink);letter-spacing:-0.01em}
+  h1{font-size:44px;line-height:1.1;margin:0 0 6px}
+  h2{font-size:28px;line-height:1.2;margin:56px 0 8px;padding-top:18px;border-top:1px solid var(--line)}
+  h2 .num{color:var(--muted);font-weight:400;margin-right:10px;font-feature-settings:"tnum"}
+  h3{font-size:19px;line-height:1.3;margin:28px 0 8px;color:var(--navy)}
+  h4{font-size:15px;line-height:1.3;margin:18px 0 6px;color:var(--ink-2);text-transform:uppercase;letter-spacing:0.06em;font-family:"Inter",sans-serif;font-weight:700;font-size:12.5px}
+  p{margin:0 0 12px}
+  strong{font-weight:600;color:var(--ink)}
+  em{font-style:italic;color:var(--ink-2)}
+  a{color:var(--rust)}
+  hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+
+  /* Cover */
+  .cover{padding:80px 0 56px;border-bottom:1px solid var(--line)}
+  .cover .eyebrow{font-size:12px;font-weight:600;letter-spacing:0.18em;color:var(--rust);text-transform:uppercase;margin-bottom:18px}
+  .cover h1{font-size:54px;margin-bottom:12px}
+  .cover .sub{font-size:20px;color:var(--ink-2);max-width:720px;line-height:1.4;margin-bottom:28px;font-family:"Source Serif 4",Georgia,serif;font-style:italic}
+  .cover .meta{display:flex;gap:32px;flex-wrap:wrap;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px}
+  .cover .meta b{color:var(--ink);font-weight:600}
+
+  /* TOC */
+  .toc{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 28px;margin:24px 0 0;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px}
+  .toc a{color:var(--ink-2);text-decoration:none;display:flex;gap:10px;padding:3px 0}
+  .toc a:hover{color:var(--rust)}
+  .toc a span:first-child{color:var(--muted);font-variant-numeric:tabular-nums;min-width:20px}
+
+  /* Hero stats */
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0 8px}
+  .stat{background:var(--card);border:1px solid var(--line);padding:18px 16px;border-radius:2px}
+  .stat .lbl{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px}
+  .stat .num{font-family:"Source Serif 4",Georgia,serif;font-size:28px;line-height:1;color:var(--navy);font-weight:600}
+  .stat .delta{font-size:12.5px;color:var(--sage);margin-top:6px;font-weight:600}
+  .stat.warn .num{color:var(--rust)}
+  .stat.warn .delta{color:var(--rust)}
+
+  /* Callout */
+  .callout{background:var(--paper-2);border-left:3px solid var(--rust);padding:16px 20px;margin:20px 0;border-radius:0 2px 2px 0;font-size:15px}
+  .callout.navy{border-left-color:var(--navy)}
+  .callout.sage{border-left-color:var(--sage)}
+  .callout b{color:var(--ink)}
+  .callout .k{font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rust);margin-bottom:4px;display:block}
+  .callout.navy .k{color:var(--navy)}
+
+  /* Tables */
+  table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--paper-2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-2);border-bottom:1px solid #ddd6c7}
+  tr:last-child td{border-bottom:none}
+  td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+  td.c,th.c{text-align:center}
+  td.tot{background:var(--paper-2);font-weight:700;color:var(--navy)}
+  .check{color:var(--sage);font-weight:700}
+  .cross{color:var(--rust);font-weight:700}
+
+  /* Two-col */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+  /* Cards */
+  .card{background:var(--card);border:1px solid var(--line);padding:20px;border-radius:2px}
+  .card h4{margin-top:0}
+  .card.subtle{background:var(--paper-2);border-color:transparent}
+
+  /* Flow diagram */
+  .flow{background:var(--card);border:1px solid var(--line);padding:26px;margin:16px 0;border-radius:2px}
+  .flow svg{display:block;width:100%;height:auto}
+
+  /* Color tiles */
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:580px;margin:14px 0 24px;background:var(--ink);padding:6px;border-radius:4px}
+  .tile{aspect-ratio:3/2;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;color:#fff;font-size:11px;line-height:1.2;border-radius:2px}
+  .tile b{font-size:13px;font-weight:600;display:block}
+  .tile .id{font-size:10px;opacity:.6;margin-bottom:auto;font-variant-numeric:tabular-nums}
+
+  /* Before/after */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:18px 0;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+  .ba > div{padding:22px}
+  .ba .before{background:#fff2ea;border-right:1px solid var(--line)}
+  .ba .after{background:#edf4ef}
+  .ba .k{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px}
+  .ba .before .k{color:var(--rust)}
+  .ba .after .k{color:var(--sage)}
+  .ba h4{margin-top:0;font-size:14px}
+  .ba p{font-size:14px;line-height:1.55;color:var(--ink-2)}
+
+  /* Phase timeline */
+  .phases{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:16px 0 24px}
+  .phase{background:var(--card);border:1px solid var(--line);padding:14px 12px;position:relative;border-radius:2px}
+  .phase .p{font-family:"Source Serif 4",Georgia,serif;font-size:22px;color:var(--navy);font-weight:600;line-height:1}
+  .phase .m{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin:4px 0 8px}
+  .phase .t{font-size:12.5px;line-height:1.35;color:var(--ink-2)}
+  .phase.active{background:var(--navy);border-color:var(--navy)}
+  .phase.active .p,.phase.active .t{color:#fff}
+  .phase.active .m{color:#c3d4e4}
+
+  /* Dashboard mock */
+  .dash{background:#0f1a24;color:#d7e3ee;padding:22px;border-radius:3px;font-family:"JetBrains Mono","SF Mono",Consolas,monospace;font-size:12.5px;line-height:1.6;margin:16px 0}
+  .dash .title{color:#f5c36a;font-weight:700;letter-spacing:0.06em;margin-bottom:14px;font-size:11.5px;text-transform:uppercase}
+  .dash .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;margin-bottom:14px}
+  .dash .block h5{margin:0 0 8px;color:#f5c36a;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+  .dash .row{display:flex;justify-content:space-between;border-bottom:1px dashed #2a3a4a;padding:3px 0}
+  .dash .row .v{font-weight:700;color:#fff}
+  .dash .up{color:#8fc58f}
+  .dash .dn{color:#e79b7b}
+  .dash .flag{color:#e79b7b;border-top:1px dashed #2a3a4a;padding-top:10px;margin-top:10px}
+
+  /* Donut + bars */
+  .bars{margin:12px 0}
+  .bar-row{display:grid;grid-template-columns:1fr 90px;gap:10px;margin-bottom:6px;font-size:13px;align-items:center}
+  .bar-track{background:var(--paper-2);height:22px;border-radius:2px;position:relative;overflow:hidden}
+  .bar-fill{height:100%;background:var(--navy);display:flex;align-items:center;padding:0 8px;color:#fff;font-size:11.5px;font-weight:600;white-space:nowrap}
+  .bar-fill.rust{background:var(--rust)}
+  .bar-fill.sage{background:var(--sage)}
+  .bar-fill.gold{background:var(--gold)}
+  .bar-row .lab{color:var(--ink-2)}
+
+  /* Risk matrix */
+  .risk-grid{display:grid;grid-template-columns:110px repeat(3,1fr);gap:4px;font-size:12px;margin:10px 0 22px}
+  .risk-grid .hdr{background:var(--paper-2);padding:8px;text-align:center;font-weight:700;color:var(--ink-2);text-transform:uppercase;letter-spacing:0.06em;font-size:11px}
+  .risk-grid .ax{padding:8px;font-weight:600;color:var(--ink-2);display:flex;align-items:center;justify-content:flex-end;background:var(--paper-2)}
+  .risk-grid .cell{background:var(--card);border:1px solid var(--line);padding:10px;min-height:70px;font-size:11.5px;line-height:1.35}
+  .risk-grid .cell .pill{display:inline-block;background:var(--ink);color:#fff;padding:1px 6px;border-radius:2px;font-size:10px;font-weight:700;margin-right:4px;margin-bottom:3px}
+  .risk-grid .cell.hi{background:#fceae2}
+  .risk-grid .cell.md{background:#fbf4e1}
+  .risk-grid .cell.lo{background:#e9f1ea}
+
+  /* Footnote */
+  .fn{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px;margin-top:40px}
+
+  /* Section anchors */
+  .sec{scroll-margin-top:16px}
+
+  /* SVG colors */
+  .svg-line{stroke:#d6cfc1;stroke-width:1.5}
+  .svg-arrow{fill:#999083}
+  .svg-box{fill:#fff;stroke:var(--navy);stroke-width:1.5}
+  .svg-box-alt{fill:var(--paper-2);stroke:#c4bba8;stroke-width:1}
+  .svg-label{font:600 12px Inter,sans-serif;fill:var(--ink)}
+  .svg-label-sm{font:500 11px Inter,sans-serif;fill:var(--ink-2)}
+  .svg-label-muted{font:500 11px Inter,sans-serif;fill:var(--muted)}
+
+  /* Quote */
+  .quote{font-family:"Source Serif 4",Georgia,serif;font-size:19px;line-height:1.5;color:var(--ink);border-left:3px solid var(--gold);padding:6px 0 6px 20px;margin:22px 0;font-style:italic}
+
+  /* Print */
+  @media print {
+    body{background:#fff}
+    .toc,.dash{background:#fff}
+    .phase.active{background:#eee;border-color:#000}
+    .phase.active .p,.phase.active .t{color:#000}
+    h2{page-break-before:auto}
+  }
+
+  @media (max-width:900px){
+    .wrap{padding:0 18px}
+    .cover h1{font-size:36px}
+    .hero-stats{grid-template-columns:repeat(2,1fr)}
+    .toc{grid-template-columns:1fr 1fr}
+    .two,.three,.ba{grid-template-columns:1fr}
+    .phases{grid-template-columns:repeat(2,1fr)}
+    .tiles{grid-template-columns:repeat(3,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="wrap">
+    <div class="eyebrow">Maslahat hisoboti · 2026-yil aprel · Dilmuss Woman</div>
+    <h1>O'tish Yo'l Xaritasi</h1>
+    <div class="sub">Tovar darajasidagi umumiy qabul qilishdan SKU-darajasidagi, ma'lumotga asoslangan inventarga o'tish</div>
+    <p style="max-width:720px;color:var(--ink-2);font-size:15.5px;margin-bottom:28px">
+      55 do'konli O'zbek fashion tarmog'i milliy miqyosga chiqmoqda. Har kuni Toshkent bozorlaridan
+      xarid qilinadi, Turkiya va Xitoydan import tushadi. Ushbu hujjat omborni 150–200 kishidan
+      70–90 kishiga qisqartirish va do'konlarga avtomatik to'ldirish tizimini qurish yo'lini ko'rsatadi.
+    </p>
+    <div class="meta">
+      <div><b>Tayyorladi:</b> Katta darajadagi Supply Chain maslahatchisi</div>
+      <div><b>Sana:</b> 2026-yil 21-aprel</div>
+      <div><b>Kurs:</b> 12 250 so'm / 1 USD</div>
+      <div><b>Hajm:</b> Buyum masteridan tortib toshpul qayta rejalashtirishgacha</div>
+    </div>
+
+    <nav class="toc">
+      <a href="#s-exec"><span>00</span><span>Qisqacha xulosa</span></a>
+      <a href="#s1"><span>01</span><span>Hozirgi holat</span></a>
+      <a href="#s2"><span>02</span><span>Global tajriba</span></a>
+      <a href="#s3"><span>03</span><span>Standartlashtirish</span></a>
+      <a href="#s4"><span>04</span><span>Texnologiya va jihozlar</span></a>
+      <a href="#s5"><span>05</span><span>Omborni qayta loyihalash</span></a>
+      <a href="#s6"><span>06</span><span>Kelajak jarayoni</span></a>
+      <a href="#s7"><span>07</span><span>Bosqichli reja</span></a>
+      <a href="#s8"><span>08</span><span>Iqtisodiy asos</span></a>
+      <a href="#s9"><span>09</span><span>Xavflar reestri</span></a>
+      <a href="#s10"><span>10</span><span>Harakatsizlik narxi</span></a>
+      <a href="#s11"><span>11</span><span>Keyingi 90 kun</span></a>
+      <a href="#sA"><span>A</span><span>Ilova: arxitektura va bozor</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ EXEC SUMMARY ============ -->
+<section id="s-exec" class="sec">
+  <div class="wrap">
+    <h2><span class="num">00</span>Qisqacha xulosa</h2>
+
+    <p>
+      Dilmuss bugun <b>ulgurji darajadagi qabul jarayonini chakana miqyosda</b> yuritmoqda.
+      150–200 kishilik ombor — bu alomat, kasallik emas. Kasallik arxitekturada:
+      <b>SKU ma'lumotlar modelida mavjud emas</b>. Mollar "model" (style) darajasida yuritiladi,
+      <b>model × rang × o'lcham</b> darajasida emas. Barcha keyingi muammolar shu bitta kamchilikka borib taqaladi.
+    </p>
+
+    <p>Yechim — dasturiy ta'minot sotib olish emas. Yechim — <b>uch qatlamli qayta loyihalash</b>, qat'iy tartibda:</p>
+
+    <ol>
+      <li><b>Ma'lumot qatlami</b> — har qanday jihozdan oldin standart SKU to'rini o'rnatish (model × rang × o'lcham).</li>
+      <li><b>Jarayon qatlami</b> — omborni 14 ta kategoriya orolidan bitta <b>oqim-o'tkazuvchi cross-dock</b>ka aylantirish.</li>
+      <li><b>Jihoz qatlami</b> — skanerlar, sensorli ekranlar, RFID — faqat 1–2-qatlamlar qo'lda ishlay boshlagandan keyin.</li>
+    </ol>
+
+    <div class="callout">
+      <span class="k">Eslatma — aynan shu xatolik</span>
+      To'g'ridan-to'g'ri jihozga o'tish — 2014–2019 yillarda uchta Turkiya va ikkita Rossiya chakana tarmog'ini
+      cho'ktirgan klassik xato. 3-bo'limda shuning oldini olish chizilgan.
+    </div>
+
+    <h3>90 soniyalik argument</h3>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="lbl">Investitsiya</div>
+        <div class="num">$449K</div>
+        <div class="delta">≈ 5,50 mlrd so'm</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">Yillik tejash (barqaror)</div>
+        <div class="num">$907K</div>
+        <div class="delta">≈ 11,11 mlrd so'm</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">Qoplanish muddati</div>
+        <div class="num">14 oy</div>
+        <div class="delta">Barqarorlikdan ~6 oy</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">5-yillik NPV (o'sish)</div>
+        <div class="num">$7.8M</div>
+        <div class="delta">110 do'konga yetganda</div>
+      </div>
+    </div>
+
+    <h3>Kutilayotgan natijalar — 12–18 oy (konservativ baho)</h3>
+    <table>
+      <thead><tr><th>Ko'rsatkich</th><th>Bugun</th><th>Maqsad</th></tr></thead>
+      <tbody>
+        <tr><td>Ombor xodimlari</td><td>150–200</td><td><b>70–90</b> (−55%)</td></tr>
+        <tr><td>Qabul → do'konga tushirish davri</td><td>2–4 kun</td><td><b>&lt;24 soat</b></td></tr>
+        <tr><td>SKU darajasida (rang + o'lcham) yuritiladigan mollar</td><td>~0%</td><td><b>&gt;95%</b></td></tr>
+        <tr><td>Sotilish ma'lumotining ko'rinuvchanligi</td><td>Yo'q</td><td>Kunlik, do'kon × SKU</td></tr>
+        <tr><td>To'ldirish (replenishment)</td><td>Push — menejer sezgisi</td><td>Pull — POS ma'lumotidan avtomatik</td></tr>
+        <tr><td>Buzilgan o'lchamdan chegirma yo'qotishi</td><td>Noma'lum (taxmin 8–15%)</td><td><b>&lt;4%</b></td></tr>
+        <tr><td>Yalpi foyda (barqaror holda)</td><td>Asos</td><td><b>+3.0–3.5</b> foiz puntli o'sish</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout navy">
+      <span class="k">Strategik oyna — ochiq, lekin qisqarmoqda</span>
+      LC Waikiki, Koton, DeFacto shu tizimda ishlaydi. O'zbek kapitaliga tegishli <b>birorta</b> tarmoq
+      hali bunday emas. Dilmuss birinchi bo'lib o'tsa — 3–5 yillik struktural afzallik. 2027–2028 yillarda
+      Turkiya va Rossiya raqobatchilari O'zbekistonga kuchliroq kiradi.
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 1 ============ -->
+<section id="s1" class="sec">
+  <div class="wrap">
+    <h2><span class="num">01</span>Hozirgi holat ("As-Is")</h2>
+
+    <h3>1.1 Ishlash modeli</h3>
+    <p>Yorliqlardan tozalab qarasak, hozirgi model — <b>bozordan do'konga qo'l bilan yuritilgan konveyer</b>:</p>
+
+    <div class="flow">
+      <svg viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" class="svg-arrow"/>
+          </marker>
+        </defs>
+
+        <!-- row 1 -->
+        <rect x="20" y="30" width="160" height="50" rx="3" class="svg-box-alt"/>
+        <text x="100" y="52" text-anchor="middle" class="svg-label">Bozor / Turkiya / Xitoy</text>
+        <text x="100" y="68" text-anchor="middle" class="svg-label-muted">Manba</text>
+
+        <line x1="180" y1="55" x2="230" y2="55" class="svg-line" marker-end="url(#ar1)"/>
+
+        <rect x="230" y="30" width="180" height="50" rx="3" class="svg-box"/>
+        <text x="320" y="52" text-anchor="middle" class="svg-label">14 Kategoriya Menejeri</text>
+        <text x="320" y="68" text-anchor="middle" class="svg-label-muted">Mustaqil silosda xarid</text>
+
+        <line x1="410" y1="55" x2="460" y2="55" class="svg-line" marker-end="url(#ar1)"/>
+
+        <rect x="460" y="30" width="190" height="50" rx="3" class="svg-box"/>
+        <text x="555" y="52" text-anchor="middle" class="svg-label">Ombor qabuli</text>
+        <text x="555" y="68" text-anchor="middle" class="svg-label-muted">84–112 sortirovkachi</text>
+
+        <line x1="650" y1="55" x2="700" y2="55" class="svg-line" marker-end="url(#ar1)"/>
+
+        <rect x="700" y="30" width="220" height="50" rx="3" class="svg-box"/>
+        <text x="810" y="52" text-anchor="middle" class="svg-label">30 kompyuter operatori</text>
+        <text x="810" y="68" text-anchor="middle" class="svg-label-muted">Faqat "model" darajasida kiritish</text>
+
+        <!-- vertical connector -->
+        <path d="M 810 80 L 810 125 L 450 125 L 450 170" class="svg-line" fill="none" marker-end="url(#ar1)"/>
+
+        <!-- row 2 -->
+        <rect x="350" y="170" width="200" height="50" rx="3" class="svg-box"/>
+        <text x="450" y="192" text-anchor="middle" class="svg-label">Xavfsizlik + narx + shtrix-kod</text>
+        <text x="450" y="208" text-anchor="middle" class="svg-label-muted">3 ta alohida jamoa</text>
+
+        <line x1="450" y1="220" x2="450" y2="255" class="svg-line" marker-end="url(#ar1)"/>
+
+        <rect x="320" y="255" width="260" height="50" rx="3" class="svg-box"/>
+        <text x="450" y="277" text-anchor="middle" class="svg-label">Do'konlarga taqsimlash</text>
+        <text x="450" y="293" text-anchor="middle" class="svg-label-muted">Menejer sezgisi bo'yicha, qo'lda</text>
+
+        <line x1="450" y1="305" x2="450" y2="335" class="svg-line" marker-end="url(#ar1)"/>
+        <text x="450" y="350" text-anchor="middle" class="svg-label">Yuklash jamoasi → 55 do'kon</text>
+      </svg>
+    </div>
+
+    <p>
+      Bu model — <b>qo'lda yuritilgan post-distribution</b>. Mol omborga tushadi,
+      to'liq qayta ishlanadi, keyin kimdir har bir partiyaga "bu do'konga boradi" deb hukm chiqaradi.
+      Mavjud barcha variantlar ichida eng mehnat talab qiladigan va <b>xodimlar soni do'konlar soniga chiziqli o'sadigan yagona</b> modeldir.
+    </p>
+
+    <h3>1.2 Asosiy sabablar xaritasi</h3>
+    <table>
+      <thead><tr><th>Belgisi</th><th>Sirtki sabab</th><th>Asl sabab</th></tr></thead>
+      <tbody>
+        <tr><td>30 ta operator ma'lumot kiritishda tiqilinch</td><td>"Kompyuter yetmaydi"</td><td>Ma'lumot jismoniy ishdan <b>keyin</b> qayd etiladi — kiritish alohida bosqich, jarayonning tabiiy natijasi emas</td></tr>
+        <tr><td>O'lcham/rang bo'yicha analitika yo'q</td><td>"Operatorlar kiritmaydi"</td><td>Buyum master'ida SKU sxemasi yo'q — ma'lumotni qo'yadigan joy yo'q</td></tr>
+        <tr><td>Xodimlar rang/o'lchamga qarshilik ko'rsatadi</td><td>"Xodimlar bo'ysunmaydi"</td><td>Standart lug'at yo'q — "ko'k" 8 sortirovkachida 8 xil ma'no beradi, xato topgani uchun jazolanadi</td></tr>
+        <tr><td>14 ta kategoriya silosi</td><td>"Tashkiliy tuzilma"</td><td>Har bir menejer xarid qiladi, qabul qiladi <b>va</b> taqsimlaydi — bir kishiga mumkin bo'lmagan 3 ta vazifa</td></tr>
+        <tr><td>150–200 xodim</td><td>"Hajm katta"</td><td>Har bir qadam har bir mahsulotni qo'li bilan tegadi; hech narsa yuqorida oldindan ajratilmagan</td></tr>
+        <tr><td>Do'konga sekin to'ldirish</td><td>"Logistika"</td><td>POS qayta aloqasi yo'q — do'kon nima sotganini emas, menejer nima o'ylaganini oladi</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="k">Eng yuqori tortish kuchi bo'lgan kuzatuv</span>
+      Ombor mehnatining <b>~60% shunchaki yo'q ma'lumot va yo'q yetkazib beruvchi intizomini qoplash uchun mavjud</b>.
+      Yuqorida tuzatilsa, bu mehnat o'zidan-o'zi yo'q bo'ladi — avtomatlashtirish emas, mavjud bo'lmaslik kerak.
+    </div>
+
+    <h3>1.3 Bitta yuk, raqamlarda — yashirin xarajatni ko'rsatish</h3>
+    <p>
+      "Mehnat inflyatsiyasi" abstrakt. Mana aniq bitta bozor yuki qadam-baqadam:
+    </p>
+    <div class="card subtle">
+      <p style="margin:0"><b>Yuk:</b> Chorsu bozori, seshanba ertalab. Bitta sotuvchi, ayollar uchun oddiy futbolka,
+      <b>480 dona</b> (qora/oq/ko'k/bej × XS–XL). Ulgurji narx: 32 000 so'm × 480 = <b>15,36 mln so'm (~$1,254)</b>.
+      Chakana narx: 89 000 so'm.</p>
+    </div>
+
+    <table>
+      <thead><tr><th>Qadam</th><th>Hozirgi model</th><th class="r">Min.</th><th>Maqsad model (§6)</th><th class="r">Min.</th></tr></thead>
+      <tbody>
+        <tr><td>Bozordan olib ketish</td><td>Haydovchi + yordamchi yuklaydi</td><td class="r">45</td><td>Field-rep iPad'da: model, rang, o'lcham, miqdor — 480 SKU yorlig'ini joyida chop etadi</td><td class="r">55</td></tr>
+        <tr><td>Ombor qabuli</td><td>Kategoriya bo'limiga bo'shatish, taxminiy hisob</td><td class="r">30</td><td>SSCC kartonni skan qilish → ASN bilan avto-tekshiruv</td><td class="r">3</td></tr>
+        <tr><td>Modelga ajratish</td><td>Kategoriya sortirovkachi</td><td class="r">25</td><td>Kerak emas — SKU yorlig'i bor</td><td class="r">0</td></tr>
+        <tr><td>Rangga ajratish</td><td>"Qora yoki ko'k?" munozaralari</td><td class="r">40</td><td>Kerak emas — SKU'da 11-01 (Navy)</td><td class="r">0</td></tr>
+        <tr><td>O'lchamga ajratish</td><td>Yorliqlarni o'qib ajratish</td><td class="r">35</td><td>Kerak emas — SKU'da M</td><td class="r">0</td></tr>
+        <tr><td>Ma'lumot kiritish</td><td>Operator model kodini Excel'ga kiritadi</td><td class="r">60</td><td>Allaqachon tizimda</td><td class="r">0</td></tr>
+        <tr><td>Xavfsizlik yorliq</td><td>Alohida jamoa</td><td class="r">25</td><td>Narx yorlig'i bilan bitta stansiyada</td><td class="r">18</td></tr>
+        <tr><td>Narx yorliq</td><td>Alohida jamoa</td><td class="r">25</td><td>(yuqorida birlashtirilgan)</td><td class="r">—</td></tr>
+        <tr><td>Do'konga taqsimlash</td><td>Menejer sezgisi</td><td class="r">40</td><td>Put-to-light devor, engine tomonidan tayyorlangan ro'yxat</td><td class="r">22</td></tr>
+        <tr><td>Yuklash / tashish</td><td>Yuklovchilar</td><td class="r">20</td><td>Yuklovchilar</td><td class="r">20</td></tr>
+        <tr class="tot"><td><b>Jami mehnat</b></td><td></td><td class="r"><b>~345 min (5,75 s)</b></td><td></td><td class="r"><b>~118 min (2,0 s)</b></td></tr>
+      </tbody>
+    </table>
+
+    <div class="two">
+      <div class="card">
+        <h4>Bir yuk tannarxi</h4>
+        <div class="bar-row"><span class="lab">Hozirgi</span><span class="bar-track"><span class="bar-fill rust" style="width:100%">230 000 so'm</span></span></div>
+        <div class="bar-row"><span class="lab">Maqsad</span><span class="bar-track"><span class="bar-fill sage" style="width:34%">79 000 so'm</span></span></div>
+        <p style="margin:8px 0 0;font-size:12.5px;color:var(--muted)">40 000 so'm/soat yuklama bilan hisoblangan.</p>
+      </div>
+      <div class="card">
+        <h4>Yiliga kunga 120 yuk</h4>
+        <p style="font-size:13.5px;line-height:1.55;margin:4px 0">
+          Oldini olish mumkin bo'lgan mehnat xarajati: <b style="color:var(--rust)">~27 mln so'm/kun</b>
+          (~$2 200/kun; <b>~10 mlrd so'm/yil</b>). Bu hali <i>"qabul qilinganini bilmaslikning"</i>
+          keyingi ta'sirlari hisobga olinmasdan.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 ============ -->
+<section id="s2" class="sec">
+  <div class="wrap">
+    <h2><span class="num">02</span>Global tajriba — yetakchi brendlar qanday ishlaydi</h2>
+
+    <h3>2.1 Pre-distribution vs. Post-distribution — arxitektura tanlovi</h3>
+    <div class="two">
+      <div class="card">
+        <h4 style="color:var(--navy)">Pre-pack / Cross-dock — Zara modeli</h4>
+        <p style="font-size:13.5px;line-height:1.55">
+          Inditex ombori (Arteixo, Saragoza) — klassik misol. Mol do'konlarga
+          <b>oldindan qadoqlangan</b> holda keladi (masalan: 2×S, 4×M, 4×L, 2×XL).
+          Ombor — <b>cross-dock</b>, saqlash joyi emas. O'rtacha turish vaqti &lt;72 soat.
+          Qabul qilingan kartonlarning &gt;90% to'g'ridan-to'g'ri mashinadan savdo maydonchasiga tushadi.
+        </p>
+        <p style="font-size:12.5px;color:var(--muted);margin:0">
+          Nega ishlaydi: Zara ishlab chiqarishga egalik qiladi va karton tarkibini buyurtma beradi.
+        </p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--navy)">Bulk-break — H&amp;M, LC Waikiki modeli</h4>
+        <p style="font-size:13.5px;line-height:1.55">
+          Mono-SKU kartonlar keladi (bitta karton = bitta model/rang/o'lcham).
+          Ombor do'kon kartonlariga haftalik taqsimlash mantig'i bo'yicha qayta qadoqlaydi.
+          Konveyer, put-wall va pick-to-light — DC taqsimot ishini bajarganligi uchun ko'p ishlatiladi.
+        </p>
+        <p style="font-size:12.5px;color:var(--muted);margin:0">
+          Nega ishlatiladi: ko'p yetkazib beruvchi pre-pack qilolmaydi; markaziy xavfsizlik zaxirasi saqlanadi.
+        </p>
+      </div>
+    </div>
+
+    <h4>Dilmuss uchun real maqsad — gibrid model</h4>
+    <table>
+      <thead><tr><th>Mahsulot turi</th><th>Model</th><th>Sababi</th></tr></thead>
+      <tbody>
+        <tr><td>Importlangan to'liq kollektsiya (Turkiya/Xitoy)</td><td><b>Pre-pack</b></td><td>Hajm yetkazib beruvchi bilan karton tarkibi bo'yicha shart qo'yishni oqlaydi</td></tr>
+        <tr><td>Kunlik bozor xaridlari</td><td><b>Standartlashtirilgan post-distribution</b></td><td>Bozor sotuvchisiga shart qo'yib bo'lmaydi, lekin qabul tartibini standartlashtirish mumkin</td></tr>
+        <tr><td>Asosiy / basic to'ldirish SKU'lari</td><td><b>DC buferidan post-distribution</b></td><td>POS pull'ga javob berish kerak</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2.2 Raqobatchilar nima qiladi, Dilmuss nima qilmaydi</h3>
+    <table>
+      <thead><tr><th>Amaliyot</th><th class="c">Zara</th><th class="c">H&amp;M</th><th class="c">LC Waikiki</th><th class="c">Mango</th><th class="c">Dilmuss</th></tr></thead>
+      <tbody>
+        <tr><td>Qabulda SKU = model × rang × o'lcham</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
+        <tr><td>Standart rang master (ID, erkin matn emas)</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
+        <tr><td>Kategoriya bo'yicha standart o'lcham to'ri</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
+        <tr><td>Yetkazib beruvchi chop etgan shtrix-kod (GS1/EAN-13)</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
+        <tr><td>Jismoniy qabuldan oldin ASN</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
+        <tr><td>Do'konlarni klasterga ajratish</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
+        <tr><td>Kunlik POS qaytaalani taqsimlashga uzatish</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
+        <tr><td>Dona darajasida RFID</td><td class="c check">✓</td><td class="c">qisman</td><td class="c check">✓</td><td class="c">qisman</td><td class="c cross">✗</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout navy">
+      <span class="k">Eng katta farq — yetkazib beruvchi shtrix-kodi + ASN</span>
+      Molsikchani <b>"qabulda skan qiling"</b>ga aylantirsa, 30 ta kiritish operatorining ~70% darhol ortiqcha bo'ladi.
+      <b>Ikkinchi eng katta farq — do'kon klasterlashtirish</b>: raqobatchi 5–6 qarorga tushadi; Dilmuss har shipment uchun 55 qaror qabul qiladi.
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 ============ -->
+<section id="s3" class="sec">
+  <div class="wrap">
+    <h2><span class="num">03</span>Standartlashtirish asosi — Rang, O'lcham, Buyum Masteri</h2>
+    <p>
+      <b>Zarur qatlam.</b> Busiz hech narsa ishlamaydi. Buni <em>har qanday jihozdan oldin</em> quring.
+    </p>
+
+    <h3>3.1 Standart rang to'ri — uch daraja</h3>
+    <p>Xodimlar rangni ajratishga qarshilik ko'rsatmaydi — qarshilik ko'rsatishi tabiiy, chunki "ko'k" haqiqatan ham noaniq. Yechim — <b>hukm chiqarishni olib tashlash</b>.</p>
+
+    <div class="card subtle" style="padding:18px 20px;margin-top:14px">
+      <pre style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.7;color:var(--ink-2)">1-daraja: Rang oilasi (12 qiymat)   ← xodim tanlaydi
+2-daraja: Rang kodi   (~60 qiymat)   ← tizim saqlaydi
+3-daraja: Pantone/Hex (aniq)         ← dizaynerlar ishlatadi</pre>
+    </div>
+
+    <h4>12 ta oila — Sensor ekranda ko'rinadi</h4>
+    <div class="tiles">
+      <div class="tile" style="background:#1a1a1a"><span class="id">01</span><b>Qora</b>Чёрный</div>
+      <div class="tile" style="background:#f7f1e1;color:#333"><span class="id" style="color:#999">02</span><b>Oq</b>Белый</div>
+      <div class="tile" style="background:#8a8d94"><span class="id">03</span><b>Kulrang</b>Серый</div>
+      <div class="tile" style="background:#c9a87c;color:#2a1e10"><span class="id" style="color:#5e4a2e">04</span><b>Bej</b>Бежевый</div>
+      <div class="tile" style="background:#6b4423"><span class="id">05</span><b>Jigarrang</b>Коричневый</div>
+      <div class="tile" style="background:#b23a3a"><span class="id">06</span><b>Qizil</b>Красный</div>
+      <div class="tile" style="background:#e58ab1"><span class="id">07</span><b>Pushti</b>Розовый</div>
+      <div class="tile" style="background:#d96a3c"><span class="id">08</span><b>To'q sariq</b>Оранжевый</div>
+      <div class="tile" style="background:#e8c547;color:#2a1e10"><span class="id" style="color:#7a5c1e">09</span><b>Sariq</b>Жёлтый</div>
+      <div class="tile" style="background:#5c7a5a"><span class="id">10</span><b>Yashil</b>Зелёный</div>
+      <div class="tile" style="background:#1e4a73"><span class="id">11</span><b>Ko'k</b>Синий</div>
+      <div class="tile" style="background:#7c5ea8"><span class="id">12</span><b>Siyohrang</b>Фиолетовый</div>
+    </div>
+
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-12px">
+      Ekran ikki tilli (ruscha + o'zbekcha lotin). Xodim bitta plitani bosadi — o'rtacha qaror vaqti &lt;2 soniya.
+      O'qish ko'nikmasi shart emas: foto plitkada qaror qabul qilinadi. Bu dizayn Koton va Mavi Jeans
+      Turkiyadagi o'xshash ishchi profilida muvaffaqiyatli ishlagan.
+    </p>
+
+    <h4>2-daraja: Ko'k oilasi misoli</h4>
+    <table>
+      <thead><tr><th>Kod</th><th>Ko'rinish nomi</th><th>Xodim ko'radi</th><th>Hex</th></tr></thead>
+      <tbody>
+        <tr><td>11-01</td><td>Navy</td><td>Ko'k</td><td style="font-family:monospace">#1A2B4C</td></tr>
+        <tr><td>11-02</td><td>Royal Blue</td><td>Ko'k</td><td style="font-family:monospace">#1E47C5</td></tr>
+        <tr><td>11-03</td><td>Sky Blue</td><td>Ko'k</td><td style="font-family:monospace">#87CEEB</td></tr>
+        <tr><td>11-04</td><td>Denim Blue</td><td>Ko'k</td><td style="font-family:monospace">#4A6FA5</td></tr>
+        <tr><td>11-05</td><td>Teal</td><td>Ko'k</td><td style="font-family:monospace">#008080</td></tr>
+        <tr><td>11-08</td><td>Cobalt</td><td>Ko'k</td><td style="font-family:monospace">#0047AB</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13.5px">
+      2-daraja kodi <b>xaridor tomonidan PO paytida</b> belgilanadi, ombor xodimi emas.
+      Xodim faqat oilani tasdiqlaydi. Bu ajratish muhim: <b>xarid qarorlari xarid bosqichida, qabul bosqichida emas.</b>
+    </p>
+
+    <h3>3.2 Standart o'lcham to'ri — kategoriyaga qarab</h3>
+    <table>
+      <thead><tr><th>Kategoriya</th><th>O'lchamlar</th><th>Izoh</th></tr></thead>
+      <tbody>
+        <tr><td>Ust-bosh, ko'ylak, tashqi kiyim</td><td>XS, S, M, L, XL, XXL</td><td>3XL — faqat sotuv &gt;3% bo'lsa qo'shiladi</td></tr>
+        <tr><td>Pastki kiyim (jinsi, shim)</td><td>26, 27, 28 … 36</td><td>Bel dyuymda</td></tr>
+        <tr><td>Poyabzal</td><td>35, 36, 37 … 41</td><td>EU o'lchami</td></tr>
+        <tr><td>Aksessuarlar</td><td>OS (bir o'lcham)</td><td>—</td></tr>
+        <tr><td>Ichki kiyim</td><td>70A, 70B, 75A …</td><td>Lenta + kosa</td></tr>
+      </tbody>
+    </table>
+
+    <h3>3.3 SKU identifikatsiya — boshidan oxirigacha</h3>
+    <div class="card subtle" style="padding:18px 20px">
+<pre style="margin:0;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;color:var(--ink)">SKU = Model × Rang kodi × O'lcham
+Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
+     = DW1043-1101-M</pre>
+    </div>
+
+    <p>
+      Bahor 2026 kolleksiyasidan bitta real model: <b>ayollar uchun oddiy futbolka DW1043, 4 rang × 5 o'lcham = 20 SKU</b>,
+      har birida noyob EAN-13:
+    </p>
+    <table>
+      <thead><tr><th>Model</th><th>Rang</th><th>Nom</th><th>O'lcham</th><th>SKU</th><th>EAN-13</th></tr></thead>
+      <tbody>
+        <tr><td>DW1043</td><td>11-01</td><td>Navy</td><td>XS</td><td>DW1043-1101-XS</td><td style="font-family:monospace">4870000104301</td></tr>
+        <tr><td>DW1043</td><td>11-01</td><td>Navy</td><td>S</td><td>DW1043-1101-S</td><td style="font-family:monospace">4870000104318</td></tr>
+        <tr><td>DW1043</td><td>11-01</td><td>Navy</td><td>M</td><td>DW1043-1101-M</td><td style="font-family:monospace">4870000104325</td></tr>
+        <tr><td>DW1043</td><td>11-01</td><td>Navy</td><td>L</td><td>DW1043-1101-L</td><td style="font-family:monospace">4870000104332</td></tr>
+        <tr><td>DW1043</td><td>11-01</td><td>Navy</td><td>XL</td><td>DW1043-1101-XL</td><td style="font-family:monospace">4870000104349</td></tr>
+        <tr><td>DW1043</td><td>01-01</td><td>Black</td><td>XS</td><td>DW1043-0101-XS</td><td style="font-family:monospace">4870000104356</td></tr>
+        <tr><td style="color:var(--muted)" colspan="6">… 14 ta yana SKU</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13.5px;color:var(--muted)">
+      EAN-13 prefiksi <b>487</b> — O'zbekistonning GS1 davlat kodi. Dilmuss bir martalik <b>GS1 Uzbekistan</b> kompaniya prefiksini ro'yxatdan o'tkazishi kerak (~$1 200 / 14,7 mln so'm).
+      Ichki yaratilgan barcha shtrix-kodlar global miqyosda noyob bo'ladi.
+    </p>
+
+    <div class="callout sage">
+      <span class="k">Bu nima ochadi</span>
+      <b>Bitta skan</b> = model, rang, o'lcham, mavsum, kategoriya, yetkazib beruvchi, xarid narxi, chakana narx darhol.
+      <b>POS sotuvlari SKU bo'yicha avtomatik yig'iladi</b> — sell-through, buzilgan o'lcham, to'ldirish analitikasi alohida hisobot loyihasi emas, kunlik faoliyatning tabiiy mahsulotidir.
+      <b>30 ta operator kerak bo'lmaydi</b>, chunki ma'lumot kiritish alohida qadam bo'lmaydi.
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4 ============ -->
+<section id="s4" class="sec">
+  <div class="wrap">
+    <h2><span class="num">04</span>Avtomatlashtirish va jihozlar</h2>
+    <p><b>Ketma-ketlik tanlovdan muhimroq.</b> Rang master'idan oldin RFID sotib olish — muvaffaqiyatsizlikka eng qimmat yo'l.</p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="p">1</div>
+        <div class="m">0–3 oy</div>
+        <div class="t">Yangi jihoz yo'q. Faqat standartlashtirish: rang/o'lcham master'i, yetkazib beruvchi shtrix-kod sharti, 1 kategoriya pilot.</div>
+      </div>
+      <div class="phase active">
+        <div class="p">2</div>
+        <div class="m">3–9 oy</div>
+        <div class="t">Skanerlar, sensor ekranlar, put-to-light devor. Kiritish operatorlari 30 → 10.</div>
+      </div>
+      <div class="phase">
+        <div class="p">3</div>
+        <div class="m">9–18 oy</div>
+        <div class="t">Konveyer sortirovkasi — faqat 25 000 dona/kun'dan oshsa. Aks holda put-to-light + qo'l arzonroq.</div>
+      </div>
+      <div class="phase">
+        <div class="p">4</div>
+        <div class="m">18–30 oy</div>
+        <div class="t">Dona darajasida RFID (Zara/Uniqlo standarti). Faqat 1–3-bosqichlar ishlayotgan bo'lsa.</div>
+      </div>
+      <div class="phase" style="grid-column:span 2;background:#fbf4e1;border-color:#e5d49e">
+        <div class="p" style="color:#8a6b1e">⚠</div>
+        <div class="m" style="color:#8a6b1e">Sotib OLMASLIK kerak</div>
+        <div class="t" style="color:#6b501a">Enterprise WMS (SAP EWM, Manhattan). AS/RS (avtomatik saqlash). AGV/AMR robotlar. Masshtab yetarli emas — hozir ortiqcha xarajat.</div>
+      </div>
+    </div>
+
+    <h3>2-bosqich jihozlari — vazifasi</h3>
+    <table>
+      <thead><tr><th>Jihoz</th><th>Vazifa</th><th>Nega</th></tr></thead>
+      <tbody>
+        <tr><td><b>Zebra TC22/TC27</b> (yoki Honeywell CT45; Urovo DT40 — arzon CIS muqobili)</td><td>PC stantsiyalarini almashtirish</td><td>Bitta skaner = bitta operatorning butun ish jarayoni. "PC'ga borib yozish" halqasi yo'qoladi.</td></tr>
+        <tr><td><b>Mobil arava</b> (planshet + Zebra ZD621 printer + yorliq g'alasi)</td><td>Shtrix-kodsiz kelgan bozor mollari uchun</td><td>Arava molga boradi, mol stolga emas. SKU yorlig'i joyida chop etiladi.</td></tr>
+        <tr><td><b>Sensor ekran kiosklar</b> (15" sanoat sifatli)</td><td>Xodim tomonidan ma'lumot kiritish</td><td>12 rang plitka + o'lcham tugmalari. Klaviatura yo'q, xato yozish yo'q.</td></tr>
+        <tr><td><b>Put-to-light devor</b></td><td>"Qaysi do'kon?" qarorini almashtirish</td><td>Tizim to'g'ri yacheykani yoqadi, xodim skan qilib tashlaydi. Taqsimot mehnati ~70% kamayadi.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13.5px"><b>2-bosqich taxminiy xarajat:</b> $80–150K (~980M – 1,84 mlrd so'm). Mehnat tejashda qoplanish &lt;12 oy.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 ============ -->
+<section id="s5" class="sec">
+  <div class="wrap">
+    <h2><span class="num">05</span>Ombor qayta loyihalash — 14 silosdan oqimga</h2>
+
+    <h3>5.1 Strukturaviy muammo</h3>
+    <p>Hozir har bir kategoriya menejeri bir kishiga to'g'ri kelmaydigan 3 ta rolni birga olib boradi:</p>
+    <div class="three">
+      <div class="card" style="border-left:3px solid var(--rust)">
+        <h4 style="color:var(--rust)">Xaridchi</h4>
+        <p style="font-size:13.5px;margin:0">Nimani sotib olish kerak — qaror qiladi</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--rust)">
+        <h4 style="color:var(--rust)">Qabul qiluvchi</h4>
+        <p style="font-size:13.5px;margin:0">Nima keldi — tekshiradi</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--rust)">
+        <h4 style="color:var(--rust)">Taqsimlovchi</h4>
+        <p style="font-size:13.5px;margin:0">Qaysi do'konga boradi — qaror qiladi</p>
+      </div>
+    </div>
+    <p style="font-size:13.5px;margin-top:16px">
+      Bu — <b>vazifalar ajralmasligi</b> muammosining klassik misoli. Sifat nazorati yo'q, markaziy taqsimot mantig'i yo'q —
+      bitta global optimum o'rniga 14 ta mos kelmaydigan mahalliy optimum.
+    </p>
+
+    <h3>5.2 Maqsadli tashkiliy tuzilma</h3>
+    <div class="flow">
+      <svg viewBox="0 0 920 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" class="svg-arrow"/>
+          </marker>
+        </defs>
+        <!-- Merchandising -->
+        <rect x="110" y="20" width="700" height="64" rx="4" fill="#1e4a73"/>
+        <text x="460" y="45" text-anchor="middle" class="svg-label" fill="#fff" style="font-size:13px">MERCHANDISING</text>
+        <text x="460" y="64" text-anchor="middle" fill="#c3d4e4" style="font:500 11.5px Inter,sans-serif">Kategoriya xaridchi-planirovshiklar (14 → 8) · Rejalashtirish · Taqsimlash</text>
+        <text x="460" y="79" text-anchor="middle" fill="#c3d4e4" style="font:500 10.5px Inter,sans-serif">Egaligi: buyum master'i, rang master'i, o'lcham to'ri, PO shartlari</text>
+
+        <!-- arrow down -->
+        <line x1="460" y1="84" x2="460" y2="115" class="svg-line" marker-end="url(#ar2)"/>
+        <text x="480" y="103" class="svg-label-muted">PO + ASN</text>
+
+        <!-- DC -->
+        <rect x="110" y="120" width="700" height="130" rx="4" fill="#faf7f1" stroke="#1e4a73" stroke-width="1.5"/>
+        <text x="460" y="144" text-anchor="middle" class="svg-label" style="font-size:13px">DC OPERATSIYALAR</text>
+
+        <rect x="140" y="160" width="140" height="60" rx="3" fill="#fff" stroke="#c4bba8"/>
+        <text x="210" y="186" text-anchor="middle" class="svg-label-sm">Qabul</text>
+        <text x="210" y="202" text-anchor="middle" class="svg-label-muted">Receive</text>
+
+        <line x1="280" y1="190" x2="306" y2="190" class="svg-line" marker-end="url(#ar2)"/>
+
+        <rect x="306" y="160" width="140" height="60" rx="3" fill="#fff" stroke="#c4bba8"/>
+        <text x="376" y="186" text-anchor="middle" class="svg-label-sm">QA / Yorliqlash</text>
+        <text x="376" y="202" text-anchor="middle" class="svg-label-muted">Tag</text>
+
+        <line x1="446" y1="190" x2="472" y2="190" class="svg-line" marker-end="url(#ar2)"/>
+
+        <rect x="472" y="160" width="140" height="60" rx="3" fill="#fff" stroke="#c4bba8"/>
+        <text x="542" y="186" text-anchor="middle" class="svg-label-sm">Saralash/Qadoqlash</text>
+        <text x="542" y="202" text-anchor="middle" class="svg-label-muted">Sort/Pack</text>
+
+        <line x1="612" y1="190" x2="638" y2="190" class="svg-line" marker-end="url(#ar2)"/>
+
+        <rect x="638" y="160" width="140" height="60" rx="3" fill="#fff" stroke="#c4bba8"/>
+        <text x="708" y="186" text-anchor="middle" class="svg-label-sm">Jo'natma</text>
+        <text x="708" y="202" text-anchor="middle" class="svg-label-muted">Dispatch</text>
+
+        <text x="460" y="240" text-anchor="middle" class="svg-label-muted">Yagona oqim — kategoriya silosi yo'q</text>
+
+        <!-- down -->
+        <line x1="460" y1="250" x2="460" y2="280" class="svg-line" marker-end="url(#ar2)"/>
+        <text x="460" y="300" text-anchor="middle" class="svg-label">55 (→ N) do'konlar · POS ma'lumoti taqsimot engine'iga kunlik qaytadi</text>
+      </svg>
+    </div>
+
+    <h3>5.3 Xodimlar tuzilishini qayta qurish</h3>
+    <table>
+      <thead><tr><th>Hozirgi rol</th><th class="r">Bugun</th><th class="r">Maqsad</th><th>Harakat</th></tr></thead>
+      <tbody>
+        <tr><td>Kategoriya menejerlari</td><td class="r">14</td><td class="r">8</td><td>Birlashtirish (Tops + Knitwear, Denim + Shim). Taqsimlash vazifasidan xalos qilish.</td></tr>
+        <tr><td>Sortirovkachilar</td><td class="r">84–112</td><td class="r">30–40</td><td>Kategoriya-spetsifik sortdan yagona ko'p-ko'nikmali liniyaga.</td></tr>
+        <tr><td>Kiritish operatorlari</td><td class="r">30</td><td class="r">4–6</td><td>80% shtrix-kod + skaner orqali yo'q bo'ladi. Qolgani istisnolarni ko'radi.</td></tr>
+        <tr><td>Xavfsizlik yorliqchilari</td><td class="r">~15</td><td class="r">8</td><td>Narx yorliqchilari bilan birlashadi.</td></tr>
+        <tr><td>Narx yorliqchilari</td><td class="r">~15</td><td class="r">(birlashgan)</td><td>Yuqorida.</td></tr>
+        <tr><td>Do'kon taqsimlovchilari</td><td class="r">joylashtirilgan</td><td class="r">3</td><td>Markaziy planirovshik — engine ishlaydi.</td></tr>
+        <tr><td>Yuklovchilar/jo'natma</td><td class="r">~20</td><td class="r">15</td><td>Jismoniy mehnat qoladi, biroz kamayadi.</td></tr>
+        <tr class="tot"><td><b>Jami</b></td><td class="r"><b>~178–204</b></td><td class="r"><b>~68–82</b></td><td><b>~55–60% qisqarish</b></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="k">Muhim — bu ishdan bo'shatish emas</span>
+      12–18 oylik o'tish davri. Qayta o'qitish, yangi ochilayotgan do'konlarga ko'chirish, tabiiy ketish.
+      Ommaviy ishdan bo'shatishning siyosiy, huquqiy va pul qiymati loyihani cho'ktiradi (D.3 ilovaga qarang).
+    </div>
+
+    <h3>5.4 Xodimlar kamayishi — har bir qadamda qanday ishlaydi</h3>
+    <p>
+      Savol: ~180 kishidan ~80 kishiga qanday yetamiz — bir ham kishini ommaviy ishdan bo'shatmasdan?
+      Quyida har bosqichda <b>nima o'zgaradi</b>, <b>qaysi rol yo'qoladi</b>, va
+      <b>odamlar qayerga boradi</b> — aniq ko'rsatilgan.
+    </p>
+
+    <h4>Xodimlar soni — 18 oylik vaqt grafigi</h4>
+    <div class="flow">
+      <svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="210" x2="880" y2="210" stroke="#c4bba8"/>
+        <line x1="60" y1="30" x2="60" y2="210" stroke="#c4bba8"/>
+
+        <!-- Y labels -->
+        <text x="54" y="45" text-anchor="end" font-size="11" fill="#6b6f78">200</text>
+        <text x="54" y="90" text-anchor="end" font-size="11" fill="#6b6f78">150</text>
+        <text x="54" y="135" text-anchor="end" font-size="11" fill="#6b6f78">100</text>
+        <text x="54" y="180" text-anchor="end" font-size="11" fill="#6b6f78">50</text>
+        <text x="54" y="213" text-anchor="end" font-size="11" fill="#6b6f78">0</text>
+
+        <!-- X labels (months) -->
+        <text x="60" y="228" font-size="11" fill="#6b6f78">M0</text>
+        <text x="200" y="228" font-size="11" fill="#6b6f78">M3</text>
+        <text x="340" y="228" font-size="11" fill="#6b6f78">M6</text>
+        <text x="480" y="228" font-size="11" fill="#6b6f78">M9</text>
+        <text x="620" y="228" font-size="11" fill="#6b6f78">M12</text>
+        <text x="760" y="228" font-size="11" fill="#6b6f78">M15</text>
+        <text x="880" y="228" font-size="11" fill="#6b6f78" text-anchor="end">M18</text>
+
+        <!-- Phase zones -->
+        <rect x="60" y="30" width="90" height="180" fill="#faf7f1" opacity="0.8"/>
+        <rect x="150" y="30" width="140" height="180" fill="#f2ede2" opacity="0.6"/>
+        <rect x="290" y="30" width="200" height="180" fill="#faf7f1" opacity="0.8"/>
+        <rect x="490" y="30" width="230" height="180" fill="#f2ede2" opacity="0.6"/>
+        <rect x="720" y="30" width="160" height="180" fill="#faf7f1" opacity="0.8"/>
+
+        <!-- Phase labels -->
+        <text x="105" y="22" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b6f78">Ph 0</text>
+        <text x="220" y="22" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b6f78">Ph 1</text>
+        <text x="390" y="22" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b6f78">Ph 2</text>
+        <text x="605" y="22" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b6f78">Ph 3</text>
+        <text x="800" y="22" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b6f78">Ph 4</text>
+
+        <!-- Curve: 180 → 180 → 150 → 130 → 80 -->
+        <polyline points="60,48 150,48 290,48 490,75 620,95 720,160 880,165"
+                  stroke="#1e4a73" stroke-width="2.5" fill="none"/>
+
+        <!-- Data points -->
+        <circle cx="60" cy="48" r="5" fill="#1e4a73"/>
+        <text x="70" y="44" font-size="11" font-weight="700" fill="#1e4a73">~180</text>
+
+        <circle cx="290" cy="48" r="5" fill="#1e4a73"/>
+        <text x="300" y="44" font-size="11" font-weight="700" fill="#1e4a73">~180</text>
+
+        <circle cx="490" cy="75" r="5" fill="#1e4a73"/>
+        <text x="500" y="71" font-size="11" font-weight="700" fill="#1e4a73">~148 (−32)</text>
+
+        <circle cx="620" cy="95" r="5" fill="#1e4a73"/>
+        <text x="630" y="91" font-size="11" font-weight="700" fill="#1e4a73">~128 (−20)</text>
+
+        <circle cx="720" cy="160" r="5" fill="#b0451f"/>
+        <text x="660" y="156" font-size="11" font-weight="700" fill="#b0451f">Ph 4 boshlanadi</text>
+
+        <circle cx="880" cy="165" r="5" fill="#5c7a5a"/>
+        <text x="870" y="155" text-anchor="end" font-size="11" font-weight="700" fill="#5c7a5a">~80</text>
+
+        <!-- Redeployment track -->
+        <polyline points="60,200 290,200 490,190 620,185 720,170 880,165"
+                  stroke="#5c7a5a" stroke-width="1.5" stroke-dasharray="4,3" fill="none"/>
+        <text x="480" y="205" font-size="10" fill="#5c7a5a" font-style="italic">Yangi do'konlarga ko'chirish + tabiiy ketish kumulativ</text>
+      </svg>
+    </div>
+
+    <h4>Bosqich 0 — Oylar 0–2 · Kamayish: <span style="color:#5c7a5a">0</span></h4>
+    <div class="card">
+      <p style="margin-top:0"><b>Nima bo'ladi:</b> Faqat boshqaruv va masterlar quriladi. Hali birorta qadam avtomatlashmaydi.</p>
+      <p style="margin-bottom:0"><b>Mexanizm:</b> Yollash to'xtatiladi — bu davrdan boshlab ketgan xodim o'rniga yangi kishi olinmaydi (ba'zi kalit pozitsiyalardan tashqari).
+      Bu "yashirin" qisqarishning birinchi qadami. Fashion-ombor sohasida Toshkentda yillik tabiiy kadrlar aylanmasi ~15–20%, ya'ni 2 oyda ~5–6 kishi o'zi ketadi.</p>
+    </div>
+
+    <h4>Bosqich 1 — Oylar 2–5 · Kamayish: <span style="color:#5c7a5a">0</span> (parallel ish)</h4>
+    <div class="card">
+      <p style="margin-top:0"><b>Nima bo'ladi:</b> Pilot kategoriya eski va yangi tizimda parallel ishlaydi. Xatolarni qidirish vaqti.</p>
+      <p><b>Ichki harakatlar:</b></p>
+      <ul style="margin:0 0 6px">
+        <li>6–10 xodim <b>field-intake rep</b>ga o'qitiladi (Chorsu, Yangiobod, Olay mahallalaridan) — yangi rol.</li>
+        <li>2–3 sortirovkachi pilot liniyaga trening uchun ko'chadi.</li>
+        <li>Yollash to'xtatuvi davom etadi: 3 oyda yana ~8–10 kishi tabiiy ravishda ketadi, o'rniga qo'yilmaydi.</li>
+      </ul>
+      <p style="margin-bottom:0;color:var(--muted);font-size:13px"><i>Son o'zgarmasa ham, tarkib o'zgarmoqda — yangi rollar paydo bo'lmoqda.</i></p>
+    </div>
+
+    <h4>Bosqich 2 — Oylar 5–9 · Kamayish: <span style="color:var(--rust)">−30 dan −40 ga</span></h4>
+    <p>Eng katta bitta qisqarish aynan shu yerda — jihoz va skanerlar kiritish operatorlari va yorliqchilar ehtiyojini olib tashlaydi.</p>
+    <table>
+      <thead><tr><th>Qaysi rol</th><th class="r">Bugun</th><th class="r">Keyin</th><th>Nima o'zgaradi (mexanizm)</th><th>Odamlar qayerga boradi</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Kiritish operatorlari</b></td>
+          <td class="r">30</td>
+          <td class="r">10</td>
+          <td>Supplier allaqachon shtrix-kodli yuboradi. Skan bir yozishdan 20× tez. "Excel'ga yozish" qadami butunlay yo'q.</td>
+          <td>~8 kishi → put-to-light operatoriga o'qitish (DC'da qoladi)<br>~5 kishi → yangi do'konlarga<br>~5 kishi → field-intake repiga<br>~2 kishi → tabiiy ketish</td>
+        </tr>
+        <tr>
+          <td><b>Xavfsizlik + narx yorliqchilari</b></td>
+          <td class="r">30</td>
+          <td class="r">8</td>
+          <td>2 ta alohida stantsiya <b>bitta</b> birlashgan stantsiyaga aylanadi: bir kishi bir qabulda har ikkala yorliqni chop etadi.</td>
+          <td>~10 kishi → put-to-light / sort jamoasiga<br>~8 kishi → yangi do'konlarga (do'kon tarmog'i o'sayotgan)<br>~4 kishi → tabiiy ketish (backfill yo'q)</td>
+        </tr>
+        <tr>
+          <td colspan="5" style="background:var(--paper-2);padding:10px;font-weight:700;color:var(--navy)">Jami: 60 → 18 rol. Lekin 22 kishi yangi DC rollarida qoladi (put-to-light, QA kombo stantsiya, field-intake). <b>Net DC kamayishi: ~30–40.</b></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Bosqich 3 — Oylar 9–14 · Kamayish: <span style="color:var(--rust)">−20</span></h4>
+    <p>Taqsimot engine jonli bo'ladi. 14 ta menejer boshiga to'planuvchi "qaysi do'konga?" qarorlari modelga o'tadi.</p>
+    <table>
+      <thead><tr><th>Qaysi rol</th><th class="r">Bugun</th><th class="r">Keyin</th><th>Mexanizm</th><th>Odamlar qayerga</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Do'kon taqsimlovchilari</b> (hozir kategoriya menejerlariga singib ketgan)</td>
+          <td class="r">10 ekv.</td>
+          <td class="r">3</td>
+          <td>Engine SKU × do'kon darajasida kunlik ro'yxat chiqaradi. Planirovshik istisnolarni bir bosishda tasdiqlaydi.</td>
+          <td>3 ta engine bilan ishlaydigan planirovshikka aylanadi (rol yuksaltirish). Qolganlari kategoriya menejerlari 4-bosqichda birlashguncha o'z pozitsiyalarida qoladi.</td>
+        </tr>
+        <tr>
+          <td><b>Kiritish operatorlari</b> (qolgan)</td>
+          <td class="r">10</td>
+          <td class="r">5</td>
+          <td>POS ma'lumoti pipeline'i barqaror ishlayapti. Istisnolar kamayadi.</td>
+          <td>3 kishi → ma'lumot sifati analitikasiga<br>2 kishi → yangi do'konlarga</td>
+        </tr>
+        <tr>
+          <td><b>Tabiiy ketish</b> (butun DC bo'yicha)</td>
+          <td class="r">—</td>
+          <td class="r">—</td>
+          <td>5 oy ichida ~15–20 kishi tabiiy ravishda ishdan ketadi — backfill qilinmaydi.</td>
+          <td>Yo'q (o'z ishida qoldiradi)</td>
+        </tr>
+        <tr>
+          <td colspan="5" style="background:var(--paper-2);padding:10px;font-weight:700;color:var(--navy)">Net kamayishi: ~20. Hech kim ishdan bo'shatilmaydi — qayta taqsim, yuksaltirish va tabiiy ketish orqali.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Bosqich 4 — Oylar 12–18 · Kamayish: <span style="color:var(--rust)">−40 dan −60 ga</span></h4>
+    <p>Eng katta struktur qisqarishi. DC 14 kategoriya bo'limidan bitta ko'p-ko'nikmali oqim liniyasiga aylanadi.</p>
+    <table>
+      <thead><tr><th>Qaysi rol</th><th class="r">Bugun</th><th class="r">Keyin</th><th>Mexanizm</th><th>Odamlar qayerga</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Sortirovkachilar</b></td>
+          <td class="r">84–112</td>
+          <td class="r">30–40</td>
+          <td>14 kategoriya bo'limi → bitta cross-dock liniya. SKU yorlig'i borligi uchun rang/o'lchamga ajratish keraksiz. Qolgan ish: put-to-light oldida skan+tashlash.</td>
+          <td>~20 kishi → put-to-light va QA kombo stantsiyasi (yangi DC rollari)<br>~15 kishi → yangi ochilgan do'konlarga (tarmoq 55 → 75+ bo'lgan)<br>~15 kishi → 18 oy davomida tabiiy ketish<br>~5 kishi → rad etilgan rollar uchun kompensatsiyali chiqish (Mehnat Kodeksi art.99–101, ~$700/kishi)</td>
+        </tr>
+        <tr>
+          <td><b>Kategoriya menejerlari</b></td>
+          <td class="r">14</td>
+          <td class="r">8</td>
+          <td>Kategoriyalar birlashadi: Tops+Knitwear, Denim+Shim, Outerwear+Suits. Qabul va taqsimot rollari olinib tashlanadi — faqat <b>Xaridchi-Planirovshik</b>.</td>
+          <td>6 ta rol yo'q bo'ladi. Biroq qolgan 8 ta <b>kengaytirilgan P&amp;L bilan, yuqoriroq maosh va status bilan</b> qayta ta'riflanadi — promotsiya sifatida. Chiqganlardan: 3 kishi yangi do'kon rahbariyatiga, 2 kishi Category Buyer rollariga Toshkent tashqarisida, 1 kishi brend tizim rivojlanishiga.</td>
+        </tr>
+        <tr>
+          <td><b>Yuklovchilar</b></td>
+          <td class="r">~20</td>
+          <td class="r">15</td>
+          <td>Kartonizatsiya avtomatik ("pre-cartonized by dispatch"). Yuklash vaqti qisqaradi.</td>
+          <td>3 kishi → yangi do'kon logistika jamoalariga<br>2 kishi → tabiiy ketish</td>
+        </tr>
+        <tr>
+          <td colspan="5" style="background:var(--paper-2);padding:10px;font-weight:700;color:var(--navy)">Net kamayishi: ~50. 4-bosqich oxirida jami DC xodimi: ~68–82.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>100+ kishining yo'nalishi — umumiy suzuvchi balans</h4>
+    <div class="bars">
+      <div class="bar-row"><span class="lab">Yangi do'konlarga ko'chirish (55 → 75+)</span><span class="bar-track"><span class="bar-fill sage" style="width:40%">~40 kishi (40%)</span></span></div>
+      <div class="bar-row"><span class="lab">Tabiiy ketish (yollash to'xtatuvi 18 oy)</span><span class="bar-track"><span class="bar-fill gold" style="width:30%">~30 kishi (30%)</span></span></div>
+      <div class="bar-row"><span class="lab">Yangi DC rollariga o'qitish (put-to-light, QA, field-rep)</span><span class="bar-track"><span class="bar-fill" style="width:22%">~22 kishi (22%)</span></span></div>
+      <div class="bar-row"><span class="lab">Promotsiya / ko'chirish (Buyer-Planner, planirovshik)</span><span class="bar-track"><span class="bar-fill rust" style="width:6%">~6 kishi (6%)</span></span></div>
+      <div class="bar-row"><span class="lab">Kompensatsiyali chiqish (&lt;5%)</span><span class="bar-track"><span class="bar-fill" style="width:5%;background:#8b9094">~5–8 kishi</span></span></div>
+    </div>
+
+    <h4>Nega hozirgi miqyosdagi ishdan bo'shatish shart emas</h4>
+    <div class="three">
+      <div class="card" style="border-top:3px solid var(--sage)">
+        <h4 style="color:var(--sage)">1. O'sish yutish</h4>
+        <p style="font-size:13.5px;margin:0">18 oyda tarmoq 55 → 75+ do'konga o'sadi. Har yangi do'kon 2–3 ombor/qabul pozitsiyasi yaratadi — ya'ni ~40–50 yangi joy. DC qisqartirish aynan shu oqimga to'g'ri keladi.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--sage)">
+        <h4 style="color:var(--sage)">2. Tabiiy aylanma</h4>
+        <p style="font-size:13.5px;margin:0">Tashkent ombor sohasida yillik kadrlar aylanmasi ~15–20%. 18 oy = ~25–30% kumulativ. Backfill hiring to'xtatilishi bilan ~30 kishi avtomatik yo'qoladi.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--sage)">
+        <h4 style="color:var(--sage)">3. Qayta o'qitish</h4>
+        <p style="font-size:13.5px;margin:0">Put-to-light operatorligi, field-intake repi, QA-stantsiya xodimi — barchasi yangi rollar. Mavjud xodim 2–3 haftalik treningdan o'tib ishga kirishadi. Bu eng arzon va eng tez.</p>
+      </div>
+    </div>
+
+    <div class="callout navy">
+      <span class="k">Muhim — vaqt load-bearing</span>
+      <b>12–18 oy nima uchun muhim:</b> O'sish, aylanma va qayta o'qitish — bularning hammasi vaqt talab qiladi.
+      Agar bu o'tish 6 oyda qilinsa, ishdan bo'shatishdan boshqa chora qolmaydi — va u ~$73K to'g'ridan-to'g'ri kompensatsiya narxi,
+      ommaviy axborot vositalarining e'tibori, kasaba uyushmasi bilan muammolar, mehnatkashlarning bosimini keltirib chiqaradi.
+      <b>Sekinroq qilish aslida arzonroq va xavfsizroq</b> — bu loyihaning ohang tabiatining asosida yotgan bir xil arifmetik.
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6 ============ -->
+<section id="s6" class="sec">
+  <div class="wrap">
+    <h2><span class="num">06</span>"Kelajak" jarayoni</h2>
+
+    <h3>6.1 Boshidan oxirigacha oqim</h3>
+    <div class="flow">
+      <svg viewBox="0 0 960 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" class="svg-arrow"/>
+          </marker>
+        </defs>
+        <!-- 8 step flow in 2 rows -->
+        <g font-family="Inter,sans-serif">
+          <!-- row 1 -->
+          <circle cx="80" cy="60" r="22" fill="#1e4a73"/>
+          <text x="80" y="66" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">1</text>
+          <text x="80" y="102" text-anchor="middle" font-size="12" font-weight="600">Xaridchi PO</text>
+          <text x="80" y="118" text-anchor="middle" font-size="10.5" fill="#6b6f78">tizimga qo'yadi</text>
+
+          <line x1="105" y1="60" x2="200" y2="60" class="svg-line" marker-end="url(#ar3)"/>
+
+          <circle cx="230" cy="60" r="22" fill="#1e4a73"/>
+          <text x="230" y="66" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">2</text>
+          <text x="230" y="102" text-anchor="middle" font-size="12" font-weight="600">Yetkazib beruvchi</text>
+          <text x="230" y="118" text-anchor="middle" font-size="10.5" fill="#6b6f78">ASN bilan jo'natadi</text>
+
+          <line x1="255" y1="60" x2="350" y2="60" class="svg-line" marker-end="url(#ar3)"/>
+
+          <circle cx="380" cy="60" r="22" fill="#1e4a73"/>
+          <text x="380" y="66" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">3</text>
+          <text x="380" y="102" text-anchor="middle" font-size="12" font-weight="600">Qabul</text>
+          <text x="380" y="118" text-anchor="middle" font-size="10.5" fill="#6b6f78">SSCC skani</text>
+
+          <line x1="405" y1="60" x2="500" y2="60" class="svg-line" marker-end="url(#ar3)"/>
+
+          <circle cx="530" cy="60" r="22" fill="#1e4a73"/>
+          <text x="530" y="66" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">4</text>
+          <text x="530" y="102" text-anchor="middle" font-size="12" font-weight="600">QA + Yorliq</text>
+          <text x="530" y="118" text-anchor="middle" font-size="10.5" fill="#6b6f78">12 plitka kiosk</text>
+
+          <!-- connector to row 2 -->
+          <path d="M 530 82 L 530 140 L 80 140 L 80 220" class="svg-line" fill="none" marker-end="url(#ar3)"/>
+
+          <!-- row 2 -->
+          <circle cx="80" cy="250" r="22" fill="#b0451f"/>
+          <text x="80" y="256" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">5</text>
+          <text x="80" y="292" text-anchor="middle" font-size="12" font-weight="600">Taqsimot</text>
+          <text x="80" y="308" text-anchor="middle" font-size="10.5" fill="#6b6f78">engine (inson emas)</text>
+
+          <line x1="105" y1="250" x2="200" y2="250" class="svg-line" marker-end="url(#ar3)"/>
+
+          <circle cx="230" cy="250" r="22" fill="#b0451f"/>
+          <text x="230" y="256" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">6</text>
+          <text x="230" y="292" text-anchor="middle" font-size="12" font-weight="600">Put-to-light</text>
+          <text x="230" y="308" text-anchor="middle" font-size="10.5" fill="#6b6f78">do'konga saralash</text>
+
+          <line x1="255" y1="250" x2="350" y2="250" class="svg-line" marker-end="url(#ar3)"/>
+
+          <circle cx="380" cy="250" r="22" fill="#b0451f"/>
+          <text x="380" y="256" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">7</text>
+          <text x="380" y="292" text-anchor="middle" font-size="12" font-weight="600">Jo'natish</text>
+          <text x="380" y="308" text-anchor="middle" font-size="10.5" fill="#6b6f78">do'kon yorliqli karton</text>
+
+          <line x1="405" y1="250" x2="500" y2="250" class="svg-line" marker-end="url(#ar3)"/>
+
+          <circle cx="530" cy="250" r="22" fill="#b0451f"/>
+          <text x="530" y="256" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">8</text>
+          <text x="530" y="292" text-anchor="middle" font-size="12" font-weight="600">Do'kon qabuli</text>
+          <text x="530" y="308" text-anchor="middle" font-size="10.5" fill="#6b6f78">POS kunlik uzatadi</text>
+
+          <!-- feedback -->
+          <path d="M 555 250 C 700 250, 800 180, 800 150 C 800 90, 700 80, 620 80" stroke="#b0451f" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#ar3)"/>
+          <text x="780" y="170" text-anchor="middle" fill="#b0451f" font-size="11" font-weight="600">POS qayta aloqasi</text>
+        </g>
+      </svg>
+    </div>
+
+    <h3>6.2 Xodimlar uchun oson qilish — UX intizomi</h3>
+    <p>
+      Xodim qarshiligi — <b>UX muammosi</b>, intizom muammosi emas. "Rang va o'lchamni Excel'ga yozing" — haqiqatan qiyin.
+      Yangi talab haqiqatan oson bo'lishi kerak:
+    </p>
+    <ul style="margin:0 0 10px">
+      <li><b>12 ta katta foto plitka</b> — bir marta bosish.</li>
+      <li><b>Hech qachon yozish kerak emas.</b> O'lchamlar — tugma. Miqdor +/− tugmalari.</li>
+      <li><b>Supplier yuqorida ishni qiladi.</b> Importlangan mollar oldindan SKU-shtrix-kodli keladi.</li>
+      <li><b>Yengil gamifikatsiya</b> — kunlik ko'rsatkich tablosi, oylik yuqori chorak uchun bonus.</li>
+      <li><b>Trenerlarni tayyorlang, hammani emas.</b> 2–3 hurmatli katta sortirovkachi har smenada tanlab, chuqur o'rgatish.</li>
+    </ul>
+    <div class="callout">
+      <span class="k">O'zbek realligi — mahalla tarmoqlari</span>
+      Peer trenerlarni <b>mahalla tarmog'i</b> orqali tanlang. Mahalla ichidagi ishonch va obro' lavozim nomidan ko'ra og'irroq.
+      Mahalla ishonchini olmagan "chet dan kelgan o'zgartirish menejeri" muvaffaqiyatsiz bo'ladi.
+    </div>
+
+    <h3>6.3 Bir kunlik hayot — oldin va keyin</h3>
+    <div class="ba">
+      <div class="before">
+        <div class="k">Oldin — Mahina, 42, rang sortirovkachi</div>
+        <p>
+          07:30 keladi. Choy ichadi. 08:00 Chorsudan yuk keladi — 3 ta furgon aralash mol. Trikotaj bo'limi. Kartondan tortiq chiqaradi, "ko'km-qora?" deb qiyinlashadi.
+          Plastik yashchiklarga "ko'z bilan" bo'yicha tashlaydi. Tush payti kategoriya menejeri kelib baqiradi — ikkita yashchik aralashib ketgan. Qayta ajratadi.
+          11:30 — 80 dona erkaklar futbolkasi keladi; joy talashadi. Smenaning oxirida ~1 200 dona. Nechta XS va nechta XL ekanini hech kim bilmaydi. Maosh: 4,2 mln so'm. Qoniqish past.
+        </p>
+      </div>
+      <div class="after">
+        <div class="k">Keyin — o'sha Mahina, 8 oydan so'ng</div>
+        <p>
+          07:30. Choy. 08:00 yuk keladi — mollar SKU-shtrix-kodli. Put-to-light devor oldida Zebra TC22 skaner bilan turadi.
+          Har SKU'ni skan qiladi. Yorug'lik yonib do'kon yacheykasini ko'rsatadi. Tashlaydi. Rangga debat yo'q. Kategoriya menejeri yo'q (u boshqa qavatda planirovshik).
+          11:30 da ~2 400 dona — ikki barobar ko'p, yarim yuk. Dekretdagi hamkasabasini bemalol almashtiradi — jarayon bir xil.
+          Maosh: 5,1 mln so'm. Qoniqish yuqori — janjal va qaror yo'q.
+        </p>
+      </div>
+    </div>
+    <div class="ba">
+      <div class="before">
+        <div class="k">Oldin — Rustam, 38, Kategoriya menejeri "Denim"</div>
+        <p>
+          Bo'g'ilgan. Xarid qiladi, taqsimlaydi, qabul qiladi, Logistika bilan janjallashadi, Bojxona bilan. Har yuk uchun 55 ta qaror — sezgi bilan.
+          "Men sezaman" — skinny jinsni flagship'ga ko'proq yuboradi. Butun kareriyasida bir marta sell-through raqamini ko'rmagan. Maosh: 14 mln so'm.
+        </p>
+      </div>
+      <div class="after">
+        <div class="k">Keyin — Rustam, 12 oydan so'ng, "Bottoms Xaridchi-Planirovshik"</div>
+        <p>
+          Bo'limga emas, P&amp;L ga egadir. Ertalab dashboard: klaster bo'yicha sell-through, buzilgan o'lcham istisnolari, OTIF.
+          Sezgi emas — klaster profili bo'yicha xarid qiladi. Taqsimot — engine ishi. Har 6 haftada Laleli'ga boradi, har kuni Chorsu'ga emas.
+          Maosh: 18,5 mln so'm. Boshqaruvi ostida 14 sortirovkachi emas, 0 kishi. Yaxshi ish, yuqori maqom, o'lchanadigan javobgarlik.
+        </p>
+      </div>
+    </div>
+
+    <h3>6.4 Do'kon klasterlashtirish — metodologiya</h3>
+    <p>
+      Kirish: 12–18 oylik POS sotuv ma'lumoti, ob-havo, demografiya, 1 km radiusdagi raqobatchi.
+      Usul: k-means, xususiyatlar vektori bo'yicha, k = 4–6.
+    </p>
+    <h4>Xususiyatlar vektori (do'kon bo'yicha)</h4>
+    <table>
+      <thead><tr><th>Xususiyat</th><th>Ta'rif</th><th>Nima ochadi</th></tr></thead>
+      <tbody>
+        <tr><td>Rang aralashmasi</td><td>Daromadning 1-daraja oila bo'yicha %</td><td>Neytral vs. yorqin palitrali do'kon</td></tr>
+        <tr><td>O'lcham qiyalik</td><td>Daromadning o'lcham bo'yicha %</td><td>Tuman bo'yicha tana profili farq qiladi</td></tr>
+        <tr><td>Narx darajasi</td><td>Kirish / o'rta / premium %</td><td>Daromad darajasi proksi</td></tr>
+        <tr><td>Mavsumiy amplituda</td><td>Qish / yoz daromadi nisbati</td><td>Mintaqaviy vs. Toshkent markazi</td></tr>
+        <tr><td>Haftalik ritm</td><td>Juma + shanba daromad ulushi</td><td>Bozor-yon vs. savdo markazi</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Natija — 4–5 arxetip</h4>
+    <table>
+      <thead><tr><th>Klaster</th><th>Ta'rifi</th><th>Vakil do'konlar (illyustrativ)</th></tr></thead>
+      <tbody>
+        <tr><td><b>C1</b> Markaziy premium</td><td>O'rta-premium narx, neytral ranglar, balansli o'lcham, ish kuni sotuvi</td><td>Tashkent City, Next Mall (Yunusobod)</td></tr>
+        <tr><td><b>C2</b> Savdo-shahar</td><td>Kirish-o'rta narx, yorqin ranglar, yosh profil, dam olish sotuvi</td><td>Compass, Samarqand Darvoza, Riviera</td></tr>
+        <tr><td><b>C3</b> Viloyat shahri</td><td>Kirish narx, an'anaviy palitra, to'liq o'lcham egri chizig'i</td><td>Namangan, Andijon, Farg'ona, Qarshi</td></tr>
+        <tr><td><b>C4</b> Bozor-yonidagi</td><td>Arzon narx, hajmli sotuv, M/L/XL og'ir</td><td>Chorsu atrofi, kichik shahar markazlari</td></tr>
+        <tr><td><b>C5</b> Kurort/mavsumiy</td><td>Keskin mavsumiy o'sish, yengil palitra, turist-haydaluvchi</td><td>Buxoro eski shahar, Samarqand Registon yonidagi</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13.5px">
+      <b>Ish qoidasi:</b> xaridchilar assortimentni <b>klaster</b> darajasida quradi (do'kon-SKU emas); engine klaster ichida do'kon og'irliklari bo'yicha bo'ladi.
+      55 qaror ~5 + og'irliklarga aylanadi.
+    </p>
+
+    <h3>6.5 Taqsimot engine — haqiqiy matematika</h3>
+    <div class="card subtle">
+<pre style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;color:var(--ink)">1-qadam: TargetStock(do'kon, SKU) = ForecastHaftalikTalab × CoverHaftalar
+2-qadam: Need(do'kon, SKU)       = max(0, TargetStock − OnHand − InTransit)
+3-qadam: Allocate(do'kon, SKU)   = Need × (DC_Mavjud / SumOfAllNeeds)
+4-qadam: Karton ko'plikka yaxlitlash
+5-qadam: Eshiklar (&gt;30% buzilgan o'lcham → single-size pull;
+         &lt;10% sell-through 4-haftada → replen to'xtash → chegirma)</pre>
+    </div>
+
+    <h4>Ishlangan misol — DW1043-1101-M (Navy, M)</h4>
+    <p>DC'da <b>840 dona</b>. 55 do'kondagi umumiy ehtiyoj: <b>1 200 dona</b>. Fair-share koeffitsienti = 0.70.</p>
+    <div class="bars">
+      <div class="bar-row"><span class="lab">C1 (12 do'kon, 8/hafta)</span><span class="bar-track"><span class="bar-fill" style="width:95%">204 dona → 17/do'kon</span></span></div>
+      <div class="bar-row"><span class="lab">C2 (15 do'kon, 6/hafta)</span><span class="bar-track"><span class="bar-fill" style="width:90%">195 dona → 13/do'kon</span></span></div>
+      <div class="bar-row"><span class="lab">C3 (18 do'kon, 5/hafta)</span><span class="bar-track"><span class="bar-fill" style="width:92%">198 dona → 11/do'kon</span></span></div>
+      <div class="bar-row"><span class="lab">C4 (8 do'kon, 7/hafta)</span><span class="bar-track"><span class="bar-fill" style="width:56%">120 dona → 15/do'kon</span></span></div>
+      <div class="bar-row"><span class="lab">C5 (2 do'kon, mavsumiy ×1.4)</span><span class="bar-track"><span class="bar-fill" style="width:12%">24 dona</span></span></div>
+    </div>
+    <p style="font-size:13.5px">
+      Planirovshik anomaliyalarni ertalab 30 soniyada tasdiqlaydi. Birinchi 6 oy — har bir taqsimot inson nazoratida.
+      60 kun ketma-ket &lt;10% override bo'lsa — faqat istisnolarga.
+    </p>
+    <p style="font-size:13.5px">
+      <b>Sotib olish yoki qurish?</b> SaaS (Toolio, Onebeat, Syrup Tech) sotib oling. Qurmang —
+      mat operatsionallashtirish (cold-start SKU, almashtirish mantig'i, mavsumiy qayta o'qitish) —
+      maxsus ish. Noldan qurgan loyihalarning ~70% muvaffaqiyatsiz.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SECTION 7 ============ -->
+<section id="s7" class="sec">
+  <div class="wrap">
+    <h2><span class="num">07</span>Bosqichli amalga oshirish rejasi</h2>
+
+    <div class="phases">
+      <div class="phase"><div class="p">0</div><div class="m">0–2 oy</div><div class="t"><b>Asos</b> — boshqaruv + masterlar</div></div>
+      <div class="phase"><div class="p">1</div><div class="m">2–5 oy</div><div class="t"><b>Pilot</b> — 1 kategoriya, 1 supplier, 1 klaster</div></div>
+      <div class="phase"><div class="p">2</div><div class="m">5–9 oy</div><div class="t"><b>Jihoz</b> — skaner, kiosk, put-to-light</div></div>
+      <div class="phase"><div class="p">3</div><div class="m">9–14 oy</div><div class="t"><b>Engine</b> — POS qaytaloqa + avto-replen</div></div>
+      <div class="phase"><div class="p">4</div><div class="m">12–18 oy</div><div class="t"><b>Konsolidatsiya</b> — 14→8, oqim DC</div></div>
+      <div class="phase"><div class="p">5</div><div class="m">18–30 oy</div><div class="t"><b>RFID</b> (ixtiyoriy) — dona darajasida</div></div>
+    </div>
+
+    <h3>7.1 Boshqaruv RACI — kim nima qiladi</h3>
+    <table>
+      <thead><tr><th>Qaror / Artifact</th><th>Bajaruvchi (R)</th><th>Mas'ul (A)</th><th>Maslahat (C)</th><th>Xabardor (I)</th></tr></thead>
+      <tbody>
+        <tr><td>Rang masteri (2-daraja qo'shish/o'zgartirish)</td><td>Merch Data Lead</td><td>Merch Direktor</td><td>Kategoriya Xaridchi, DC</td><td>IT, Xodimlar</td></tr>
+        <tr><td>Kategoriya bo'yicha o'lcham to'ri</td><td>Kategoriya Xaridchi</td><td>Merch Direktor</td><td>DC</td><td>IT</td></tr>
+        <tr><td>PO shartlari (shtrix-kod, ASN)</td><td>Procurement Lead</td><td>COO</td><td>Huquq, Merch</td><td>Supplierlar</td></tr>
+        <tr><td>Nomuvofiq yukni rad etish</td><td>DC Qabul Lead</td><td>COO</td><td>Procurement</td><td>Supplier, Merch</td></tr>
+        <tr><td>Yangi SKU master kiritish</td><td>Kategoriya Xaridchi</td><td>Merch Direktor</td><td>Merch Data Lead</td><td>DC, Moliya</td></tr>
+        <tr><td>Klaster modeli</td><td>Planning Lead</td><td>Merch Direktor</td><td>Chakana Operatsiyalar</td><td>Kategoriya Xaridchi</td></tr>
+        <tr><td>Engine override</td><td>Planirovshik</td><td>Planning Lead</td><td>Kategoriya Xaridchi</td><td>Do'kon Menejeri</td></tr>
+        <tr><td>Chegirma boshlash</td><td>Kategoriya Xaridchi</td><td>Merch Direktor</td><td>Planirovshik, Moliya</td><td>Do'kon Menejeri</td></tr>
+        <tr><td>Kapital xarajat &gt;$10K (&gt;125 mln so'm)</td><td>CFO</td><td>CEO</td><td>COO, IT Lead</td><td>Bosh Kengash</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.2 KPI dashboard — haftalik yig'ilish ko'radigan narsa</h3>
+    <div class="dash">
+      <div class="title">W24 — Dilmuss O'tish Dasturi — Steering Committee</div>
+      <div class="grid">
+        <div class="block">
+          <h5>A. Supplier intizomi</h5>
+          <div class="row"><span>ASN muvofiqligi</span><span class="v up">82% ↑</span></div>
+          <div class="row"><span>Shtrix-kod muvofiqligi</span><span class="v up">76% ↑</span></div>
+          <div class="row"><span>Avto-tekshiruv SKU</span><span class="v up">71% ↑</span></div>
+          <div class="row"><span>Nomuvofiq ushlamalar</span><span class="v up">3 ↓</span></div>
+        </div>
+        <div class="block">
+          <h5>B. DC operatsiyalari</h5>
+          <div class="row"><span>Qabul → jo'natma</span><span class="v up">26 soat ↓</span></div>
+          <div class="row"><span>Skan / yozish</span><span class="v">94 / 6</span></div>
+          <div class="row"><span>Hosiladorlik vs. asos</span><span class="v up">+18%</span></div>
+          <div class="row"><span>DC xodim</span><span class="v up">142 ↓</span></div>
+        </div>
+        <div class="block">
+          <h5>C. Ma'lumot sifati</h5>
+          <div class="row"><span>SKU-yorlig'li qabul</span><span class="v">89%</span></div>
+          <div class="row"><span>Haftalik yangi rang</span><span class="v">2</span></div>
+          <div class="row"><span>Master konflikti</span><span class="v">0</span></div>
+          <div class="row"><span>POS→DW SLA</span><span class="v">99.3%</span></div>
+        </div>
+        <div class="block">
+          <h5>D. Tijorat ta'sir</h5>
+          <div class="row"><span>Top-200 sell-through</span><span class="v">62%</span></div>
+          <div class="row"><span>Buzilgan o'lcham</span><span class="v">7%</span></div>
+          <div class="row"><span>Chegirma stavkasi</span><span class="v">6.8%</span></div>
+          <div class="row"><span>GM ta'siri (YoY)</span><span class="v up">+1.2pt</span></div>
+        </div>
+      </div>
+      <div class="flag">
+        <b>E. Gate holati:</b> 2-bosqich darvozasi 6/7 — shtrix-kod muvofiqligi 4 punkt kam.
+        Qaror: 3-bosqichni 2 hafta kechiktiring; W26'da qayta tekshirish.
+      </div>
+      <div class="flag">
+        ⚠ Supplier "Istanbul Tex" — uchinchi marta kechikkan ASN — jarimani qo'llang.
+        ⚠ Trikotaj bo'limida kiosk qabuli 68% — W25'da qayta trening.
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted)"><b>Qoida:</b> agar bu hafta qaror chiqarmasa, bu sahifada joyi yo'q. Batafsil hisobotlar boshqa joyda.</p>
+
+    <h3>7.3 Bosqich darvozalari</h3>
+    <table>
+      <thead><tr><th>Darvoza</th><th>O'tish mezoni (HAMMASI bajarilishi kerak)</th></tr></thead>
+      <tbody>
+        <tr><td><b>0 → 1</b></td><td>Rang masteri Merch Direktor tomonidan tasdiqlangan. Har kategoriyada o'lcham to'ri e'lon qilingan. ≥1 importchi POC shtrix-kodli karton qaytargan. Buyum master ERP'da jonli. GS1 UZ prefiks ro'yxatda.</td></tr>
+        <tr><td><b>1 → 2</b></td><td>Pilot 30 kun uzluksiz ishlayapti, istisno stavkasi &lt;5%. Pilot do'konlar uchun SKU-darajasida sell-through hisobot jonli. Kiosk qabuli ≥85% nazoratsiz.</td></tr>
+        <tr><td><b>2 → 3</b></td><td>DC qabullarning 100% skan (yozilgan emas). Kiritish guruhi ≤10. Hosiladorlik asos yoki undan yuqori. Import hajmining ≥80% shtrix-kodli.</td></tr>
+        <tr><td><b>3 → 4</b></td><td>Top-200 SKU uchun avto-replen planirovshik tomonidan tasdiqlangan, 60 kun jonli. Pilot SKU uchun prognoz aniqligi ≥70%. Klaster model 6 oylik ma'lumotda tasdiqlangan.</td></tr>
+        <tr><td><b>4 → barqaror</b></td><td>DC jismoniy qayta joylashuv tugallangan. 14→8 o'tish tugagan. Barcha KPI ±10% oralig'ida. PMO tarqatilgan.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.4 Muvaffaqiyat omillari (muhimlik tartibida)</h3>
+    <ol>
+      <li><b>Bitta ijrochi sponsor</b> — Merch + IT + Ombor uchun bir vaqtda hokimiyat. Uch bo'limning ulushma egalik qilishi loyihani o'ldiradi.</li>
+      <li><b>Rang/o'lcham masteri muqaddas.</b> Erta qulflang. Qo'shishlarni haftalik boshqaring.</li>
+      <li><b>Supplier muvofiqligi — shartnoma bandi, iltimos emas.</b> Shtrix-kodsiz import = yukxonada rad etiladi. Bir marta. Bozor tez o'rganadi.</li>
+      <li><b>Miqyosga o'tishdan oldin pilot.</b> Bir kategoriya, bir klaster. Halqani isbotlang, keyin yoying.</li>
+      <li><b>Ishdan bo'shatmang — ko'chiring.</b> Do'kon tarmog'ining o'sishi 100+ qisqarishni yutadi.</li>
+      <li><b>Jihozni oxirgi sotib oling.</b> Yaltiroq skaner vasvasasiga berilmang.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ SECTION 8 ============ -->
+<section id="s8" class="sec">
+  <div class="wrap">
+    <h2><span class="num">08</span>Iqtisodiy asos</h2>
+    <p>Birinchi 12 oyda o'zi qoplanadi, so'ngra barqaror foyda keltiradi. Konservativ holat: yangi do'kon yo'q, narx o'zgarishi yo'q, o'rta chegirma tiklanishi.</p>
+
+    <h3>8.1 Investitsiya — CapEx + bir marta OpEx</h3>
+    <table>
+      <thead><tr><th>Modda</th><th class="c">Bosqich</th><th class="r">USD</th><th class="r">So'm (mln)</th></tr></thead>
+      <tbody>
+        <tr><td>Qo'l skanerlari (Zebra TC22/TC27, 40 dona)</td><td class="c">2</td><td class="r">$34 000</td><td class="r">416</td></tr>
+        <tr><td>Mobil printer aravalar (8 dona)</td><td class="c">2</td><td class="r">$14 400</td><td class="r">176</td></tr>
+        <tr><td>Sensor kiosklar (20 dona)</td><td class="c">2</td><td class="r">$24 000</td><td class="r">294</td></tr>
+        <tr><td>Put-to-light devor (60 yacheyka)</td><td class="c">2</td><td class="r">$42 000</td><td class="r">515</td></tr>
+        <tr><td>WMS litsenziya + joriy etish</td><td class="c">1–3</td><td class="r">$65 000</td><td class="r">796</td></tr>
+        <tr><td>Taqsimot engine (SaaS, 1-yil)</td><td class="c">3</td><td class="r">$42 000</td><td class="r">515</td></tr>
+        <tr><td>Supplier portal + ASN tizimi</td><td class="c">1</td><td class="r">$25 000</td><td class="r">306</td></tr>
+        <tr><td>Field-intake komplekti (10 dona)</td><td class="c">1–2</td><td class="r">$15 000</td><td class="r">184</td></tr>
+        <tr><td>Maslahat / PMO (12 oy)</td><td class="c">0–4</td><td class="r">$96 000</td><td class="r">1 176</td></tr>
+        <tr><td>Trening + o'zgarish boshqaruvi</td><td class="c">1–4</td><td class="r">$30 000</td><td class="r">368</td></tr>
+        <tr><td>Rang kitoblari + gazlama namunalari</td><td class="c">0</td><td class="r">$4 000</td><td class="r">49</td></tr>
+        <tr><td>GS1 UZ ro'yxatdan o'tish + yillik</td><td class="c">0</td><td class="r">$1 200</td><td class="r">15</td></tr>
+        <tr><td>Kontingent zaxira (15%)</td><td class="c">—</td><td class="r">$56 800</td><td class="r">696</td></tr>
+        <tr class="tot"><td><b>Jami investitsiya</b></td><td></td><td class="r"><b>~$449 400</b></td><td class="r"><b>~5 506</b></td></tr>
+      </tbody>
+    </table>
+
+    <h4>Investitsiya taqsimoti — vizual</h4>
+    <div class="bars">
+      <div class="bar-row"><span class="lab">Jihoz (skaner, kiosk, printer, devor)</span><span class="bar-track"><span class="bar-fill" style="width:25%">$114K</span></span></div>
+      <div class="bar-row"><span class="lab">Dasturiy (WMS, engine, portal)</span><span class="bar-track"><span class="bar-fill rust" style="width:29%">$132K</span></span></div>
+      <div class="bar-row"><span class="lab">Maslahat / PMO</span><span class="bar-track"><span class="bar-fill gold" style="width:21%">$96K</span></span></div>
+      <div class="bar-row"><span class="lab">Trening + field kit</span><span class="bar-track"><span class="bar-fill sage" style="width:10%">$45K</span></span></div>
+      <div class="bar-row"><span class="lab">Zaxira + boshqa</span><span class="bar-track"><span class="bar-fill" style="width:15%;background:#8b9094">$62K</span></span></div>
+    </div>
+
+    <h3>8.2 Yillik operatsion tejash (barqaror holat)</h3>
+    <p style="font-size:13.5px;color:var(--muted)">Daromad bazasi: $18M / ~220 mlrd so'm (55 do'kon, konservativ).</p>
+    <table>
+      <thead><tr><th>Manba</th><th>Hisoblash</th><th class="r">USD/yil</th><th class="r">So'm/yil (mlrd)</th></tr></thead>
+      <tbody>
+        <tr><td>Ombor xodimi (103 × $3 600)</td><td>—</td><td class="r">$370 800</td><td class="r">4.54</td></tr>
+        <tr><td>Chegirma kamayishi (7pt × 30% tiklash)</td><td>18M × 7% × 30%</td><td class="r">$378 000</td><td class="r">4.63</td></tr>
+        <tr><td>Tovar aylanishi (10% saqlash xarajati)</td><td>18M × 18% × 10%</td><td class="r">$32 400</td><td class="r">0.40</td></tr>
+        <tr><td>Stoksiz qolish tiklash (2% rev × 35% marja)</td><td>18M × 2% × 35%</td><td class="r">$126 000</td><td class="r">1.54</td></tr>
+        <tr class="tot"><td><b>Jami yillik tejash</b></td><td></td><td class="r"><b>~$907 200</b></td><td class="r"><b>~11.11</b></td></tr>
+      </tbody>
+    </table>
+
+    <h3>8.3 Buzilgan o'lcham — $378K qayerdan keladi</h3>
+    <p>
+      Bahor 2026 bitta xarid — <b>4 000 dona basic tee</b>, 4 rang × 5 o'lcham.
+      Landed 32 000 so'm (~$2.61), chakana 89 000 so'm (~$7.27). Rejadagi daromad: <b>356 mln so'm (~$29 100)</b>.
+    </p>
+    <div class="ba">
+      <div class="before">
+        <div class="k">SKU intizomsiz (bugun)</div>
+        <p>Xaridchi tekis egri chiziqda buyurtma beradi (har o'lchamga 20% — chunki boshqa ma'lumot yo'q).</p>
+        <p>Haqiqiy Toshkent talabi: XS 12%, S 22%, <b>M 30%</b>, <b>L 24%</b>, XL 12%.</p>
+        <p>6-hafta: top 30 do'konda M va L tugadi; XS va XL turibdi. <b>Qayta buyurtma imkonsiz</b> — SKU ko'rinmaydi.</p>
+        <p>7–10 haftalar: XS/XL −40%. 11+: tozalash sotuvi −60%.</p>
+        <p><b>Haqiqiy daromad: ~248 mln so'm. Farq: ~108 mln so'm (30%).</b></p>
+      </div>
+      <div class="after">
+        <div class="k">SKU intizomi bilan (maqsad)</div>
+        <p>Klaster-moslangan egri chiziq bilan xarid: XS 12%, S 22%, M 30%, L 24%, XL 12%.</p>
+        <p>3-hafta: dashboard ko'rsatadi — C1'da M/L tugayapti; engine size-only pull ishga tushiradi → faqat M/L bo'yicha 800 dona, o'sha supplier, 2-haftalik burilish (allaqachon shtrix-kodli).</p>
+        <p>8-hafta: buzilgan o'lcham yo'q. Full-price sell-through ~82%.</p>
+        <p>XS/XL yengil chegirma −20%.</p>
+        <p><b>Haqiqiy daromad: ~328 mln so'm. Tiklanish: ~80 mln so'm (~$6 540) har xaridda.</b></p>
+      </div>
+    </div>
+    <p style="font-size:13.5px">
+      Dilmuss miqyosida (~230 shunday xarid/yil): <b>~18,4 mlrd so'm (~$1.5M) qaytarilishi mumkin bo'lgan yalpi marja</b>.
+      Biznes-asos konservativ tarzda 30% ni oladi (~5,5 mlrd so'm / ~$450K) — chunki hamma xarid qayta buyurtma qilinmaydi.
+    </p>
+
+    <h3>8.4 Sezuvchanlik tahlili</h3>
+    <table>
+      <thead><tr><th>Senariya</th><th class="r">Investitsiya</th><th class="r">1-yil tejash</th><th class="r">Qoplanish</th><th class="r">5-y NPV</th></tr></thead>
+      <tbody>
+        <tr class="tot"><td><b>Asos</b></td><td class="r">$449K</td><td class="r">$907K</td><td class="r">14 oy</td><td class="r"><b>$3.1M</b></td></tr>
+        <tr><td>Pessimistik (30% kechikish, 50% tejash)</td><td class="r">$585K</td><td class="r">$454K</td><td class="r">31 oy</td><td class="r">$1.1M</td></tr>
+        <tr><td>O'sish (3-yil 110 do'kon)</td><td class="r">$480K</td><td class="r">$1.65M</td><td class="r">9 oy</td><td class="r"><b>$7.8M</b></td></tr>
+        <tr><td>Turkiya importi buzilishi (−20% hajm)</td><td class="r">$449K</td><td class="r">$725K</td><td class="r">17 oy</td><td class="r">$2.4M</td></tr>
+        <tr><td>So'mning USD'ga nisbatan 20% tushishi</td><td class="r">$510K</td><td class="r">$907K</td><td class="r">16 oy</td><td class="r">$2.8M</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout sage">
+      <span class="k">Natija</span>
+      <b>Loyiha har qanday haqiqiy pastki senariyadan omon qoladi.</b>
+      Uni o'ldiradigan yagona narsa — siyosiy: rahbariyat 3-bosqich o'rtasida qiziqishini yo'qotsa (R10).
+    </div>
+
+    <h3>8.5 Masshtab argumenti — nima uchun bu o'sish sug'urtasi</h3>
+    <div class="two">
+      <div class="card">
+        <h4>Hozirgi model</h4>
+        <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="140" x2="280" y2="140" stroke="#c4bba8"/>
+          <line x1="30" y1="140" x2="30" y2="20" stroke="#c4bba8"/>
+          <text x="30" y="155" font-size="11" fill="#6b6f78">55 do'kon</text>
+          <text x="260" y="155" font-size="11" fill="#6b6f78" text-anchor="end">110</text>
+          <text x="30" y="18" font-size="11" fill="#6b6f78">xodim</text>
+          <line x1="30" y1="80" x2="280" y2="20" stroke="#b0451f" stroke-width="2.5"/>
+          <circle cx="30" cy="80" r="4" fill="#b0451f"/>
+          <circle cx="280" cy="20" r="4" fill="#b0451f"/>
+          <text x="40" y="76" font-size="12" font-weight="600" fill="#b0451f">~175</text>
+          <text x="270" y="34" font-size="12" font-weight="600" fill="#b0451f" text-anchor="end">~340</text>
+        </svg>
+      </div>
+      <div class="card">
+        <h4>Yangi model</h4>
+        <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="140" x2="280" y2="140" stroke="#c4bba8"/>
+          <line x1="30" y1="140" x2="30" y2="20" stroke="#c4bba8"/>
+          <text x="30" y="155" font-size="11" fill="#6b6f78">55 do'kon</text>
+          <text x="260" y="155" font-size="11" fill="#6b6f78" text-anchor="end">110</text>
+          <text x="30" y="18" font-size="11" fill="#6b6f78">xodim</text>
+          <line x1="30" y1="100" x2="280" y2="80" stroke="#5c7a5a" stroke-width="2.5"/>
+          <circle cx="30" cy="100" r="4" fill="#5c7a5a"/>
+          <circle cx="280" cy="80" r="4" fill="#5c7a5a"/>
+          <text x="40" y="96" font-size="12" font-weight="600" fill="#5c7a5a">~85</text>
+          <text x="270" y="76" font-size="12" font-weight="600" fill="#5c7a5a" text-anchor="end">~120</text>
+        </svg>
+      </div>
+    </div>
+    <div class="quote">
+      $449K — optimallashtirish emas. Bu <b>o'sish sug'urtasi</b>. Busiz — tarmoq to'liq qurilishidan oldin foyda egri chizig'i Dilmussga qarshi bukiladi.
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 9 ============ -->
+<section id="s9" class="sec">
+  <div class="wrap">
+    <h2><span class="num">09</span>Xavflar reestri</h2>
+    <p>13 ta eng katta xavf, har oy steering committee tomonidan ko'rib chiqiladi.</p>
+
+    <h4>Xavflar matritsasi (L = ehtimollik · I = ta'sir)</h4>
+    <div class="risk-grid">
+      <div class="hdr"></div>
+      <div class="hdr">Past ta'sir</div>
+      <div class="hdr">O'rta ta'sir</div>
+      <div class="hdr">Yuqori ta'sir</div>
+
+      <div class="ax">Yuqori L</div>
+      <div class="cell lo"></div>
+      <div class="cell md"></div>
+      <div class="cell hi">
+        <span class="pill">R1</span> Bozor supplieri qarshiligi<br>
+        <span class="pill">R2</span> Kategoriya menejeri qarshiligi
+      </div>
+
+      <div class="ax">O'rta L</div>
+      <div class="cell lo"></div>
+      <div class="cell md">
+        <span class="pill">R6</span> Pilot buziladi<br>
+        <span class="pill">R8</span> Bojxona kechikishi<br>
+        <span class="pill">R11</span> So'm devalvatsiyasi
+      </div>
+      <div class="cell hi">
+        <span class="pill">R3</span> Xodim qabuli to'xtaydi<br>
+        <span class="pill">R4</span> Shtrix-kod buziq<br>
+        <span class="pill">R5</span> WMS kechikadi<br>
+        <span class="pill">R12</span> Mehnat qonuni
+      </div>
+
+      <div class="ax">Past L</div>
+      <div class="cell lo"></div>
+      <div class="cell md"><span class="pill">R7</span> Engine overfit</div>
+      <div class="cell hi">
+        <span class="pill">R9</span> Kalit kishi ketishi<br>
+        <span class="pill">R10</span> Egalik o'zgarishi<br>
+        <span class="pill">R13</span> AEO yo'qotish
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>№</th><th>Xavf</th><th class="c">L</th><th class="c">I</th><th>Oldini olish</th></tr></thead>
+      <tbody>
+        <tr><td>R1</td><td><b>Bozor supplierlari qog'oz bilan ishlashdan bosh tortadi</b></td><td class="c">Y</td><td class="c">Y</td><td>Yuqoridan bosim qilmang. Field-intake kit (C.2): Dilmuss reps iPad'da joyida SKU yorlig'i chop etadi. Supplier tajribasi <i>osonlashadi</i>.</td></tr>
+        <tr><td>R2</td><td><b>Kategoriya menejerlari 14→8 ga qarshilik</b></td><td class="c">Y</td><td class="c">Y</td><td>Rolni "Kategoriya Xaridchi-Planirovshik" deb qayta ta'riflang, P&amp;L egaligi bilan. Qolgan 8 ta <b>yuqori maoshli va yuqori maqomli</b> bo'lishi kerak.</td></tr>
+        <tr><td>R3</td><td><b>Xodim qabuli to'xtab qoladi</b></td><td class="c">O</td><td class="c">Y</td><td>Har smenada 2–3 peer super-user (mahalla orqali). Dam olish xonasida ko'rsatkich tablosi. Oylik yuqori chorak bonusi.</td></tr>
+        <tr><td>R4</td><td><b>Shtrix-kod ma'lumoti buziq</b></td><td class="c">O</td><td class="c">Y</td><td>Qabul darvozasi: har skan ochiq PO ro'yxati bilan tekshiriladi. Noma'lum SKU = jismoniy ushlash + inson tekshiruvi.</td></tr>
+        <tr><td>R5</td><td><b>WMS joriy etish 6+ oy kechikadi</b></td><td class="c">O</td><td class="c">Y</td><td>1–2 bosqichlarda enterprise WMS'dan qoching. 1C ustidagi minimal modul bilan boshlang.</td></tr>
+        <tr><td>R6</td><td><b>Pilot kategoriya boshqa sabablarga buziladi</b></td><td class="c">O</td><td class="c">O</td><td>Pilot barqaror, yuqori hajmli (basics, denim) bo'lishi kerak. Qoida, afzallik emas.</td></tr>
+        <tr><td>R7</td><td><b>Engine yaqin ma'lumotga overfit</b></td><td class="c">P</td><td class="c">O</td><td>6-haftalik rolling oyna + mavsumiy ko'paytma (Navro'z, qish). Inson nazorati 6 oy.</td></tr>
+        <tr><td>R8</td><td><b>Bojxona kechikishi pre-pack'ni buzadi</b></td><td class="c">O</td><td class="c">O</td><td>AEO maqomini saqlang. Top-200 SKU uchun 10–15% buffer. Noaniq yo'nalishlarda 100% pre-pack qilmang.</td></tr>
+        <tr><td>R9</td><td><b>Kalit xodim ketishi</b></td><td class="c">P</td><td class="c">Y</td><td>Hamma master qoidalari hujjatda (bosh ichida emas). 1-kundan o'rinbosar har muhim rolga.</td></tr>
+        <tr><td>R10</td><td><b>Egalik/strategiya 3-bosqich o'rtasida o'zgarishi</b></td><td class="c">P</td><td class="c">Y</td><td>5 oy ichida ko'rinadigan 1-bosqich g'alabalar. CEO sponsorli oylik steering. 30-kunlik reja aynan shuning uchun bor.</td></tr>
+        <tr><td>R11</td><td><b>So'm USD'ga nisbatan pasayadi</b></td><td class="c">O</td><td class="c">O</td><td>Asosiy jihoz CapEx'ni erta USD shartnomada qulflang. Importlarni oldinga yuring. 10% FX zaxirasini kontingentda saqlang.</td></tr>
+        <tr><td>R12</td><td><b>Mehnat qonuni bo'yicha da'vo</b></td><td class="c">O</td><td class="c">Y</td><td>O'sish-yutish (ishdan bo'shatish emas) modelini ishlating. Mehnat Kodeksi 99–101 moddalariga rioya. Bandlik vazirligi bilan oldindan muvofiqlashtirish.</td></tr>
+        <tr><td>R13</td><td><b>AEO "yashil yo'lak" maqomi yo'qoladi</b></td><td class="c">P</td><td class="c">Y</td><td>AEO auditga tayyorlikni saqlang. Ikki oldindan attestatsiyadan o'tgan bojxona broker, hech qachon bitta emas.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ SECTION 10 ============ -->
+<section id="s10" class="sec">
+  <div class="wrap">
+    <h2><span class="num">10</span>Agar Dilmuss hech narsa qilmasa — nima bo'ladi</h2>
+    <p>Harakatsizlikning yashirin narxi. Ko'pincha investitsiya uchun eng kuchli argument.</p>
+    <div class="two">
+      <div class="card" style="border-top:3px solid var(--rust)">
+        <h4>Xodimlar soni chiziqli o'sadi</h4>
+        <p style="font-size:13.5px">55 → 110 do'kon = ~180 → ~360 ombor xodimi. Qo'shimcha mehnat xarajati yiliga <b>~$648K / ~7,9 mlrd so'm</b> — abadiy to'planadi.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--rust)">
+        <h4>Chegirma yo'qotishi to'planadi</h4>
+        <p style="font-size:13.5px">O'lcham/rang ma'lumotsiz, buzilgan o'lchamdan chegirma daromadning 8–15%. O'sayotgan bazada — eng katta yashirin xarajat.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--rust)">
+        <h4>Xarid xatolari takrorlanadi</h4>
+        <p style="font-size:13.5px">Rang bo'yicha sell-through bo'lmasa, yomon rangalar har mavsum qayta sotib olinadi — chunki muvaffaqiyatsizlik isbotlanmaydi.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--rust)">
+        <h4>Raqobat xavfi</h4>
+        <p style="font-size:13.5px">LC Waikiki, Koton, DeFacto allaqachon shunday ishlaydi. Dilmuss ularning darajasiga o'ssa, farq mijozga (stok yo'q, eskirgan assortiment) va investorlarga (marja profili) ko'rinadi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 11 ============ -->
+<section id="s11" class="sec">
+  <div class="wrap">
+    <h2><span class="num">11</span>Tavsiya etilgan keyingi 90 kun</h2>
+    <p>Aniq, kam xarajatli birinchi chorak. Momentum shu vaqtda quriladi yoki yo'qoladi.</p>
+
+    <h3>11.1 1–30 kunlar — Asos</h3>
+    <div class="flow" style="padding:22px">
+      <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.7">
+        <li><b>Hafta 1:</b> Loyiha egasini (C-daraja yoki bevosita hisobot beruvchi) tayinlash. Merch + IT + Ombor + HR boshliqlarini yig'ish. RACI e'lon qilish va ops maydonlariga jismoniy osib qo'yish.</li>
+        <li><b>Hafta 2:</b> 12 ta oilali rang master + kategoriyalar bo'yicha o'lcham to'rini tuzish. Merch Direktor imzolaydi. GS1 Uzbekistan kompaniya prefiksini ro'yxatdan o'tkazish.</li>
+        <li><b>Hafta 3:</b> Pilot kategoriyani tanlash (basic tops yoki denim — barqaror, yuqori hajm). 1 Laleli supplier + 5 pilot do'kon (2×C1 Toshkent + 2×C2 savdo-shahar + 1×C3 viloyat — klaster amalligini tekshirish uchun).</li>
+        <li><b>Hafta 4:</b> Yangilangan PO shablonini (Ilova C.1 tili) pilot supplierga berish. Pilot uchun 4 kiosk + 8 skaner buyurtma. Mahalla tarmog'i trenerlari bilan trening rejasi. AEO pre-audit boshlash.</li>
+      </ul>
+    </div>
+
+    <h3>11.2 31–60 kunlar — Pilot ishlayapti</h3>
+    <div class="flow" style="padding:22px">
+      <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.7">
+        <li><b>Hafta 5:</b> Birinchi pilot yuk Laleli'dan shtrix-kodli keladi. To'liq jamoa debrif: nima buzildi? Hujjatlashtirish.</li>
+        <li><b>Hafta 6:</b> Chorsu'da field-intake kit top 3 pilot-kategoriya bozor supplieri uchun jonli. Shu mahallalardan trenerlar field reps bilan birga.</li>
+        <li><b>Hafta 7:</b> POS → Data Warehouse pipeline 5 pilot do'konda jonli. Birinchi SKU-darajasi sell-through hisoboti.</li>
+        <li><b>Hafta 8:</b> Birinchi steering committee KPI dashboardida. 0→1 darvoza rasmiy baholanadi.</li>
+      </ul>
+    </div>
+
+    <h3>11.3 61–90 kunlar — Halqani isbotlash, miqyosga tayyorgarlik</h3>
+    <div class="flow" style="padding:22px">
+      <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.7">
+        <li><b>Haftalar 9–10:</b> Ikkinchi va uchinchi pilot yuklar. O'lchash: istisno &lt;5%? Kiosk qabul ≥85%? Sikli &lt;36 soat? Agar ha — 1→2 darvoza tayyorgarligi.</li>
+        <li><b>Hafta 11:</b> Procurement yangi PO shablonini keyingi 3 formal supplierga beradi (Wave 2 — §C.3).</li>
+        <li><b>Hafta 12:</b> 1→2 darvoza tekshiruvi. Boshqa kategoriyalarga jihoz yoyish bo'yicha go/no-go. Byudjet tasdiqlangan, jihoz buyurtma qilingan (kiosk uchun EU/Turkiya lead-time ~8 hafta).</li>
+        <li><b>90-kun oxirida:</b> Pilot tasdiqlangan. Jihoz buyurtma. Wave 2 supplierlar onboard. Engine sotuvchisi tanlangan. DC qabulining ~25% yangi oqimda.</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <span class="k">Qoida</span>
+      <b>90-kunda darvoza buzilsa — miqyosga o'tmang.</b> Sababni topib tuzating, pilotni 4–6 hafta uzaytiring, qayta urinib ko'ring.
+      Kaskad optimizm — loyihalarning 1-o'ldiruvchisi.
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPENDICES ============ -->
+<section id="sA" class="sec">
+  <div class="wrap">
+    <h2><span class="num">A</span>Ilova: arxitektura va O'zbekiston bozori</h2>
+
+    <h3>A.1 Texnologik arxitektura</h3>
+    <div class="flow">
+      <svg viewBox="0 0 940 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" class="svg-arrow"/>
+          </marker>
+        </defs>
+        <!-- layer 1 -->
+        <rect x="20" y="20" width="900" height="70" rx="4" fill="#1e4a73"/>
+        <text x="470" y="44" text-anchor="middle" fill="#fff" class="svg-label" style="font-size:13px">MERCHANDISING / PLANIROVKA</text>
+        <rect x="60" y="52" width="200" height="28" rx="2" fill="#2d6094"/>
+        <text x="160" y="71" text-anchor="middle" fill="#fff" style="font:600 11px Inter">Buyum Master + Rang/O'lcham</text>
+        <rect x="290" y="52" width="260" height="28" rx="2" fill="#2d6094"/>
+        <text x="420" y="71" text-anchor="middle" fill="#fff" style="font:600 11px Inter">Taqsimot Engine (Toolio/Onebeat SaaS)</text>
+
+        <line x1="160" y1="90" x2="160" y2="125" class="svg-line" marker-end="url(#ar4)"/>
+        <line x1="420" y1="90" x2="420" y2="125" class="svg-line" marker-end="url(#ar4)"/>
+
+        <!-- ERP -->
+        <rect x="20" y="130" width="900" height="64" rx="4" fill="#faf7f1" stroke="#1e4a73" stroke-width="1.5"/>
+        <text x="470" y="154" text-anchor="middle" class="svg-label" style="font-size:13px">CORE ERP (1C:Enterprise)</text>
+        <text x="470" y="176" text-anchor="middle" class="svg-label-muted">PO · Supplierlar · Moliya · GL · Inventar birlashmasi</text>
+
+        <line x1="160" y1="194" x2="160" y2="230" class="svg-line" marker-end="url(#ar4)"/>
+        <line x1="470" y1="194" x2="470" y2="230" class="svg-line" marker-end="url(#ar4)"/>
+        <line x1="780" y1="194" x2="780" y2="230" class="svg-line" marker-end="url(#ar4)"/>
+
+        <!-- layer 3 -->
+        <rect x="60" y="234" width="200" height="64" rx="3" class="svg-box"/>
+        <text x="160" y="258" text-anchor="middle" class="svg-label" style="font-size:12.5px">WMS</text>
+        <text x="160" y="278" text-anchor="middle" class="svg-label-muted">1C:WMS / Mecalux</text>
+
+        <rect x="370" y="234" width="200" height="64" rx="3" class="svg-box"/>
+        <text x="470" y="258" text-anchor="middle" class="svg-label" style="font-size:12.5px">Supplier portal + ASN</text>
+        <text x="470" y="278" text-anchor="middle" class="svg-label-muted">Retool / Softr</text>
+
+        <rect x="680" y="234" width="200" height="64" rx="3" class="svg-box"/>
+        <text x="780" y="258" text-anchor="middle" class="svg-label" style="font-size:12.5px">POS (55 do'kon)</text>
+        <text x="780" y="278" text-anchor="middle" class="svg-label-muted">1C:Retail</text>
+
+        <line x1="160" y1="298" x2="160" y2="325" class="svg-line" marker-end="url(#ar4)"/>
+        <rect x="20" y="330" width="440" height="40" rx="3" fill="#f2ede2" stroke="#c4bba8"/>
+        <text x="240" y="355" text-anchor="middle" class="svg-label-sm">DC FLOOR: skaner + kiosk + put-to-light + mobil arava + field-intake kit</text>
+
+        <line x1="780" y1="298" x2="780" y2="325" class="svg-line" marker-end="url(#ar4)"/>
+        <rect x="480" y="330" width="440" height="40" rx="3" fill="#f2ede2" stroke="#c4bba8"/>
+        <text x="700" y="355" text-anchor="middle" class="svg-label-sm">DATA WAREHOUSE + BI (Postgres + Metabase/Power BI)</text>
+      </svg>
+    </div>
+
+    <h3>A.2 Sotib olish yoki qurish</h3>
+    <table>
+      <thead><tr><th>Komponent</th><th>Tavsiya</th><th>Sabab</th></tr></thead>
+      <tbody>
+        <tr><td>Core ERP</td><td><b>Mavjud 1C'ni saqlang</b></td><td>1–2 bosqich uchun yetarli. SAP joriy etish ehtiyojini keltirmang.</td></tr>
+        <tr><td>Buyum Master / SKU moduli</td><td><b>1C ustida quring</b></td><td>Mahalliy integrator orqali — arzon, mahalliy iste'dod.</td></tr>
+        <tr><td>WMS</td><td><b>1C:WMS yoki mid-market sotib oling</b></td><td>Qurmang. Enterprise olmang — masshtab yetarli emas.</td></tr>
+        <tr><td>Taqsimot engine</td><td><b>SaaS sotib oling</b> (Toolio, Onebeat)</td><td>Qurmang — ML og'ir, mutaxassis ish.</td></tr>
+        <tr><td>Supplier portal</td><td><b>Minimal quring</b> (Retool / Softr)</td><td>Shunchaki forma.</td></tr>
+        <tr><td>POS integratsiyasi</td><td><b>Kechasi sinxronizatsiya</b></td><td>Real-time ortiqcha — haftalik replen uchun.</td></tr>
+        <tr><td>BI qatlami</td><td><b>Metabase</b> (bepul/arzon)</td><td>UZ bozorida eng keng tarqalgan.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>A.3 O'zbekiston mehnat qonuniga rioya</h3>
+    <div class="card">
+      <p style="margin-top:0"><b>Mehnat Kodeksi 99–101 moddalari:</b></p>
+      <ul style="margin:8px 0 0">
+        <li>Ish beruvchi tomonidan qisqartirish bo'yicha bekor qilish ≥2 oylik yozma ogohlantirish va ≥2 oylik o'rtacha ish haqi kompensatsiyasini talab qiladi.</li>
+        <li>100 xodim × 4,5 mln so'm/oy = to'g'ridan-to'g'ri kompensatsiya <b>~900 mln so'm (~$73 500)</b> — agar ishdan bo'shatish sifatida amalga oshirilsa.</li>
+        <li>Kasaba uyushmasi bo'lsa — majburiy maslahat.</li>
+        <li>101-modda: kompaniyada mos vakant lavozim bo'lsa — birinchi taklif qilish shart.</li>
+      </ul>
+      <p style="margin-bottom:0"><b>Dizayn natijasi:</b> tavsiya etilgan "yangi do'konlarga ko'chirish, ishdan bo'shatish emas" yondashuvi
+      siyosiy va iqtisodiy jihatdan afzal. 12–18 oylik muddat — do'kon tarmog'i o'sishi xodimlarni tabiiy ravishda yutishi uchun zarur.</p>
+    </div>
+
+    <h3>A.4 Turkiya yetkazib beruvchilari — tuman bo'yicha</h3>
+    <table>
+      <thead><tr><th>Tuman</th><th>Odatdagi soha</th><th class="r">Min. buyurtma</th><th>To'lov shartlari</th></tr></thead>
+      <tbody>
+        <tr><td><b>Laleli</b></td><td>Ayollar asoslari, trikotaj</td><td class="r">300–500 / model</td><td>30% oldindan, 70% jo'natishdan oldin</td></tr>
+        <tr><td><b>Merter</b></td><td>Denim, ustki kiyim, katta cut-and-sew</td><td class="r">500–1 000 / model</td><td>30–50% oldindan</td></tr>
+        <tr><td><b>Osmanbey</b></td><td>O'rta-premium, marosim kiyimi</td><td class="r">200–300 / model</td><td>50% oldindan, qolganini 30 kunda</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13.5px">
+      <b>Transport yo'llari:</b> Istanbul → Toshkent — yuk mashinasida Iran-Turkmaniston orqali (10–14 kun),
+      poyezdda Baku-Oqtov-Beyno'v orqali (12–18 kun), havoda (2–3 kun, qimmat).
+      Har yo'nalishning alohida ishonchliligi va bojxona profili bor — buffer stok rejasi yo'l aralashmasini aks ettirishi kerak.
+    </p>
+
+    <h3>A.5 O'zbek chakana kalendari — mavsumiy talab</h3>
+    <table>
+      <thead><tr><th>Davr</th><th>Sanalar</th><th>Talab signali</th><th>Operatsion eslatma</th></tr></thead>
+      <tbody>
+        <tr><td>Qish cho'qqisi</td><td>Nov–Fev</td><td>Ustki kiyim, trikotaj</td><td>Eng katta bitta mavsum xaridi; 4 oylik sell-through rejalashtirish</td></tr>
+        <tr><td><b>Navro'z</b></td><td>21-mart ± 10 kun</td><td>Bayramona kiyim, oilaviy xarid</td><td>3 hafta oldin qabul; Markaziy + Viloyat klasterlari cho'qqida</td></tr>
+        <tr><td>Bahor</td><td>Apr–May</td><td>Yengil qatlamlar, basics</td><td>O'rta, barqaror</td></tr>
+        <tr><td>Yoz</td><td>Iyun–Avg</td><td>Yorqin palitra; turistik zonalar (Buxoro, Samarqand) cho'qqida</td><td>C5 klasterga e'tibor</td></tr>
+        <tr><td><b>Maktab + Mustaqillik</b></td><td>Avg oxiri</td><td>Basic tops, ish kiyimi</td><td>Ikkinchi cho'qqi; 2-haftalik qabul oynasi</td></tr>
+        <tr><td>Kuz</td><td>Sent–Okt</td><td>O'tuvchi</td><td>To'ldirish og'ir</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13.5px;color:var(--muted)">
+      <b>Taqsimot engine mavsumiy ko'paytmalari aynan shu oynalarga sozlanishi kerak</b>, umumiy 4-mavsumli shablonga emas.
+      Navro'z vaqtini noto'g'ri topish — Markaziy Osiyoga yangi kelgan tarmoqlarning eng ko'p uchragan xatosi.
+    </p>
+
+    <h3>A.6 Supplier onboarding — PO bandi (ingliz + rus)</h3>
+    <div class="card subtle">
+      <p style="margin-top:0;font-size:13.5px"><b>Barcoding and Advance Shipping Notice Clause</b></p>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.55">
+        Supplier shall print and affix a GS1-128 barcode encoding Buyer's SKU to every individual garment.
+        Each shipping carton shall bear a unique SSCC label. ASN in CSV or EDI 856 shall be transmitted to
+        <code>asn@dilmuss.uz</code> no later than <b>48 hours before departure</b>.
+      </p>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.55">
+        <b>Non-compliance:</b> 1-chi marta — yozma ogohlantirish. 2-chi — 5% invoys jarimasi. 3-chi — 90 kunlik delisting.
+      </p>
+      <p style="font-size:12.5px;color:var(--muted);font-style:italic;margin-bottom:0">
+        Пункт о штрихкодировании и предварительном уведомлении об отгрузке: Поставщик обязуется наносить штрих-код GS1-128
+        с SKU Покупателя на каждое изделие до упаковки. Каждая коробка — уникальный SSCC. ASN в формате CSV/EDI 856 —
+        на asn@dilmuss.uz не позднее 48 часов до отгрузки.
+      </p>
+    </div>
+
+    <h3>A.7 Bojxona — real vaqtlar</h3>
+    <table>
+      <thead><tr><th>Maqom</th><th>Odatdagi tozalash</th><th>Pre-pack uchun ma'nosi</th></tr></thead>
+      <tbody>
+        <tr><td><b>AEO "yashil yo'lak"</b></td><td>4–24 soat</td><td>Pre-pack amaliy</td></tr>
+        <tr><td>Standart</td><td>2–5 ish kuni</td><td>Pre-pack qiyin; buffer kerak</td></tr>
+        <tr><td>Qizil kanal (tekshiruv)</td><td>5–14 ish kuni</td><td>Pre-pack xavfli</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13.5px">
+      <b>Natija:</b> Davlat Bojxona Qo'mitasi bilan <b>AEO (Authorized Economic Operator)</b> maqomini saqlash.
+      Birinchi sertifikatsiya byudjeti: ~$3 000 (~37 mln so'm). Doim ikki bojxona broker — hech qachon bitta emas.
+    </p>
+
+    <h3>A.8 Raqobat oynasi — nima uchun hozir</h3>
+    <table>
+      <thead><tr><th>Raqobatchi</th><th>Pozitsiyasi</th><th>Ma'lumot etukligi</th></tr></thead>
+      <tbody>
+        <tr><td>LC Waikiki (UZ franshiza)</td><td>Mid-market fast-fashion</td><td>To'liq SKU-li, POS-yuriladi (Turkiya HQ)</td></tr>
+        <tr><td>Koton (UZ)</td><td>Mid-market fast-fashion</td><td>To'liq SKU-li (Turkiya HQ)</td></tr>
+        <tr><td>DeFacto</td><td>Value fashion</td><td>To'liq SKU-li</td></tr>
+        <tr><td>Zara (Inditex)</td><td>Premium fast-fashion</td><td>Oltin standart; Dilmuss yo'nalishidan yuqorida</td></tr>
+        <tr><td>Mahalliy tarmoqlar</td><td>Value / an'anaviy</td><td>Ko'pi Dilmuss darajasida yoki undan past</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <span class="k">Oyna</span>
+      O'zbek kapitaliga tegishli tarmoqlarning ko'pi Dilmuss bilan bir xil etuklikda. <b>Birinchi bo'lib o'tish — 3–5 yillik strukturaviy afzallik</b>.
+      2027–2028 yillarda Turkiya va Rossiya tarmoqlari O'zbekistonga kuchliroq kiradi. <b>2026-yil 2-chorakda boshlangan o'tish
+      mintaqaviy raqobat zichligi o'zgarishidan oldin tugaydi.</b>
+    </div>
+
+    <div class="fn">
+      <b>Hujjat oxiri.</b>
+      Ushbu deliverable yangilanishi va tafsilotlari uchun Merchandising Direktori va Loyiha Egasi bilan aloqa qiling.
+      Har bir bo'lim alohida ilova va ishlayotgan spetsifikatsiya bilan kengaytirilishi mumkin: texnologiya arxitekturasi tafsilotlari,
+      supplier shartnomalari, klaster modelining aniq xususiyatlar vektori, KPI dashboardining joriy etish texnik talabnomasi,
+      bojxona ishlov berish rejasi, mehnat qonuniga rioya qilish rejasi, AEO sertifikatsiya to'liq ro'yxati.
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
