@@ -426,6 +426,86 @@
     .risk-grid .cell{min-height:auto}
   }
 
+  /* Compare — responsive 6-column comparison */
+  .compare{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+    margin:14px 0 18px;
+  }
+  .compare-row{
+    display:grid;
+    grid-template-columns:2.3fr repeat(5, 1fr);
+    align-items:stretch;
+    border-bottom:1px solid var(--line);
+    transition:background-color 150ms;
+  }
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:not(.compare-head):hover{background:var(--paper-2)}
+  .compare-head{background:var(--paper-2);border-bottom:1px solid var(--line-2)}
+  .cr-cells{display:contents}
+  .cr-label{
+    padding:clamp(10px,1.2vw,14px) clamp(12px,1.5vw,16px);
+    font-size:clamp(12.5px,1.05vw,13.5px);
+    line-height:1.5;
+    color:var(--ink-2);
+    display:flex;align-items:center;
+  }
+  .compare-head .cr-label{
+    font-size:clamp(10.5px,1vw,11.5px);font-weight:600;
+    text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-2);
+  }
+  .cr-head{
+    padding:12px 8px;text-align:center;
+    font-size:clamp(10.5px,1vw,11.5px);font-weight:600;
+    text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-2);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .cr-cell{
+    display:flex;align-items:center;justify-content:center;
+    padding:12px 8px;
+    font-size:clamp(14px,1.3vw,17px);
+    font-weight:700;line-height:1;
+  }
+  .cr-cell.ok{color:var(--sage)}
+  .cr-cell.no{color:var(--rust)}
+  .cr-cell.partial{
+    font-size:clamp(10px,1vw,11px);
+    color:var(--gold);font-weight:600;
+  }
+  @media (max-width:720px){
+    .compare-head{display:none}
+    .compare-row{
+      display:block;
+      padding:14px clamp(14px,3vw,18px);
+    }
+    .cr-label{
+      padding:0 0 10px 0;
+      font-weight:600;font-size:14px;
+      color:var(--ink);line-height:1.42;
+      display:block;
+    }
+    .cr-cells{display:flex;flex-wrap:wrap;gap:4px}
+    .cr-cell{
+      padding:4px 10px;
+      margin:0;border-radius:3px;
+      font-size:11.5px;font-weight:600;
+      background:var(--paper-2);
+      border:1px solid var(--line);
+      display:inline-flex;align-items:center;gap:5px;
+      line-height:1.3;
+    }
+    .cr-cell::before{
+      content:attr(data-brand);
+      font-weight:600;color:var(--ink);font-size:11px;
+    }
+    .cr-cell.ok{background:#e3eedf;border-color:#c9ddc5;color:var(--sage)}
+    .cr-cell.no{background:#fbe3d6;border-color:#f0ccb8;color:var(--rust)}
+    .cr-cell.partial{background:#faf0d4;border-color:#eee0b4;color:var(--gold);font-size:11px}
+  }
+
   /* Footnote */
   .fn{font-size:clamp(11.5px,1.05vw,12.5px);color:var(--muted);border-top:1px solid var(--line);padding-top:22px;margin-top:44px;line-height:1.6}
 
@@ -758,19 +838,98 @@
     </table>
 
     <h3>2.2 Raqobatchilar nima qiladi, Dilmuss nima qilmaydi</h3>
-    <table>
-      <thead><tr><th>Amaliyot</th><th class="c">Zara</th><th class="c">H&amp;M</th><th class="c">LC Waikiki</th><th class="c">Mango</th><th class="c">Dilmuss</th></tr></thead>
-      <tbody>
-        <tr><td>Qabulda SKU = model × rang × o'lcham</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
-        <tr><td>Standart rang master (ID, erkin matn emas)</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
-        <tr><td>Kategoriya bo'yicha standart o'lcham to'ri</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
-        <tr><td>Yetkazib beruvchi chop etgan shtrix-kod (GS1/EAN-13)</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
-        <tr><td>Jismoniy qabuldan oldin ASN</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
-        <tr><td>Do'konlarni klasterga ajratish</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
-        <tr><td>Kunlik POS qaytaalani taqsimlashga uzatish</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c check">✓</td><td class="c cross">✗</td></tr>
-        <tr><td>Dona darajasida RFID</td><td class="c check">✓</td><td class="c">qisman</td><td class="c check">✓</td><td class="c">qisman</td><td class="c cross">✗</td></tr>
-      </tbody>
-    </table>
+    <div class="compare">
+      <div class="compare-row compare-head">
+        <div class="cr-label">Amaliyot</div>
+        <div class="cr-cells">
+          <div class="cr-head">Zara</div>
+          <div class="cr-head">H&amp;M</div>
+          <div class="cr-head">LC Waikiki</div>
+          <div class="cr-head">Mango</div>
+          <div class="cr-head">Dilmuss</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Qabulda SKU = model × rang × o'lcham</div>
+        <div class="cr-cells">
+          <div class="cr-cell ok" data-brand="Zara">✓</div>
+          <div class="cr-cell ok" data-brand="H&amp;M">✓</div>
+          <div class="cr-cell ok" data-brand="LC Waikiki">✓</div>
+          <div class="cr-cell ok" data-brand="Mango">✓</div>
+          <div class="cr-cell no" data-brand="Dilmuss">✗</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Standart rang master (ID, erkin matn emas)</div>
+        <div class="cr-cells">
+          <div class="cr-cell ok" data-brand="Zara">✓</div>
+          <div class="cr-cell ok" data-brand="H&amp;M">✓</div>
+          <div class="cr-cell ok" data-brand="LC Waikiki">✓</div>
+          <div class="cr-cell ok" data-brand="Mango">✓</div>
+          <div class="cr-cell no" data-brand="Dilmuss">✗</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Kategoriya bo'yicha standart o'lcham to'ri</div>
+        <div class="cr-cells">
+          <div class="cr-cell ok" data-brand="Zara">✓</div>
+          <div class="cr-cell ok" data-brand="H&amp;M">✓</div>
+          <div class="cr-cell ok" data-brand="LC Waikiki">✓</div>
+          <div class="cr-cell ok" data-brand="Mango">✓</div>
+          <div class="cr-cell no" data-brand="Dilmuss">✗</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Yetkazib beruvchi chop etgan shtrix-kod (GS1/EAN-13)</div>
+        <div class="cr-cells">
+          <div class="cr-cell ok" data-brand="Zara">✓</div>
+          <div class="cr-cell ok" data-brand="H&amp;M">✓</div>
+          <div class="cr-cell ok" data-brand="LC Waikiki">✓</div>
+          <div class="cr-cell ok" data-brand="Mango">✓</div>
+          <div class="cr-cell no" data-brand="Dilmuss">✗</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Jismoniy qabuldan oldin ASN</div>
+        <div class="cr-cells">
+          <div class="cr-cell ok" data-brand="Zara">✓</div>
+          <div class="cr-cell ok" data-brand="H&amp;M">✓</div>
+          <div class="cr-cell ok" data-brand="LC Waikiki">✓</div>
+          <div class="cr-cell ok" data-brand="Mango">✓</div>
+          <div class="cr-cell no" data-brand="Dilmuss">✗</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Do'konlarni klasterga ajratish</div>
+        <div class="cr-cells">
+          <div class="cr-cell ok" data-brand="Zara">✓</div>
+          <div class="cr-cell ok" data-brand="H&amp;M">✓</div>
+          <div class="cr-cell ok" data-brand="LC Waikiki">✓</div>
+          <div class="cr-cell ok" data-brand="Mango">✓</div>
+          <div class="cr-cell no" data-brand="Dilmuss">✗</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Kunlik POS qaytaalani taqsimlashga uzatish</div>
+        <div class="cr-cells">
+          <div class="cr-cell ok" data-brand="Zara">✓</div>
+          <div class="cr-cell ok" data-brand="H&amp;M">✓</div>
+          <div class="cr-cell ok" data-brand="LC Waikiki">✓</div>
+          <div class="cr-cell ok" data-brand="Mango">✓</div>
+          <div class="cr-cell no" data-brand="Dilmuss">✗</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Dona darajasida RFID</div>
+        <div class="cr-cells">
+          <div class="cr-cell ok" data-brand="Zara">✓</div>
+          <div class="cr-cell partial" data-brand="H&amp;M">qisman</div>
+          <div class="cr-cell ok" data-brand="LC Waikiki">✓</div>
+          <div class="cr-cell partial" data-brand="Mango">qisman</div>
+          <div class="cr-cell no" data-brand="Dilmuss">✗</div>
+        </div>
+      </div>
+    </div>
 
     <div class="callout navy">
       <span class="k">Eng katta farq — yetkazib beruvchi shtrix-kodi + ASN</span>
