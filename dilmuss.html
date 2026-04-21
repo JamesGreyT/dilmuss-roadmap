@@ -599,6 +599,16 @@
     font-style:italic;
   }
 
+  /* Inline term glosses */
+  .gloss{
+    color:var(--muted);
+    font-size:0.86em;
+    font-weight:400;
+    font-style:normal;
+    white-space:normal;
+  }
+  .gloss::before{content:" "}
+
   /* Focus */
   a:focus-visible,button:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:2px}
 
@@ -678,7 +688,7 @@
 
     <ol>
       <li><b>Ma'lumot qatlami</b> — har qanday jihozdan oldin standart SKU to'rini o'rnatish (model × rang × o'lcham).</li>
-      <li><b>Jarayon qatlami</b> — omborni 14 ta kategoriya orolidan bitta <b>oqim-o'tkazuvchi cross-dock</b>ka aylantirish.</li>
+      <li><b>Jarayon qatlami</b> — omborni 14 ta kategoriya orolidan bitta <b>oqim-o'tkazuvchi cross-dock</b> <span class="gloss">(cross-dock — qabul va jo'natma o'rtasida saqlashsiz, to'g'ridan-to'g'ri o'tkazuv ombori)</span>ka aylantirish.</li>
       <li><b>Jihoz qatlami</b> — skanerlar, sensorli ekranlar, RFID — faqat 1–2-qatlamlar qo'lda ishlay boshlagandan keyin.</li>
     </ol>
 
@@ -794,7 +804,8 @@
     </div>
 
     <p>
-      Bu model — <b>qo'lda yuritilgan post-distribution</b>. Mol omborga tushadi,
+      Bu model — <b>qo'lda yuritilgan post-distribution</b>
+      <span class="gloss">(post-distribution — mollar omborga kelgach saralanadi, so'ng do'konlarga taqsimlanadi; pre-distributionning teskarisi)</span>. Mol omborga tushadi,
       to'liq qayta ishlanadi, keyin kimdir har bir partiyaga "bu do'konga boradi" deb hukm chiqaradi.
       Mavjud barcha variantlar ichida eng mehnat talab qiladigan va <b>xodimlar soni do'konlar soniga chiziqli o'sadigan yagona</b> modeldir.
     </p>
@@ -870,6 +881,10 @@
     <h2><span class="num">02</span>Global tajriba — yetakchi brendlar qanday ishlaydi</h2>
 
     <h3>2.1 Pre-distribution vs. Post-distribution — arxitektura tanlovi</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      Pre-distribution <span class="gloss">(oldindan taqsimlash — yetkazib beruvchi do'konga qadoqlab yuboradi)</span> va
+      post-distribution <span class="gloss">(qabuldan keyin taqsimlash — ombor do'konlar uchun ajratadi)</span> — ikki asosiy model.
+    </p>
     <div class="two">
       <div class="card">
         <h4 style="color:var(--navy)">Pre-pack / Cross-dock — Zara modeli</h4>
@@ -1002,7 +1017,7 @@
 
     <div class="callout navy">
       <span class="k">Eng katta farq — yetkazib beruvchi shtrix-kodi + ASN</span>
-      Molsikchani <b>"qabulda skan qiling"</b>ga aylantirsa, 30 ta kiritish operatorining ~70% darhol ortiqcha bo'ladi.
+      <b>ASN</b> <span class="gloss">(Advance Shipping Notice — yetkazib beruvchi tomonidan jo'natmadan oldin elektron tarzda yuborilgan yuk xabarnomasi; har kartonda nima borligini oldindan bildiradi)</span> + yetkazib beruvchi tomonidan chop etilgan shtrix-kod qabul jarayonini <b>"qabulda skan qiling"</b>ga aylantirsa, 30 ta kiritish operatorining ~70% darhol ortiqcha bo'ladi.
       <b>Ikkinchi eng katta farq — do'kon klasterlashtirish</b>: raqobatchi 5–6 qarorga tushadi; Dilmuss har shipment uchun 55 qaror qabul qiladi.
     </div>
   </div>
@@ -1100,7 +1115,7 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
       </tbody>
     </table>
     <p style="font-size:13.5px;color:var(--muted)">
-      EAN-13 prefiksi <b>487</b> — O'zbekistonning GS1 davlat kodi. Dilmuss bir martalik <b>GS1 Uzbekistan</b> kompaniya prefiksini ro'yxatdan o'tkazishi kerak (~$1 200 / 14,7 mln so'm).
+      <b>EAN-13</b> <span class="gloss">(European Article Number — 13 raqamli xalqaro shtrix-kod standarti)</span> prefiksi <b>487</b> — O'zbekistonning GS1 <span class="gloss">(Global Standards 1 — shtrix-kod va ta'minot zanjiri identifikatsiya standartlari tashkiloti)</span> davlat kodi. Dilmuss bir martalik <b>GS1 Uzbekistan</b> kompaniya prefiksini ro'yxatdan o'tkazishi kerak (~$1 200 / 14,7 mln so'm).
       Ichki yaratilgan barcha shtrix-kodlar global miqyosda noyob bo'ladi.
     </p>
 
@@ -1138,12 +1153,12 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
       <div class="phase">
         <div class="p">4</div>
         <div class="m">18–30 oy</div>
-        <div class="t">Dona darajasida RFID (Zara/Uniqlo standarti). Faqat 1–3-bosqichlar ishlayotgan bo'lsa.</div>
+        <div class="t">Dona darajasida <b>RFID</b> <span class="gloss">(Radio-Frequency Identification — radio-chastotali belgilar, uzoqdan bir vaqtda yuzlab dona skan qiladi)</span> (Zara/Uniqlo standarti). Faqat 1–3-bosqichlar ishlayotgan bo'lsa.</div>
       </div>
       <div class="phase" style="grid-column:span 2;background:#fbf4e1;border-color:#e5d49e">
         <div class="p" style="color:#8a6b1e">⚠</div>
         <div class="m" style="color:#8a6b1e">Sotib OLMASLIK kerak</div>
-        <div class="t" style="color:#6b501a">Enterprise WMS (SAP EWM, Manhattan). AS/RS (avtomatik saqlash). AGV/AMR robotlar. Masshtab yetarli emas — hozir ortiqcha xarajat.</div>
+        <div class="t" style="color:#6b501a">Enterprise <b>WMS</b> <span class="gloss">(Warehouse Management System — ombor boshqaruv tizimi)</span> (SAP EWM, Manhattan). AS/RS (avtomatik saqlash). AGV/AMR robotlar. Masshtab yetarli emas — hozir ortiqcha xarajat.</div>
       </div>
     </div>
 
@@ -1154,7 +1169,7 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
         <tr><td><b>Zebra TC22/TC27</b> (yoki Honeywell CT45; Urovo DT40 — arzon CIS muqobili)</td><td>PC stantsiyalarini almashtirish</td><td>Bitta skaner = bitta operatorning butun ish jarayoni. "PC'ga borib yozish" halqasi yo'qoladi.</td></tr>
         <tr><td><b>Mobil arava</b> (planshet + Zebra ZD621 printer + yorliq g'alasi)</td><td>Shtrix-kodsiz kelgan bozor mollari uchun</td><td>Arava molga boradi, mol stolga emas. SKU yorlig'i joyida chop etiladi.</td></tr>
         <tr><td><b>Sensor ekran kiosklar</b> (15" sanoat sifatli)</td><td>Xodim tomonidan ma'lumot kiritish</td><td>12 rang plitka + o'lcham tugmalari. Klaviatura yo'q, xato yozish yo'q.</td></tr>
-        <tr><td><b>Put-to-light devor</b></td><td>"Qaysi do'kon?" qarorini almashtirish</td><td>Tizim to'g'ri yacheykani yoqadi, xodim skan qilib tashlaydi. Taqsimot mehnati ~70% kamayadi.</td></tr>
+        <tr><td><b>Put-to-light devor</b> <span class="gloss">(yorug'lik bilan ko'rsatadigan saralash tizimi — har do'kon uchun yacheyka, skan qilinganda to'g'ri yacheyka yonadi)</span></td><td>"Qaysi do'kon?" qarorini almashtirish</td><td>Tizim to'g'ri yacheykani yoqadi, xodim skan qilib tashlaydi. Taqsimot mehnati ~70% kamayadi.</td></tr>
       </tbody>
     </table>
     <p style="font-size:13.5px"><b>2-bosqich taxminiy xarajat:</b> $80–150K (~980M – 1,84 mlrd so'm). Mehnat tejashda qoplanish &lt;12 oy.</p>
@@ -1483,6 +1498,11 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
     <h2><span class="num">06</span>"Kelajak" jarayoni</h2>
 
     <h3>6.1 Boshidan oxirigacha oqim</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      <b>SSCC</b> <span class="gloss">(Serial Shipping Container Code — yagona karton seriya kodi; har kartonning "pasporti")</span> ·
+      <b>POS</b> <span class="gloss">(Point of Sale — do'konda sotuv paytida chek yozuvchi kassa tizimi)</span> ·
+      <b>DC</b> <span class="gloss">(Distribution Center — taqsimlash markazi, ya'ni ombor)</span>.
+    </p>
     <div class="flow">
       <svg viewBox="0 0 960 380" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -1605,7 +1625,7 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
       <div class="after">
         <div class="k">Keyin — Rustam, 12 oydan so'ng, "Bottoms Xaridchi-Planirovshik"</div>
         <p>
-          Bo'limga emas, P&amp;L ga egadir. Ertalab dashboard: klaster bo'yicha sell-through, buzilgan o'lcham istisnolari, OTIF.
+          Bo'limga emas, <b>P&amp;L</b> <span class="gloss">(Profit &amp; Loss — foyda va zarar javobgarligi)</span> ga egadir. Ertalab dashboard: klaster bo'yicha sell-through, buzilgan o'lcham istisnolari, <b>OTIF</b> <span class="gloss">(On-Time In-Full — o'z vaqtida va to'liq yetkazib berish ko'rsatkichi)</span>.
           Sezgi emas — klaster profili bo'yicha xarid qiladi. Taqsimot — engine ishi. Har 6 haftada Laleli'ga boradi, har kuni Chorsu'ga emas.
           Maosh: 18,5 mln so'm. Boshqaruvi ostida 14 sortirovkachi emas, 0 kishi. Yaxshi ish, yuqori maqom, o'lchanadigan javobgarlik.
         </p>
@@ -1669,8 +1689,8 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
       60 kun ketma-ket &lt;10% override bo'lsa — faqat istisnolarga.
     </p>
     <p style="font-size:13.5px">
-      <b>Sotib olish yoki qurish?</b> SaaS (Toolio, Onebeat, Syrup Tech) sotib oling. Qurmang —
-      mat operatsionallashtirish (cold-start SKU, almashtirish mantig'i, mavsumiy qayta o'qitish) —
+      <b>Sotib olish yoki qurish?</b> <b>SaaS</b> <span class="gloss">(Software as a Service — bulut orqali obuna asosida ishlaydigan dastur, lokal o'rnatilmaydi)</span> (Toolio, Onebeat, Syrup Tech) sotib oling. Qurmang —
+      matni operatsionallashtirish (cold-start SKU, almashtirish mantig'i, mavsumiy qayta o'qitish) —
       maxsus ish. Noldan qurgan loyihalarning ~70% muvaffaqiyatsiz.
     </p>
   </div>
@@ -1691,6 +1711,9 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
     </div>
 
     <h3>7.1 Boshqaruv RACI — kim nima qiladi</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      <b>RACI</b> <span class="gloss">(Responsible — bajaruvchi · Accountable — mas'ul · Consulted — maslahatchi · Informed — xabardor)</span> — har bir qaror uchun rol taqsimoti matritsasi.
+    </p>
     <table>
       <thead><tr><th>Qaror / Artifact</th><th>Bajaruvchi (R)</th><th>Mas'ul (A)</th><th>Maslahat (C)</th><th>Xabardor (I)</th></tr></thead>
       <tbody>
@@ -1707,6 +1730,10 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
     </table>
 
     <h3>7.2 KPI dashboard — haftalik yig'ilish ko'radigan narsa</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      <b>KPI</b> <span class="gloss">(Key Performance Indicator — asosiy ko'rsatkich)</span> —
+      <b>dashboard</b> <span class="gloss">(boshqaruv paneli, bir sahifada barcha muhim raqamlar)</span>.
+    </p>
     <div class="dash">
       <div class="title">W24 — Dilmuss O'tish Dasturi — Steering Committee</div>
       <div class="grid">
@@ -1781,6 +1808,10 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
     <p>Birinchi 12 oyda o'zi qoplanadi, so'ngra barqaror foyda keltiradi. Konservativ holat: yangi do'kon yo'q, narx o'zgarishi yo'q, o'rta chegirma tiklanishi.</p>
 
     <h3>8.1 Investitsiya — CapEx + bir marta OpEx</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      <b>CapEx</b> <span class="gloss">(Capital Expenditure — bir martalik kapital xarajat, masalan jihoz xarid)</span> ·
+      <b>OpEx</b> <span class="gloss">(Operating Expenditure — joriy operatsion xarajat, masalan oylik litsenziya)</span>.
+    </p>
     <table>
       <thead><tr><th>Modda</th><th class="c">Bosqich</th><th class="r">USD</th><th class="r">So'm (mln)</th></tr></thead>
       <tbody>
@@ -1870,6 +1901,9 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
     </div>
 
     <h3>8.5 Masshtab argumenti — nima uchun bu o'sish sug'urtasi</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      <b>NPV</b> <span class="gloss">(Net Present Value — sof joriy qiymat; kelajakdagi pul oqimlari bugungi qiymatga olib kelingani)</span> — investitsiyaning kumulativ foydaliligi ko'rsatkichi.
+    </p>
     <div class="two">
       <div class="card">
         <h4>Hozirgi model</h4>
@@ -2050,6 +2084,11 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
     <h2><span class="num">A</span>Ilova: arxitektura va O'zbekiston bozori</h2>
 
     <h3>A.1 Texnologik arxitektura</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      <b>ERP</b> <span class="gloss">(Enterprise Resource Planning — korxona resurslarini rejalashtirish tizimi; xarid, moliya, inventar hammasi bir joyda)</span> ·
+      <b>BI</b> <span class="gloss">(Business Intelligence — biznes-analitika qatlami, dashboard va hisobotlar)</span> ·
+      <b>EDI</b> <span class="gloss">(Electronic Data Interchange — tizimlar o'rtasida strukturali elektron hujjat almashinuvi)</span>.
+    </p>
     <div class="flow">
       <svg viewBox="0 0 940 380" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -2128,6 +2167,9 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
     </div>
 
     <h3>A.4 Turkiya yetkazib beruvchilari — tuman bo'yicha</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      <b>MOQ</b> <span class="gloss">(Minimum Order Quantity — yetkazib beruvchi bir modelga qabul qiladigan eng kam buyurtma miqdori)</span>.
+    </p>
     <table>
       <thead><tr><th>Tuman</th><th>Odatdagi soha</th><th class="r">Min. buyurtma</th><th>To'lov shartlari</th></tr></thead>
       <tbody>
@@ -2178,6 +2220,10 @@ Misol: DW-2026-S-1043  ×  11-01 (Navy)  ×  M
     </div>
 
     <h3>A.7 Bojxona — real vaqtlar</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">
+      <b>AEO</b> <span class="gloss">(Authorized Economic Operator — ishonchli iqtisodiy operator; Davlat Bojxona Qo'mitasi tomonidan beriladigan soddalashtirilgan rasmiylashtirish statusi)</span> ·
+      <b>HS kod</b> <span class="gloss">(Harmonized System — tovarni tasniflash bo'yicha xalqaro 6-raqamli kod)</span>.
+    </p>
     <table>
       <thead><tr><th>Maqom</th><th>Odatdagi tozalash</th><th>Pre-pack uchun ma'nosi</th></tr></thead>
       <tbody>
